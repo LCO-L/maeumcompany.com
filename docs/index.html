@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ma-eum Company</title>
+  <link rel="icon" href="https://bf054e0b.maeumfavicon.pages.dev/maeumfavicon.png" type="image/x-icon" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: #fafafa;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-weight: 600;
+    }
+
+    #bootingScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
+      color: #2d3748;
+      font-size: 1.1rem;
+      font-weight: 600;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s ease-out;
+      animation: bootingFadeIn 0.5s ease-out;
+    }
+
+    @keyframes bootingFadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    #bootingScreen.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #booting {
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      text-align: center;
+      max-width: 500px;
+    }
+
+    #typingContainer {
+      text-align: center;
+      max-width: 500px;
+    }
+
+    #typing {
+      display: inline;
+      font-weight: 700;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      animation: blink 1s steps(1) infinite;
+      color: #4299e1;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+
+    #mainScreen {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease-out;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #mainScreen.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .logo {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .company-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: #718096;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+      max-width: 400px;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .nav-button {
+      background: white;
+      color: #4a5568;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .nav-button:hover {
+      background: #f7fafc;
+      border-color: #cbd5e0;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .closing-message {
+      color: #a0aec0;
+      font-style: normal;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .button-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="bootingScreen">
+    <div id="booting"></div>
+    <div id="typingContainer">
+      <span id="typing"></span>
+      <span class="cursor">▍</span>
+    </div>
+  </div>
+
+  <div id="mainScreen">
+    <div class="logo">
+      <img src="https://bf054e0b.maeumfavicon.pages.dev/maeumfavicon.png" alt="Ma-eum" style="width: 2rem; height: 2rem;" />
+      <span class="company-name">Ma-eum Company</span>
+    </div>
+
+    <div class="subtitle">
+      "We are connected through the heart,<br />
+      and technology becomes a tool to restore human senses."
+    </div>
+
+    <div class="button-grid">
+      <a href="https://maeum.notion.site/Ma-eum-ENG-Page-URL" target="_blank" class="nav-button">
+        🌐 Ma-eum (ENG)
+      </a>
+      <a href="https://maeum.notion.site/Ma-eum-KOR-Page-URL" target="_blank" class="nav-button">
+        🇰🇷 Ma-eum (KOR)
+      </a>
+      <a href="https://maeum.notion.site/LEE-and-Research-Lab" target="_blank" class="nav-button">
+        🧪 Lee's & Research Lab
+      </a>
+    </div>
+
+    <div class="closing-message">
+    Ma-eum is not a product. It's a new way of sensing the world.
+    </div>
+  </div>
+
+  <script>
+    const bootingText = [];
+    const bootingScreen = document.getElementById('bootingScreen');
+    const mainScreen = document.getElementById('mainScreen');
+    const bootEl = document.getElementById('booting');
+    const typingEl = document.getElementById('typing');
+
+    let currentLine = 0;
+
+    function showBootingLines() {
+      if (currentLine < bootingText.length) {
+        bootEl.innerHTML += bootingText[currentLine] + "<br>";
+        currentLine++;
+        setTimeout(showBootingLines, 600);
+      } else {
+        typeText(" Ma-eum is all you need.", () => {
+          setTimeout(() => {
+            bootingScreen.classList.add('hidden');
+            setTimeout(() => {
+              bootingScreen.style.display = 'none';
+              mainScreen.classList.add('show');
+            }, 500);
+          }, 667);
+        }, 67);
+      }
+    }
+
+    function typeText(text, callback, speed = 80) {
+      let i = 0;
+      typingEl.textContent = "";
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          typingEl.textContent += text[i];
+          i++;
+        } else {
+          clearInterval(interval);
+          if (callback) callback();
+        }
+      }, speed);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', showBootingLines);
+    } else {
+      showBootingLines();
+    }
+  </script>
+</body>
+</html>
