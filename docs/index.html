@@ -1332,7 +1332,7 @@
                     animation: slideUp 0.3s ease;
                     position: relative;
                 ">
-                    <button onclick="this.closest('[style*=\\"position: fixed\\"]').remove()" style="
+                    <button class="modal-close-btn" style="
                         position: absolute;
                         top: 20px;
                         right: 20px;
@@ -1488,6 +1488,21 @@
 
             modal.innerHTML = modalContent;
             document.body.appendChild(modal);
+
+            // Add close button event listener
+            const closeBtn = modal.querySelector('.modal-close-btn');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    modal.remove();
+                });
+            }
+
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
 
             // Add animation styles if not already present
             if (!document.getElementById('modalAnimations')) {
