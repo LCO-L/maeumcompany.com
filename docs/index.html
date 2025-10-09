@@ -1294,15 +1294,17 @@
         function openCalendly() {
             // 언어에 따라 다른 URL 사용
             const currentLang = MAEUM_LANG.getCurrentLanguage();
+            console.log('Current language:', currentLang);
             const url = currentLang === 'kr'
                 ? 'https://open.kakao.com/o/sdSIOgWh'
                 : 'https://discord.gg/ueYeUfCUQE';
-
+            console.log('Opening URL:', url);
             window.open(url, '_blank');
         }
 
         function joinMovement() {
             // Formspree를 사용한 간단한 이메일 수집
+            const currentLang = MAEUM_LANG.getCurrentLanguage();
             const modal = document.createElement('div');
             modal.style.cssText = `
                 position: fixed;
@@ -1520,6 +1522,7 @@
         }
 
         function openPressKit() {
+            const currentLang = MAEUM_LANG.getCurrentLanguage();
             const message = currentLang === 'kr'
                 ? `프레스 키트: 데모, 창업자 바이오, 비전 문서 포함\n\n연락처: ${CONFIG.PRESS_EMAIL}`
                 : `Press Kit: Contains demos, founder bio, and vision documents\n\nContact: ${CONFIG.PRESS_EMAIL}`;
@@ -1527,6 +1530,7 @@
         }
 
         function openInvestors() {
+            const currentLang = MAEUM_LANG.getCurrentLanguage();
             const message = currentLang === 'kr'
                 ? `역사를 함께 만들어갈 투자자를 위해:\n\n최소 투자: $10M\n연락처: ${CONFIG.INVESTOR_EMAIL}`
                 : `For investors looking to back history:\n\nMinimum investment: $10M\nContact: ${CONFIG.INVESTOR_EMAIL}`;
