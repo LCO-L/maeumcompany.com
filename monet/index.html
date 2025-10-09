@@ -349,7 +349,7 @@
                 <a href="../enterprise-en/" data-en="Enterprise" data-kr="기업용" class="nav-enterprise">Enterprise</a>
                 <a href="../monet/" data-en="Monet Discord Bot" data-kr="Monet Discord Bot" class="nav-monet">Monet Discord Bot</a>
                 <a href="../about/" data-en="About" data-kr="소개" class="nav-about">About</a>
-                <a href="javascript:void(0)" onclick="openCalendly()" data-en="Schedule Meeting" data-kr="미팅 예약" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;">Schedule Meeting</a>
+                <a href="javascript:void(0)" onclick="openCalendly()" data-en="Schedule Meeting" data-kr="연락/문의" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;">Schedule Meeting</a>
             </div>
         </nav>
     </header>
@@ -601,24 +601,13 @@
     <script>
         // Schedule Meeting functionality (same as main page)
         function openCalendly() {
-            // Check if CONFIG is available
-            if (typeof CONFIG !== 'undefined' && CONFIG.DISCORD_INVITE_URL) {
-                const DISCORD_INVITE_LINK = CONFIG.DISCORD_INVITE_URL;
+            // 언어에 따라 다른 URL 사용
+            const currentLang = MAEUM_LANG.getCurrentLanguage();
+            const url = currentLang === 'kr'
+                ? 'https://open.kakao.com/o/sdSIOgWh'
+                : 'https://discord.gg/ueYeUfCUQE';
 
-                // Get current language
-                const currentLang = localStorage.getItem('maeum-language') || 'en';
-
-                const message = currentLang === 'kr'
-                    ? '💬 Discord에서 직접 상담하세요!\n\n• MAEUM 도입 문의\n• 정부/기업 전용 채널\n• 실시간 기술 지원\n\nDiscord로 이동하시겠습니까?'
-                    : '💬 Chat with us on Discord!\n\n• MAEUM deployment consultation\n• Government/Enterprise channel\n• Real-time technical support\n\nOpen Discord?';
-
-                if (CONFIG.ENABLE_DISCORD && confirm(message)) {
-                    window.open(DISCORD_INVITE_LINK, '_blank');
-                }
-            } else {
-                // Fallback if config is not loaded
-                alert('Please try again in a moment.');
-            }
+            window.open(url, '_blank');
         }
     </script>
 </body>
