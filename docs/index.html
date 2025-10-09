@@ -1293,6 +1293,7 @@
         // CTA Functions
         function openCalendly() {
             // 언어에 따라 다른 URL 사용
+            const currentLang = MAEUM_LANG.getCurrentLanguage();
             const url = currentLang === 'kr'
                 ? 'https://open.kakao.com/o/sdSIOgWh'
                 : 'https://discord.gg/ueYeUfCUQE';
