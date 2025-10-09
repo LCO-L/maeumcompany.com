@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAEUM 정부용 - 공공 서비스 AI 혁신</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MAEUM 정부용 솔루션 - 100% 온프레미스, 완전한 데이터 주권, 모든 언어 지원. 공공 서비스의 디지털 혁신을 실현합니다.">
+    <meta name="keywords" content="정부 AI, 공공 AI, 전자정부, 디지털 정부, 행정 자동화, 공공 서비스, MAEUM">
+
+    <!-- Fonts -->
+    <style>
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-weight: 400;
+            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff2') format('woff2');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-weight: 700;
+            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff2') format('woff2');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-weight: 800;
+            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff2') format('woff2');
+            font-display: swap;
+        }
+    </style>
+
+    <script src="../config.js"></script>
+    <script src="../language.js"></script>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 90%;
+        }
+
+        body {
+            font-family: 'NanumSquareNeo', -apple-system, sans-serif;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+        }
+
+        /* Page-specific overrides if needed */
+        .nav-links {
+            margin-right: 100px; /* Keep spacing for language dropdown */
+        }
+
+        .btn-primary {
+            background: #0066FF;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #0052CC;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 40px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero .subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 48px;
+            line-height: 1.6;
+        }
+
+        /* Benefits Grid */
+        .benefits {
+            padding: 80px 40px;
+            background: #f8f9fa;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .feature-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .feature-row:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .feature-content h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .feature-content p {
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: #4ade80;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+
+        .feature-visual {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: white;
+        }
+
+        /* Security Section */
+        .security {
+            padding: 80px 40px;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .security h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+
+        .security-subtitle {
+            text-align: center;
+            color: #999;
+            font-size: 18px;
+            margin-bottom: 60px;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .security-item {
+            text-align: center;
+        }
+
+        .security-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .security-item h4 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .security-item p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #0066FF, #0052CC);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 24px;
+        }
+
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 48px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .btn-white {
+            background: white;
+            color: #0066FF;
+            padding: 16px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 40px 40px;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-row {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../" class="logo">MAEUM</a>
+            <div class="nav-links">
+                <a href="../government-en/" class="nav-government" data-en="Government" data-kr="정부용">정부용</a>
+                <a href="../enterprise-en/" class="nav-enterprise" data-en="Enterprise" data-kr="기업용">기업용</a>
+                <a href="../monet/" class="nav-monet" data-en="Monet Discord Bot" data-kr="Monet Discord Bot">Monet Discord Bot</a>
+                <a href="../about/" class="nav-about" data-en="About" data-kr="소개">소개</a>
+                <a href="javascript:void(0)" onclick="openCalendly()" data-en="Schedule Meeting" data-kr="미팅 예약" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;">미팅 예약</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-label">🏛️ 정부용 AI 솔루션</span>
+        <h1>모든 시민을 위한<br>똑똑한 정부를 만듭니다</h1>
+        <p class="subtitle">
+            100% 온프레미스 AI로 완전한 데이터 주권을 보장하며,<br>
+            공공 서비스의 속도와 품질을 혁신적으로 개선합니다.
+        </p>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <h2>정부가 MAEUM을 선택하는 이유</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>즉각적인 민원 처리</h3>
+                <p>수주일 걸리던 문서 처리를 몇 분 만에. AI가 24시간 민원을 자동 분류, 처리, 응답합니다.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🌍</div>
+                <h3>모든 언어 지원</h3>
+                <p>100개 이상 언어와 방언 지원. 다문화 가정, 외국인 거주자 모두에게 평등한 서비스를 제공합니다.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🔒</div>
+                <h3>완전한 데이터 주권</h3>
+                <p>100% 온프레미스 운영. 민감한 국민 데이터가 해외 서버로 전송되지 않습니다.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>운영비 80% 절감</h3>
+                <p>클라우드 비용 제로. 기존 하드웨어 활용. 행정 인력의 효율적 재배치로 예산 절감.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🚀</div>
+                <h3>즉시 구축 가능</h3>
+                <p>복잡한 인프라 구축 불필요. 기존 시스템과 완벽 호환. 몇 주 내 전면 도입 가능.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <h3>실시간 정책 인사이트</h3>
+                <p>민원 데이터 실시간 분석으로 정책 수요를 즉각 파악. 데이터 기반 정책 결정 지원.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2>핵심 기능</h2>
+
+        <div class="feature-row">
+            <div class="feature-content">
+                <h3>지능형 문서 처리</h3>
+                <p>수백만 건의 공문서를 AI가 자동으로 분류, 요약, 처리합니다. 손글씨, 스캔 문서, 다국어 문서까지 완벽 인식.</p>
+                <ul class="feature-list">
+                    <li>OCR 정확도 99.9%</li>
+                    <li>자동 문서 분류 및 라우팅</li>
+                    <li>법령 준수 자동 검증</li>
+                    <li>처리 우선순위 자동 설정</li>
+                </ul>
+            </div>
+            <div class="feature-visual">📋</div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-content">
+                <h3>24/7 시민 상담</h3>
+                <p>AI 상담사가 모든 언어로 24시간 시민의 질문에 응답합니다. 복잡한 행정 절차도 쉽게 안내.</p>
+                <ul class="feature-list">
+                    <li>실시간 다국어 상담</li>
+                    <li>법령 기반 정확한 답변</li>
+                    <li>필요 서류 자동 안내</li>
+                    <li>처리 상태 실시간 추적</li>
+                </ul>
+            </div>
+            <div class="feature-visual">💬</div>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-content">
+                <h3>정책 분석 엔진</h3>
+                <p>민원 빅데이터를 실시간 분석하여 정책 수요를 예측하고, 정책 효과를 즉각 측정합니다.</p>
+                <ul class="feature-list">
+                    <li>민원 트렌드 실시간 분석</li>
+                    <li>정책 영향도 예측</li>
+                    <li>지역별 수요 히트맵</li>
+                    <li>정책 효과 자동 리포트</li>
+                </ul>
+            </div>
+            <div class="feature-visual">📈</div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security">
+        <h2>국가 기밀 수준의 보안</h2>
+        <p class="security-subtitle">민감한 국민 데이터를 최고 수준으로 보호합니다</p>
+
+        <div class="security-grid">
+            <div class="security-item">
+                <div class="security-icon">🛡️</div>
+                <h4>에어갭 운영</h4>
+                <p>완전한 오프라인 운영 가능</p>
+            </div>
+            <div class="security-item">
+                <div class="security-icon">🔐</div>
+                <h4>종단간 암호화</h4>
+                <p>군사급 암호화 표준 적용</p>
+            </div>
+            <div class="security-item">
+                <div class="security-icon">🏛️</div>
+                <h4>법규 준수</h4>
+                <p>개인정보보호법 완벽 준수</p>
+            </div>
+            <div class="security-item">
+                <div class="security-icon">🔍</div>
+                <h4>감사 추적</h4>
+                <p>모든 접근 기록 영구 보존</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>우리나라도 AI 강국이 될 수 있습니다</h2>
+        <p>지금 시작하면, 6개월 내 전 부처 AI 전환이 가능합니다</p>
+        <div class="cta-buttons">
+            <button class="btn-white" onclick="openConsultation()">정부 도입 상담</button>
+            <button class="btn-white" onclick="downloadWhitepaper()">백서 다운로드</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 MAEUM. 모든 인류가 AI에 접근할 수 있는 미래를 만듭니다.</p>
+        <p style="margin-top: 20px;">
+            <a href="../">홈</a> ·
+            <a href="../about/">회사 소개</a> ·
+            <a href="../legal/">법적 고지</a> ·
+            <a href="mailto:hello@maeum.io">문의</a>
+        </p>
+    </footer>
+
+    <script>
+        function openConsultation() {
+            // Discord or consultation form
+            if (typeof CONFIG !== 'undefined' && CONFIG.DISCORD_INVITE_URL) {
+                window.open(CONFIG.DISCORD_INVITE_URL, '_blank');
+            }
+        }
+
+        function downloadWhitepaper() {
+            // Whitepaper download logic
+            alert('백서 준비 중입니다. 곧 다운로드 가능합니다.');
+        }
+
+        function openCalendly() {
+            if (typeof CONFIG !== 'undefined' && CONFIG.DISCORD_INVITE_URL) {
+                const DISCORD_INVITE_LINK = CONFIG.DISCORD_INVITE_URL;
+                const currentLang = localStorage.getItem('maeum-language') || 'en';
+
+                const message = currentLang === 'kr'
+                    ? '💬 Discord에서 직접 상담하세요!\n\n• MAEUM 도입 문의\n• 정부/기업 전용 채널\n• 실시간 기술 지원\n\nDiscord로 이동하시겠습니까?'
+                    : '💬 Chat with us on Discord!\n\n• MAEUM deployment consultation\n• Government/Enterprise channel\n• Real-time technical support\n\nOpen Discord?';
+
+                if (CONFIG.ENABLE_DISCORD && confirm(message)) {
+                    window.open(DISCORD_INVITE_LINK, '_blank');
+                }
+            } else {
+                alert('Please try again in a moment.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONET - AI Chatbot Service | MAEUM</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MONET: Personal AI chatbot service powered by MAEUM technology. Chat with AI in 140+ languages. B2C service for everyone.">
+    <meta name="keywords" content="MONET, AI chatbot, personal AI, AI assistant, MAEUM chatbot, B2C AI">
+
+    <script src="../config.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+
+    <style>
+        /* Page-specific styles */
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .logo {
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 24px 100px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+        }
+
+        .chat-demo {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: left;
+        }
+
+        .chat-message {
+            margin: 15px 0;
+            padding: 12px 18px;
+            border-radius: 18px;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-message {
+            background: rgba(255, 255, 255, 0.2);
+            margin-left: auto;
+            max-width: 70%;
+        }
+
+        .ai-message {
+            background: rgba(255, 255, 255, 0.1);
+            margin-right: auto;
+            max-width: 70%;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 12px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+        }
+
+        .chat-input input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .chat-input button {
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 24px;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 16px;
+            background: #f8f9fa;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .feature-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            padding: 80px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 60px auto 0;
+        }
+
+        .use-case {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .use-case h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .use-case p {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 100px 24px;
+            background: white;
+            text-align: center;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .pricing-card {
+            padding: 40px 30px;
+            border: 2px solid #e5e5e5;
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.popular {
+            border-color: #667eea;
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .plan-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .plan-price {
+            font-size: 48px;
+            font-weight: 700;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .plan-price span {
+            font-size: 16px;
+            color: #999;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 30px 0;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            color: #666;
+        }
+
+        .plan-features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .btn-plan {
+            width: 100%;
+            padding: 14px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-plan:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 100px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .btn-white {
+            background: white;
+            color: #667eea;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .chat-demo {
+                padding: 20px;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">MAEUM</a>
+            <div class="nav-links">
+                <a href="../government-en/" data-en="Government" data-kr="정부용" class="nav-government">Government</a>
+                <a href="../enterprise-en/" data-en="Enterprise" data-kr="기업용" class="nav-enterprise">Enterprise</a>
+                <a href="../monet/" data-en="Monet Discord Bot" data-kr="Monet Discord Bot" class="nav-monet">Monet Discord Bot</a>
+                <a href="../about/" data-en="About" data-kr="소개" class="nav-about">About</a>
+                <a href="javascript:void(0)" onclick="openCalendly()" data-en="Schedule Meeting" data-kr="미팅 예약" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;">Schedule Meeting</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>
+            <span data-en="Meet Your AI Friend" data-kr="디스코드에서 만나는">Meet Your AI Friend</span><br>
+            <span data-en="on Discord" data-kr="AI 친구">on Discord</span>
+        </h1>
+        <p class="subtitle"
+           data-en="MONET is a unique AI character bot on Discord with personality, emotions, and memory. Chat naturally in 140+ languages."
+           data-kr="MONET은 개성, 감정, 기억을 가진 독특한 디스코드 AI 캐릭터 봇입니다. 140개 이상의 언어로 자연스럽게 대화하세요.">
+            MONET is a unique AI character bot on Discord with personality, emotions, and memory.<br>
+            Chat naturally in 140+ languages.
+        </p>
+
+        <!-- Discord Demo -->
+        <div class="chat-demo">
+            <div style="display: flex; align-items: center; margin-bottom: 20px; padding: 10px; background: rgba(88, 101, 242, 0.1); border-radius: 10px;">
+                <span style="margin-right: 10px;">💜</span>
+                <span style="color: #5865F2; font-weight: 600;">Discord Server</span>
+            </div>
+            <div class="chat-message user-message">
+                @MONET Hey, how are you today?
+            </div>
+            <div class="chat-message ai-message" style="display: flex; align-items: start; gap: 10px;">
+                <span style="font-size: 24px;">🤖</span>
+                <div>
+                    <strong style="color: #667eea;">MONET</strong><br>
+                    Oh hey! I'm doing great! 😊 Just helped someone plan an amazing Seoul trip earlier. What's on your mind today?
+                </div>
+            </div>
+            <div class="chat-message user-message">
+                @MONET 오늘 기분이 어때?
+            </div>
+            <div class="chat-message ai-message" style="display: flex; align-items: start; gap: 10px;">
+                <span style="font-size: 24px;">🤖</span>
+                <div>
+                    <strong style="color: #667eea;">MONET</strong><br>
+                    오늘 기분 최고예요! ✨ 여러 친구들과 재밌는 대화를 나눴거든요. 당신은 어떠세요? 무슨 일 있으신가요?
+                </div>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="#" class="btn-primary" style="background: #5865F2; padding: 12px 30px;">
+                    Join Discord Server →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <h2 class="section-title" data-en="Powerful Features for Every Situation" data-kr="모든 상황을 위한 강력한 기능">
+            Powerful Features for Every Situation
+        </h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎭</div>
+                <h3 class="feature-title" data-en="Unique Personality" data-kr="독특한 개성">Unique Personality</h3>
+                <p class="feature-desc"
+                   data-en="MONET has its own personality, emotions, and mood. Every conversation feels real and engaging."
+                   data-kr="MONET은 자신만의 개성, 감정, 기분을 가지고 있습니다. 모든 대화가 실제처럼 느껴집니다.">
+                    MONET has its own personality, emotions, and mood. Every conversation feels real and engaging.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💜</div>
+                <h3 class="feature-title" data-en="Discord Native" data-kr="디스코드 네이티브">Discord Native</h3>
+                <p class="feature-desc"
+                   data-en="Built for Discord. Works in DMs and servers. Mentions, reactions, and all Discord features supported."
+                   data-kr="디스코드를 위해 만들어졌습니다. DM과 서버에서 작동. 멘션, 리액션 등 모든 디스코드 기능 지원.">
+                    Built for Discord. Works in DMs and servers. Mentions, reactions, and all Discord features supported.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title" data-en="Remembers You" data-kr="당신을 기억합니다">Remembers You</h3>
+                <p class="feature-desc"
+                   data-en="MONET remembers your conversations, preferences, and builds a unique relationship with you."
+                   data-kr="MONET은 대화 내용과 선호도를 기억하고, 당신과 독특한 관계를 구축합니다.">
+                    MONET remembers your conversations, preferences, and builds a unique relationship with you.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title" data-en="140+ Languages" data-kr="140개 이상의 언어">140+ Languages</h3>
+                <p class="feature-desc"
+                   data-en="Chat in any language. MONET switches between languages naturally, even mid-conversation."
+                   data-kr="어떤 언어로든 대화하세요. MONET은 대화 중에도 자연스럽게 언어를 전환합니다.">
+                    Chat in any language. MONET switches between languages naturally, even mid-conversation.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <h3 class="feature-title" data-en="Interactive & Fun" data-kr="인터랙티브 & 재미">Interactive & Fun</h3>
+                <p class="feature-desc"
+                   data-en="Play games, roleplay, tell stories, or just chat. MONET adapts to your mood and interests."
+                   data-kr="게임, 롤플레이, 스토리텔링, 또는 그냥 대화. MONET은 당신의 기분과 관심사에 맞춰집니다.">
+                    Play games, roleplay, tell stories, or just chat. MONET adapts to your mood and interests.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title" data-en="Coming to Web" data-kr="웹 버전 출시 예정">Coming to Web</h3>
+                <p class="feature-desc"
+                   data-en="Soon available as a web service. Chat with MONET anywhere, not just on Discord."
+                   data-kr="곧 웹 서비스로도 이용 가능. 디스코드뿐만 아니라 어디서든 MONET과 대화하세요.">
+                    Soon available as a web service. Chat with MONET anywhere, not just on Discord.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <h2 class="section-title" style="color: white;" data-en="How People Use MONET" data-kr="사람들이 MONET을 사용하는 방법">
+            How People Use MONET
+        </h2>
+
+        <div class="use-cases-grid">
+            <div class="use-case">
+                <h3 data-en="Study & Research" data-kr="학습 및 연구">Study & Research</h3>
+                <p data-en="Get help with homework, research topics, and learn new subjects with an AI tutor."
+                   data-kr="숙제 도움, 연구 주제, AI 튜터와 함께 새로운 과목 학습.">
+                    Get help with homework, research topics, and learn new subjects with an AI tutor.
+                </p>
+            </div>
+
+            <div class="use-case">
+                <h3 data-en="Work Assistant" data-kr="업무 어시스턴트">Work Assistant</h3>
+                <p data-en="Draft emails, create presentations, analyze data, and boost productivity."
+                   data-kr="이메일 작성, 프레젠테이션 제작, 데이터 분석, 생산성 향상.">
+                    Draft emails, create presentations, analyze data, and boost productivity.
+                </p>
+            </div>
+
+            <div class="use-case">
+                <h3 data-en="Language Learning" data-kr="언어 학습">Language Learning</h3>
+                <p data-en="Practice conversations in any language with instant corrections and explanations."
+                   data-kr="즉각적인 교정과 설명으로 모든 언어로 대화 연습.">
+                    Practice conversations in any language with instant corrections and explanations.
+                </p>
+            </div>
+
+            <div class="use-case">
+                <h3 data-en="Creative Writing" data-kr="창의적 글쓰기">Creative Writing</h3>
+                <p data-en="Brainstorm ideas, develop stories, and get feedback on your writing."
+                   data-kr="아이디어 브레인스토밍, 스토리 개발, 글쓰기 피드백 받기.">
+                    Brainstorm ideas, develop stories, and get feedback on your writing.
+                </p>
+            </div>
+
+            <div class="use-case">
+                <h3 data-en="Daily Life" data-kr="일상 생활">Daily Life</h3>
+                <p data-en="Get recipes, travel advice, health tips, and answers to everyday questions."
+                   data-kr="레시피, 여행 조언, 건강 팁, 일상적인 질문에 대한 답변.">
+                    Get recipes, travel advice, health tips, and answers to everyday questions.
+                </p>
+            </div>
+
+            <div class="use-case">
+                <h3 data-en="Entertainment" data-kr="엔터테인먼트">Entertainment</h3>
+                <p data-en="Play games, tell jokes, create stories, and have fun conversations."
+                   data-kr="게임, 농담, 스토리 생성, 재미있는 대화.">
+                    Play games, tell jokes, create stories, and have fun conversations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <h2 class="section-title" data-en="Choose Your Plan" data-kr="플랜 선택">Choose Your Plan</h2>
+
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3 class="plan-name" data-en="Free" data-kr="무료">Free</h3>
+                <div class="plan-price">$0<span>/month</span></div>
+                <ul class="plan-features">
+                    <li data-en="20 messages per day" data-kr="하루 20개 메시지">20 messages per day</li>
+                    <li data-en="Basic AI model" data-kr="기본 AI 모델">Basic AI model</li>
+                    <li data-en="5 languages" data-kr="5개 언어">5 languages</li>
+                    <li data-en="Web access only" data-kr="웹 접속만">Web access only</li>
+                </ul>
+                <button class="btn-plan" data-en="Start Free" data-kr="무료 시작">Start Free</button>
+            </div>
+
+            <div class="pricing-card popular">
+                <h3 class="plan-name" data-en="Pro" data-kr="프로">Pro</h3>
+                <div class="plan-price">$20<span>/month</span></div>
+                <ul class="plan-features">
+                    <li data-en="Unlimited messages" data-kr="무제한 메시지">Unlimited messages</li>
+                    <li data-en="Advanced AI model" data-kr="고급 AI 모델">Advanced AI model</li>
+                    <li data-en="140+ languages" data-kr="140개 이상 언어">140+ languages</li>
+                    <li data-en="All devices + API" data-kr="모든 기기 + API">All devices + API</li>
+                    <li data-en="Priority support" data-kr="우선 지원">Priority support</li>
+                </ul>
+                <button class="btn-plan" data-en="Start Pro" data-kr="프로 시작">Start Pro</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3 class="plan-name" data-en="Team" data-kr="팀">Team</h3>
+                <div class="plan-price">$50<span>/user/month</span></div>
+                <ul class="plan-features">
+                    <li data-en="Everything in Pro" data-kr="프로의 모든 기능">Everything in Pro</li>
+                    <li data-en="Team collaboration" data-kr="팀 협업">Team collaboration</li>
+                    <li data-en="Admin controls" data-kr="관리자 제어">Admin controls</li>
+                    <li data-en="Custom training" data-kr="맞춤 학습">Custom training</li>
+                    <li data-en="Dedicated support" data-kr="전담 지원">Dedicated support</li>
+                </ul>
+                <button class="btn-plan" data-en="Contact Sales" data-kr="영업 문의">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2 data-en="Start Chatting with MONET Today" data-kr="오늘 MONET과 대화를 시작하세요">
+            Start Chatting with MONET Today
+        </h2>
+        <p class="cta-subtitle"
+           data-en="Join millions of users worldwide. No credit card required."
+           data-kr="전 세계 수백만 사용자와 함께하세요. 신용카드 불필요.">
+            Join millions of users worldwide. No credit card required.
+        </p>
+        <a href="#" class="btn-white" data-en="Try MONET Free →" data-kr="MONET 무료 체험 →">
+            Try MONET Free →
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #1a1a1a; color: #999;">
+        <a href="/" style="color: #999;">© 2025 MAEUM</a>
+        <a href="../privacy/" data-en="Privacy" data-kr="개인정보처리방침">Privacy</a>
+        <a href="../terms/" data-en="Terms" data-kr="이용약관">Terms</a>
+        <a href="../contact/" data-en="Contact" data-kr="문의">Contact</a>
+    </footer>
+
+    <!-- Language System -->
+    <script src="../language.js"></script>
+
+    <script>
+        // Schedule Meeting functionality (same as main page)
+        function openCalendly() {
+            // Check if CONFIG is available
+            if (typeof CONFIG !== 'undefined' && CONFIG.DISCORD_INVITE_URL) {
+                const DISCORD_INVITE_LINK = CONFIG.DISCORD_INVITE_URL;
+
+                // Get current language
+                const currentLang = localStorage.getItem('maeum-language') || 'en';
+
+                const message = currentLang === 'kr'
+                    ? '💬 Discord에서 직접 상담하세요!\n\n• MAEUM 도입 문의\n• 정부/기업 전용 채널\n• 실시간 기술 지원\n\nDiscord로 이동하시겠습니까?'
+                    : '💬 Chat with us on Discord!\n\n• MAEUM deployment consultation\n• Government/Enterprise channel\n• Real-time technical support\n\nOpen Discord?';
+
+                if (CONFIG.ENABLE_DISCORD && confirm(message)) {
+                    window.open(DISCORD_INVITE_LINK, '_blank');
+                }
+            } else {
+                // Fallback if config is not loaded
+                alert('Please try again in a moment.');
+            }
+        }
+    </script>
+</body>
+</html>
