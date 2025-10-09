@@ -1,0 +1,451 @@
+# ==================================
+# MAEUM.IO 보안 및 관리용 .gitignore
+# ==================================
+
+# =============================
+# 1. 환경변수 & 비밀키
+# =============================
+.env
+.env.*
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+*.env
+config.local.js
+config.prod.js
+secrets.js
+secrets.json
+credentials.json
+auth.json
+keys.json
+private-key.pem
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+
+# API 키 관련
+**/api-keys/
+**/credentials/
+api-config.js
+api-keys.js
+firebase-config.js
+aws-config.js
+gcp-config.js
+
+# 결제 시스템
+**/payment/config.js
+**/payment/secrets.js
+paddle-config.js
+paddle-secrets.js
+toss-config.js
+toss-secrets.js
+stripe-config.js
+payment-keys.json
+
+# 데이터베이스
+database.json
+db-config.js
+mongodb-uri.txt
+postgres-config.js
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+
+# OAuth & 소셜 로그인
+oauth-config.js
+google-oauth.json
+kakao-keys.json
+naver-keys.json
+discord-bot-token.txt
+
+# =============================
+# 2. Node.js
+# =============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# =============================
+# 3. 빌드 & 배포
+# =============================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.temp/
+.tmp/
+*.bundle.js
+*.bundle.css
+*.chunk.js
+*.chunk.css
+*.manifest.json
+public/build/
+static/build/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+.parcel-cache/
+.vercel/
+.netlify/
+.firebase/
+
+# =============================
+# 4. 로그 파일
+# =============================
+*.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+debug.log
+error.log
+access.log
+combined.log
+exceptions.log
+server.log
+app.log
+
+# =============================
+# 5. OS 관련
+# =============================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+.nfs*
+
+# =============================
+# 6. IDE & 에디터
+# =============================
+# VSCode
+.vscode/
+.vscode-test/
+*.code-workspace
+.history/
+
+# JetBrains (WebStorm, IntelliJ)
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+out/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+sftp-config.json
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+Package Control.merged-ca-bundle
+Package Control.user-ca-bundle
+oscrypto-ca-bundle.crt
+bh_unicode_properties.cache
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Atom
+.atom-build.json
+.apm/
+
+# =============================
+# 7. 백업 & 임시 파일
+# =============================
+*.bak
+*.backup
+*.tmp
+*.temp
+*.old
+*.orig
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+*.autosave
+*-autobackup
+backup/
+backups/
+**/backup/
+**/backups/
+old/
+archive/
+.backup/
+tmp/
+temp/
+
+# =============================
+# 8. 테스트 & 커버리지
+# =============================
+coverage/
+.nyc_output/
+*.lcov
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+junit.xml
+test-results/
+*.spec.js.snap
+__snapshots__/
+*.test.js.snap
+
+# =============================
+# 9. 미디어 & 에셋 (대용량)
+# =============================
+# 동영상
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+*.webm
+
+# 고해상도 이미지 원본
+**/original/
+**/source-images/
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xd
+
+# 오디오
+*.wav
+*.mp3
+*.flac
+*.aac
+
+# 압축 파일
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.tgz
+*.bz2
+
+# =============================
+# 10. 문서 임시 파일
+# =============================
+~$*.doc*
+~$*.xls*
+~$*.ppt*
+*.~vsd*
+.~lock.*
+
+# =============================
+# 11. 캐시
+# =============================
+.cache/
+.sass-cache/
+.eslintcache
+.stylelintcache
+.node-version
+.npm/
+.yarn/
+*.tsbuildinfo
+.rollup.cache/
+*.pid
+*.seed
+*.pid.lock
+
+# =============================
+# 12. 배포 & 호스팅
+# =============================
+.vercel/
+.netlify/
+.firebase/
+.now/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vuepress/dist
+.docusaurus/
+
+# GitHub Pages
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# =============================
+# 13. 민감한 데이터
+# =============================
+**/private/
+**/confidential/
+**/internal/
+secret-*
+private-*
+confidential-*
+*.secret
+*.private
+user-data.json
+customer-data.json
+analytics-data.json
+internal-docs/
+
+# =============================
+# 14. 이메일 & 통신
+# =============================
+*.eml
+*.msg
+mail-config.json
+smtp-config.json
+email-templates/draft/
+
+# =============================
+# 15. 세션 & 쿠키
+# =============================
+sessions/
+*.session
+cookie-secrets.json
+
+# =============================
+# 16. 모니터링 & 분석
+# =============================
+.monitoring/
+sentry-config.js
+analytics-keys.json
+mixpanel-config.js
+amplitude-config.js
+
+# =============================
+# 17. 로컬 개발 전용
+# =============================
+.local/
+local-config.js
+dev-config.js
+localhost.json
+
+# =============================
+# 18. Git 관련
+# =============================
+*.orig
+*.rej
+*.patch
+.git-credentials
+
+# =============================
+# 19. 프로젝트별 커스텀
+# =============================
+# MONET 관련
+monet-bot-token.txt
+discord-webhook-url.txt
+
+# Paddle 관련
+paddle-webhook-secret.txt
+
+# Notion API
+notion-api-key.txt
+notion-database-id.txt
+
+# =============================
+# 20. 기타
+# =============================
+TODO.md
+NOTES.md
+SCRATCH.md
+.env.example.local
+debug/
+experiments/
+sandbox/
+playground/
+drafts/
+
+# ==================================
+# 끝
+# ==================================
+EOF
