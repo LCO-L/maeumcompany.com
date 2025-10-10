@@ -5,7 +5,7 @@ const MAEUM_LANG = {
     // Available languages - Full support for global reach
     languages: [
         // Currently Active
-        { code: 'en', label: 'EN', name: 'English', active: true, flag: '🇺🇸' },
+        { code: 'en', label: 'EN', name: 'English', active: true, flag: '🌎' },
         { code: 'kr', label: 'KR', name: '한국어', active: true, flag: '🇰🇷' },
 
         // Asia-Pacific (Ready for deployment)
