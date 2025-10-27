@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tally Form 설정 가이드</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        .step {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid #764ba2;
+        }
+        .step h2 {
+            color: #764ba2;
+            margin-top: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .code {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 6px;
+            color: #000;
+            border-radius: 3px;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .form-preview {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .form-field {
+            margin-bottom: 15px;
+        }
+        .form-field label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-field input, .form-field select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .quick-copy {
+            background: #e3f2fd;
+            border: 2px solid #2196F3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .quick-copy h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        ul li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Tally Form 빠른 설정</h1>
+        <p class="subtitle">5분 안에 MAEUM 대기자 명단 Form 만들기</p>
+
+        <div class="step">
+            <h2>🎯 Step 1: Tally 계정 만들기 (30초)</h2>
+            <a href="https://tally.so/auth/signup" target="_blank" class="btn">
+                Tally 가입하기 (무료)
+            </a>
+            <p style="margin-top: 15px;">이메일과 비밀번호만 입력하면 끝! (또는 Google 계정으로 가입)</p>
+        </div>
+
+        <div class="step">
+            <h2>📝 Step 2: Form 만들기 (2분)</h2>
+            <p>로그인 후 "Create form" 클릭 → "Start from scratch" 선택</p>
+
+            <div class="form-preview">
+                <h3>Form 제목 설정:</h3>
+                <p><strong>Form name:</strong> MAEUM - Join the AI Revolution</p>
+                <p><strong>Description:</strong> Be the first to know when MAEUM launches in your region. Top-tier AI for everyone, everywhere.</p>
+            </div>
+
+            <h3>필드 추가하기:</h3>
+            <button class="btn" onclick="copyFormFields()">📋 필드 내용 복사</button>
+
+            <div class="code" id="formFields">
+1. Email (Email 타입) - Required ✅
+   Label: Email Address
+   Placeholder: your@email.com
+
+2. Name (Short text) - Optional
+   Label: Full Name
+   Placeholder: John Doe
+
+3. Organization (Short text) - Optional
+   Label: Organization/Company
+   Placeholder: Your company or institution
+
+4. Country (Dropdown) - Required ✅
+   Label: Country/Region
+   Options:
+   - South Korea (한국)
+   - United States
+   - Japan
+   - China
+   - India
+   - Other
+
+5. Interest (Single choice) - Required ✅
+   Label: What's your primary interest in MAEUM?
+   Options:
+   - Government/Public Sector
+   - Education
+   - Healthcare
+   - Enterprise/Business
+   - Personal Use
+   - Investment/Partnership
+
+6. Message (Long text) - Optional
+   Label: Message (Optional)
+   Placeholder: Any questions or specific needs?
+
+7. Newsletter (Single choice) - Required ✅
+   Label: Would you like to receive updates?
+   Options:
+   - Yes, keep me updated
+   - No, just notify me at launch</div>
+        </div>
+
+        <div class="step">
+            <h2>🎨 Step 3: 디자인 설정 (30초)</h2>
+            <ul>
+                <li>왼쪽 메뉴에서 "Design" 클릭</li>
+                <li>Color scheme: <strong>Blue</strong> 선택</li>
+                <li>Font: <strong>Inter</strong> 또는 <strong>Helvetica</strong></li>
+                <li>Button style: <strong>Rounded</strong></li>
+                <li>Submit button text: <strong>"Join the Movement"</strong></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>🔗 Step 4: Form ID 가져오기 (10초)</h2>
+            <ol>
+                <li>상단의 "Share" 버튼 클릭</li>
+                <li>"Embed" 탭 선택</li>
+                <li>URL에서 Form ID 복사</li>
+            </ol>
+
+            <div class="code">
+https://tally.so/r/<span class="highlight">wA7dBe</span> ← 이 부분이 Form ID
+
+예시: wA7dBe, nWq9Qw, mVBgPo 등
+            </div>
+
+            <div class="quick-copy">
+                <h3>📌 Form ID 확인하는 더 쉬운 방법:</h3>
+                <p>Form 수정 화면 URL을 보세요:</p>
+                <div class="code">
+https://tally.so/forms/<span class="highlight">wA7dBe</span>/edit
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>✅ Step 5: index.html 업데이트 (30초)</h2>
+            <p>Form ID를 복사했으면, index.html에서 이 부분을 수정:</p>
+
+            <div class="form-field">
+                <label>당신의 Tally Form ID 입력:</label>
+                <input type="text" id="formIdInput" placeholder="예: wA7dBe" oninput="updateCode()">
+            </div>
+
+            <div id="codeResult" style="display: none;">
+                <h3>생성된 코드:</h3>
+                <div class="code" id="generatedCode"></div>
+                <button class="btn" onclick="copyGeneratedCode()">📋 코드 복사</button>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>Line 998</strong>에서 수정:</p>
+            <div class="code">
+// 기존
+const TALLY_FORM_ID = 'YOUR_TALLY_FORM_ID';
+
+// 수정 후 (예시)
+const TALLY_FORM_ID = '<span class="highlight">wA7dBe</span>';
+            </div>
+        </div>
+
+        <div class="step">
+            <h2>🎉 Step 6: 테스트 (10초)</h2>
+            <ol>
+                <li>index.html을 브라우저에서 열기</li>
+                <li>"Join the Movement" 버튼 클릭</li>
+                <li>Tally Form이 팝업으로 열리는지 확인</li>
+                <li>테스트 제출 해보기</li>
+            </ol>
+
+            <button class="btn" onclick="testForm()">🚀 테스트 Form 열기</button>
+        </div>
+
+        <div class="success">
+            <h2>✨ 완료!</h2>
+            <p>Tally Form이 연동되었습니다! 응답은 Tally 대시보드에서 확인할 수 있습니다.</p>
+            <ul>
+                <li>✅ 무료로 무제한 응답 수집</li>
+                <li>✅ 이메일 알림 자동 설정</li>
+                <li>✅ CSV/Excel로 내보내기 가능</li>
+                <li>✅ 응답 분석 대시보드 제공</li>
+            </ul>
+
+            <a href="https://tally.so/dashboard" target="_blank" class="btn">
+                Tally 대시보드 열기
+            </a>
+        </div>
+
+        <div class="step">
+            <h2>💡 Pro Tips</h2>
+            <ul>
+                <li><strong>Thank you page:</strong> Settings → After submission → Custom thank you page</li>
+                <li><strong>이메일 알림:</strong> Settings → Notifications → Email me responses ✅</li>
+                <li><strong>Webhook:</strong> Zapier나 Make와 연동 가능</li>
+                <li><strong>커스텀 도메인:</strong> Pro 플랜에서 form.maeum.io 같은 도메인 사용 가능</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function copyFormFields() {
+            const text = document.getElementById('formFields').textContent;
+            navigator.clipboard.writeText(text);
+            event.target.textContent = '✅ 복사됨!';
+            setTimeout(() => {
+                event.target.textContent = '📋 필드 내용 복사';
+            }, 2000);
+        }
+
+        function updateCode() {
+            const formId = document.getElementById('formIdInput').value.trim();
+            if (formId) {
+                const code = `// Tally Form Configuration
+const TALLY_FORM_ID = '${formId}'; // Tally Form ID`;
+
+                document.getElementById('generatedCode').textContent = code;
+                document.getElementById('codeResult').style.display = 'block';
+            } else {
+                document.getElementById('codeResult').style.display = 'none';
+            }
+        }
+
+        function copyGeneratedCode() {
+            const code = document.getElementById('generatedCode').textContent;
+            navigator.clipboard.writeText(code);
+            event.target.textContent = '✅ 복사됨!';
+            setTimeout(() => {
+                event.target.textContent = '📋 코드 복사';
+            }, 2000);
+        }
+
+        function testForm() {
+            // 예시 Form ID로 테스트
+            const testFormId = 'wA7dBe';
+            window.open(`https://tally.so/r/${testFormId}`, '_blank');
+        }
+    </script>
+</body>
+</html>
