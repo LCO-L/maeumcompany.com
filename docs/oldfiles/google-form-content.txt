@@ -1,0 +1,143 @@
+==== GOOGLE FORM 내용 (복사-붙여넣기용) ====
+
+[FORM 제목]
+MAEUM - Join the AI Revolution
+
+[FORM 설명]
+Be the first to know when MAEUM launches in your region. Top-tier AI for everyone, everywhere. 140 languages. Zero GPU cost. 100% offline.
+
+==================================================
+
+[질문 1 - 이메일] *필수
+Email Address
+
+설명: We'll keep you updated on MAEUM's launch
+유형: 단답형
+필수: ✅ 체크
+응답 확인: 정규 표현식 > 이메일
+
+==================================================
+
+[질문 2 - 이름] 선택
+Full Name
+
+유형: 단답형
+필수: ❌ 체크 안함
+
+==================================================
+
+[질문 3 - 조직/회사] 선택
+Organization/Company
+
+설명: Your company, government agency, or institution
+유형: 단답형
+필수: ❌ 체크 안함
+
+==================================================
+
+[질문 4 - 국가/지역] *필수
+Country/Region
+
+유형: 드롭다운
+필수: ✅ 체크
+
+옵션 (한 줄에 하나씩):
+South Korea (한국)
+United States
+Japan (日本)
+China (中国)
+India
+Indonesia
+Philippines
+Vietnam
+Thailand
+Malaysia
+Singapore
+Germany
+France
+United Kingdom
+Brazil
+Mexico
+Canada
+Australia
+Nigeria
+Kenya
+South Africa
+Egypt
+Saudi Arabia
+UAE
+Russia
+Other
+
+==================================================
+
+[질문 5 - 관심 분야] *필수
+What's your primary interest in MAEUM?
+
+유형: 객관식 (라디오 버튼)
+필수: ✅ 체크
+
+옵션:
+Government/Public Sector (정부/공공기관)
+Education (교육)
+Healthcare (의료)
+Enterprise/Business (기업)
+NGO/Non-profit (NGO/비영리)
+Personal Use (개인 사용)
+Research/Academia (연구/학계)
+Investment/Partnership (투자/파트너십)
+Media/Press (미디어/언론)
+Other
+
+==================================================
+
+[질문 6 - 메시지] 선택
+Message (Optional)
+
+설명: Any questions or specific needs? Let us know!
+유형: 장문형
+필수: ❌ 체크 안함
+
+==================================================
+
+[질문 7 - 뉴스레터] *필수
+Would you like to receive updates about MAEUM?
+
+유형: 객관식 (라디오 버튼)
+필수: ✅ 체크
+
+옵션:
+Yes, keep me updated
+No, just notify me at launch
+
+==================================================
+
+[FORM 설정]
+
+1. 설정 > 프레젠테이션:
+   - 진행률 표시줄 표시: ✅
+   - 질문 순서 섞기: ❌
+   - 제출 후 메시지: "Thank you for joining the MAEUM revolution! We'll be in touch soon. 🚀"
+
+2. 설정 > 응답:
+   - 이메일 주소 수집: ✅
+   - 응답자가 제출 후 수정 가능: ✅
+   - 요약 차트 및 텍스트 응답 보기: ✅
+
+3. 색상 테마:
+   - 헤더 색상: 파란색 (#0066FF 유사한 색)
+   - 배경색: 흰색
+
+==================================================
+
+[확인 메시지]
+Thank you for joining the MAEUM revolution! 🚀
+
+We've received your information and will keep you updated on:
+• Launch in your region
+• Early access opportunities
+• Important announcements
+
+Check your email for confirmation.
+
+==================================================

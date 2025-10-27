@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="About MAEUM - AI for a Better World" data-kr="MAEUM 소개 - 더 나은 세상을 위한 AI">About MAEUM - AI for a Better World</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MAEUM AI advances AI technology to create a better world for humanity and contribute to world peace. Founded in 2025.">
+    <meta name="keywords" content="MAEUM, AI company, on-device AI, world peace, education technology, government AI">
+
+    <script src="../config.js"></script>
+    <script src="../language.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+
+    <style>
+        /* Page-specific styles only */
+
+        /* Hero gradient background */
+        .hero {
+            background: linear-gradient(135deg, #0066FF10, #0052CC10);
+        }
+
+        .hero h1 {
+            background: linear-gradient(135deg, #0066FF, #0052CC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        /* Features Section */
+        .features {
+            background: #F8F9FA;
+            padding: 80px 24px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0066FF, #0052CC);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 24px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .feature-text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 80px 24px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .tech-item {
+            padding: 28px;
+            border: 2px solid #E5E5E5;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            border-color: #0066FF;
+            transform: translateY(-4px);
+        }
+
+        .tech-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #0066FF;
+        }
+
+        .tech-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team {
+            background: #F8F9FA;
+            padding: 80px 24px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 600px;
+            margin: 60px auto 0;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #0066FF, #0052CC);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+        }
+
+        .member-name {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .member-role {
+            color: #0066FF;
+            margin-bottom: 12px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: white;
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .contact-item {
+            padding: 32px;
+            background: #F8F9FA;
+            border-radius: 12px;
+        }
+
+        .contact-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .contact-value {
+            color: #666;
+        }
+
+        .contact-value a {
+            color: #0066FF;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #999;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .footer a:hover {
+            color: #0066FF;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle will be added by language.js -->
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../" class="logo">MAEUM</a>
+            <div class="nav-links">
+                <a href="../studioroom/" data-en="StudioRoom" data-kr="StudioRoom" class="nav-studioroom">StudioRoom</a>
+                <a href="../government/" class="nav-government" data-en="Government" data-kr="정부">Government</a>
+                <a href="../enterprise/" class="nav-enterprise" data-en="Enterprise" data-kr="기업">Enterprise</a>
+                <a href="../about/" data-en="About" data-kr="소개" class="nav-about">About</a>
+                <a href="../press/" data-en="Press" data-kr="보도자료" class="nav-press">Press</a>
+                <a href="../investors/" data-en="Investors" data-kr="투자자" class="nav-investors">Investors</a>
+                <a href="../contact/" data-en="Contact" data-kr="연락처" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;" class="nav-contact">Contact</a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="../studioroom/" data-en="StudioRoom" data-kr="StudioRoom" class="nav-studioroom">StudioRoom</a>
+        <a href="../government/" data-en="Government" data-kr="정부" class="nav-government">Government</a>
+        <a href="../enterprise/" data-en="Enterprise" data-kr="기업" class="nav-enterprise">Enterprise</a>
+        <a href="../about/" data-en="About" data-kr="소개" class="nav-about">About</a>
+        <a href="../press/" data-en="Press" data-kr="보도자료" class="nav-press">Press</a>
+        <a href="../investors/" data-en="Investors" data-kr="투자자" class="nav-investors">Investors</a>
+        <a href="../contact/" data-en="Contact" data-kr="연락처" class="nav-contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 data-en="About MAEUM" data-kr="MAEUM 소개">About MAEUM</h1>
+        <p class="subtitle"
+           data-en="Secure, efficient on-device AI solutions for organizations that value data sovereignty"
+           data-kr="데이터 주권을 중시하는 조직을 위한 안전하고 효율적인 온디바이스 AI 솔루션">
+            Secure, efficient on-device AI solutions for organizations that value data sovereignty
+        </p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2 class="section-title" data-en="Our Mission" data-kr="우리의 미션">Our Mission</h2>
+        <div class="about-content" style="font-size: 22px; font-weight: 600; text-align: center; color: #0066FF; margin-bottom: 50px;"
+             data-en="Advancing and democratizing AI technology to contribute to human-centered development, connection, and peace"
+             data-kr="AI와 같은 기술을 발전시키고 보급하여 '인간 중심의 발전과 연결, 그리고 평화'에 기여">
+            Advancing and democratizing AI technology to contribute to<br>
+            human-centered development, connection, and peace
+        </div>
+
+        <h2 class="section-title" data-en="What We Do" data-kr="우리가 하는 일">What We Do</h2>
+        <div class="about-content"
+             data-en="Founded in 2025, MAEUM AI develops on-device AI solutions that run entirely on your infrastructure. Our technology enables government agencies and educational institutions to leverage advanced AI capabilities without exposing vulnerabilities in data security or relying on external cloud services."
+             data-kr="2025년에 설립된 MAEUM AI는 완전히 귀하의 인프라에서 실행되는 온디바이스 AI 솔루션을 개발합니다. 우리의 기술은 정부 기관과 교육 기관이 데이터 보안에 취약성을 드러내거나 외부 클라우드 서비스에 의존하지 않고 고급 AI 기능을 활용할 수 있게 합니다.">
+            Founded in 2025, MAEUM AI develops on-device AI solutions that run entirely on your infrastructure.
+            Our technology enables government agencies and educational institutions to leverage advanced AI
+            capabilities without exposing vulnerabilities in data security or relying on external cloud services.
+        </div>
+
+        <div class="about-content"
+             data-en="We believe technology should serve humanity's greater good. Our primary focus is supporting government and educational institutions worldwide, starting with Education Fields and expanding globally to help build a better future through accessible AI technology."
+             data-kr="우리는 기술이 인류의 더 큰 선을 위해 봉사해야 한다고 믿습니다. 현재 우리의 주요 초점은 교육 분야를 시작으로 전 세계 정부 및 교육 기관을 지원하여, 접근 가능한 AI 기술을 통해 더 나은 미래를 만드는 것입니다.">
+            We believe technology should serve humanity's greater good. Our primary focus is supporting government
+            and educational institutions worldwide, starting with Education Fields and expanding globally
+            to help build a better future through accessible AI technology.
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title" data-en="Key Features" data-kr="주요 기능">Key Features</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title" data-en="100% On-Premise" data-kr="100% 온프레미스">100% On-Premise</h3>
+                <p class="feature-text"
+                   data-en="Complete deployment on your servers. No cloud dependencies, no data leaving your infrastructure."
+                   data-kr="귀하의 서버에 완전히 배포됩니다. 클라우드 종속성 없음, 인프라 밖으로 데이터 유출 없음.">
+                    Complete deployment on your servers. No cloud dependencies, no data leaving your infrastructure.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title" data-en="CPU Optimized" data-kr="CPU 최적화">CPU Optimized</h3>
+                <p class="feature-text"
+                   data-en="Runs on standard hardware without expensive GPUs. Works on existing infrastructure."
+                   data-kr="비싼 GPU 없이 표준 하드웨어에서 실행됩니다. 기존 인프라에서 작동합니다.">
+                    Runs on standard hardware without expensive GPUs. Works on existing infrastructure.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3 class="feature-title" data-en="Document AI" data-kr="문서 AI">Document AI</h3>
+                <p class="feature-text"
+                   data-en="Specialized in processing government and enterprise documents with high accuracy."
+                   data-kr="정부 및 기업 문서를 높은 정확도로 처리하는 데 특화되어 있습니다.">
+                    Specialized in processing government and enterprise documents with high accuracy.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌐</div>
+                <h3 class="feature-title" data-en="Multi-Language" data-kr="다국어 지원">Multi-Language</h3>
+                <p class="feature-text"
+                   data-en="Support for multiple languages with native understanding, not just translation."
+                   data-kr="단순 번역이 아닌 네이티브 수준의 이해로 다국어를 지원합니다.">
+                    Support for multiple languages with native understanding, not just translation.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title" data-en="Security First" data-kr="보안 우선">Security First</h3>
+                <p class="feature-text"
+                   data-en="Built with security as the foundation, meeting government compliance standards."
+                   data-kr="보안을 기반으로 구축되어 정부 규정 준수 표준을 충족합니다.">
+                    Built with security as the foundation, meeting government compliance standards.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title" data-en="Fast Deployment" data-kr="빠른 배포">Fast Deployment</h3>
+                <p class="feature-text"
+                   data-en="Get up and running in days, not months. Simple installation and configuration."
+                   data-kr="몇 달이 아닌 며칠 만에 시작하고 실행할 수 있습니다. 간단한 설치 및 구성.">
+                    Get up and running in days, not months. Simple installation and configuration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology">
+        <h2 class="section-title" data-en="Our Technology" data-kr="우리의 기술">Our Technology</h2>
+
+        <div class="tech-grid">
+            <div class="tech-item">
+                <h3 class="tech-title" data-en="MONET Architecture" data-kr="MONET 아키텍처">MONET Architecture</h3>
+                <p class="tech-desc"
+                   data-en="Our proprietary MONET architecture enables GPT-level performance on CPUs through advanced model compression."
+                   data-kr="독자적인 MONET 아키텍처는 고급 모델 압축을 통해 CPU에서 GPT 수준의 성능을 구현합니다.">
+                    Our proprietary MONET architecture enables GPT-level performance on CPUs through advanced model compression.
+                </p>
+            </div>
+
+            <div class="tech-item">
+                <h3 class="tech-title" data-en="Offline Operation" data-kr="오프라인 작동">Offline Operation</h3>
+                <p class="tech-desc"
+                   data-en="Complete functionality without internet connection. Perfect for secure environments and air-gapped systems."
+                   data-kr="인터넷 연결 없이 완전한 기능. 보안 환경 및 에어갭 시스템에 완벽합니다.">
+                    Complete functionality without internet connection. Perfect for secure environments and air-gapped systems.
+                </p>
+            </div>
+
+            <div class="tech-item">
+                <h3 class="tech-title" data-en="Efficient Processing" data-kr="효율적인 처리">Efficient Processing</h3>
+                <p class="tech-desc"
+                   data-en="Process thousands of documents per hour on standard server hardware. More efficient and secure than cloud solutions."
+                   data-kr="표준 서버 하드웨어에서 시간당 수천 개의 문서를 처리합니다. 클라우드 솔루션을 뛰어넘는 효율성과 보안성을 갖췄습니다.">
+                    Process thousands of documents per hour on standard server hardware. 100x more efficient than cloud solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <h2 class="section-title" data-en="Leadership" data-kr="리더십">Leadership</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo">👤</div>
+                <h3 class="member-name">Lee D.H.</h3>
+                <p class="member-role" data-en="Founder & CEO" data-kr="창립자 & CEO">Founder & CEO</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title" data-en="Contact" data-kr="연락처">Contact</h2>
+        <p style="font-size: 18px; color: #666; margin-bottom: 40px;"
+           data-en="Join us in building a better world through AI technology"
+           data-kr="AI 기술로 더 나은 세상을 만드는 여정에 함께하세요">
+            Join us in building a better world through AI technology
+        </p>
+
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <p class="contact-label" data-en="Service Website" data-kr="서비스 웹사이트">Service Website</p>
+                <p class="contact-value">
+                    <a href="https://maeum.io" target="_blank">maeum.io</a>
+                </p>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <p class="contact-label" data-en="Current Location" data-kr="현재 위치">Current Location</p>
+                <p class="contact-value" data-en="Seoul, South Korea" data-kr="대한민국 서울">
+                    Seoul, South Korea
+                </p>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">🏢</div>
+                <p class="contact-label" data-en="Future Headquarters" data-kr="법인 설립 예정">Future Headquarters</p>
+                <p class="contact-value" data-en="To be determined" data-kr="추후 공개">
+                    To be determined
+                </p>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-icon">🎯</div>
+                <p class="contact-label" data-en="Initial Target Market" data-kr="초기 목표 시장">Initial Target Market</p>
+                <p class="contact-value" data-en="Global B2G (Government & Education)" data-kr="글로벌 B2G (정부 및 교육)">
+                    Global B2G (Government & Education)
+                </p>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 40px; padding: 20px; background: #F8F9FA; border-radius: 8px; color: #666;">
+            <a href="mailto:princeps@maeum.io" style="color: #0066FF; text-decoration: none; font-weight: 600;">princeps@maeum.io</a>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div style="margin-bottom: 20px;">
+            <a href="../privacy/" data-en="Privacy" data-kr="개인정보처리방침">Privacy</a>
+            <a href="../terms/" data-en="Terms" data-kr="이용약관">Terms</a>
+            <a href="../security/" data-en="Security" data-kr="보안">Security</a>
+        </div>
+        <p>&copy; 2025 MAEUM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Schedule Meeting functionality (same as main page)
+        function openCalendly() {
+            // Redirect to contact page
+            window.location.href = '/contact';
+        }
+
+        // Mobile menu functionality with improved UX
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            const isOpen = menu.classList.contains('active');
+
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menu.classList.add('active');
+                toggle.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scroll when menu is open
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.remove('active');
+            toggle.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scroll
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickOnToggle = toggle.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnToggle && menu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>
