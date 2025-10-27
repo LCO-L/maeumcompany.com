@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAEUM - Press Kit | Media Resources & News</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Access MAEUM's press kit, media resources, news coverage, and company announcements. Download logos, product images, and executive bios.">
+    <meta name="keywords" content="MAEUM press kit, media resources, company news, AI announcements, press releases, media coverage">
+    <meta name="author" content="MAEUM">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://maeumcompany.com/press">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maeumcompany.com/press/">
+    <meta property="og:title" content="MAEUM - Press Kit & Media Resources">
+    <meta property="og:description" content="Access MAEUM's press kit, media resources, and company announcements.">
+    <meta property="og:image" content="https://maeumcompany.com/og-press.png">
+    <meta property="og:site_name" content="MAEUM">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maeumcompany.com/press/">
+    <meta property="twitter:title" content="MAEUM - Press Kit & Media Resources">
+    <meta property="twitter:description" content="Access MAEUM's press kit, media resources, and company announcements.">
+    <meta property="twitter:image" content="https://maeumcompany.com/twitter-press.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Korean Font -->
+    <style>
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-weight: 400;
+            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff2') format('woff2');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-weight: 700;
+            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff2') format('woff2');
+            font-display: swap;
+        }
+    </style>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+
+    <!-- Configuration -->
+    <script src="../config.js"></script>
+    <script src="../language.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #FFFFFF;
+        }
+
+        body.kr {
+            font-family: 'NanumSquareNeo', -apple-system, sans-serif;
+        }
+
+        /* Navigation - uses common.css styles with page-specific overrides */
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 40px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            padding: 40px;
+            background: #F8F9FA;
+        }
+
+        .quick-links-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .quick-link-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-link-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .quick-link-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .quick-link-description {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Press Releases Section */
+        .press-releases {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .press-release-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .press-release-item {
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .press-release-item:hover {
+            border-color: #000;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .press-release-date {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .press-release-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #000;
+        }
+
+        .press-release-excerpt {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Media Kit Section */
+        .media-kit {
+            background: #0066FF;
+            color: white;
+            padding: 80px 40px;
+        }
+
+        .media-kit-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .media-kit h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .download-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .download-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .download-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .download-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .download-description {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .btn-download {
+            background: white;
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Coverage Section */
+        .coverage {
+            padding: 80px 40px;
+            background: #F8F9FA;
+        }
+
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 48px auto 0;
+        }
+
+        .coverage-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .coverage-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .coverage-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #E0E0E0, #F0F0F0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #999;
+        }
+
+        .coverage-content {
+            padding: 24px;
+        }
+
+        .coverage-source {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .coverage-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #000;
+        }
+
+        .coverage-date {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .press-contact {
+            padding: 80px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: #F8F9FA;
+            border-radius: 16px;
+            padding: 48px;
+            margin-top: 32px;
+        }
+
+        .contact-email {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .contact-email a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .contact-email a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #FAFAFA;
+            padding: 60px 40px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #000;
+        }
+
+        .btn-primary {
+            background: #0066FF;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 24px 60px;
+            }
+
+            .download-grid,
+            .coverage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">MAEUM</a>
+            <div class="nav-links">
+                <a href="/studioroom" class="nav-studioroom" data-en="StudioRoom" data-kr="StudioRoom">StudioRoom</a>
+                <a href="/government" class="nav-government" data-en="Government" data-kr="정부">Government</a>
+                <a href="/enterprise" class="nav-enterprise" data-en="Enterprise" data-kr="기업">Enterprise</a>
+                <a href="/about" class="nav-about" data-en="About" data-kr="소개">About</a>
+                <a href="/press" class="nav-press active" data-en="Press" data-kr="보도자료">Press</a>
+                <a href="/investors" class="nav-investors" data-en="Investors" data-kr="투자자">Investors</a>
+                <a href="/contact" data-en="Contact" data-kr="연락처" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;" class="nav-contact">Contact</a>
+            </div>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">
+                <span class="menu-text" data-en="MENU" data-kr="메뉴">MENU</span>
+                <span class="close-text" data-en="CLOSE" data-kr="닫기">CLOSE</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/studioroom" data-en="StudioRoom" data-kr="StudioRoom" class="nav-studioroom">StudioRoom</a>
+        <a href="/government" data-en="Government" data-kr="정부" class="nav-government">Government</a>
+        <a href="/enterprise" data-en="Enterprise" data-kr="기업" class="nav-enterprise">Enterprise</a>
+        <a href="/about" data-en="About" data-kr="소개" class="nav-about">About</a>
+        <a href="/press" data-en="Press" data-kr="보도자료" class="nav-press">Press</a>
+        <a href="/investors" data-en="Investors" data-kr="투자자" class="nav-investors">Investors</a>
+        <a href="/contact" data-en="Contact" data-kr="연락처" class="nav-contact">Contact</a>
+
+        <!-- Language Selector for Mobile -->
+        <div class="mobile-lang-selector">
+            <label data-en="Language" data-kr="언어">Language</label>
+            <div class="mobile-lang-buttons">
+                <button class="mobile-lang-btn" onclick="MAEUM_LANG.setLanguage('en')" data-lang="en">English</button>
+                <button class="mobile-lang-btn" onclick="MAEUM_LANG.setLanguage('kr')" data-lang="kr">한국어</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 data-en="Press Kit & Media Resources" data-kr="프레스 키트 및 미디어 자료">Press Kit & Media Resources</h1>
+        <p class="subtitle"
+           data-en="Everything you need to tell the MAEUM story. Access our latest news, media assets, and company information."
+           data-kr="MAEUM의 이야기를 전하는 데 필요한 모든 것. 최신 뉴스, 미디어 자료 및 회사 정보에 액세스하세요.">
+            Everything you need to tell the MAEUM story. Access our latest news, media assets, and company information.
+        </p>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="quick-links-container">
+            <a href="#releases" class="quick-link-card">
+                <div class="quick-link-icon">📰</div>
+                <div class="quick-link-title" data-en="Press Releases" data-kr="보도 자료">Press Releases</div>
+                <div class="quick-link-description" data-en="Latest announcements and news" data-kr="최신 발표 및 뉴스">Latest announcements and news</div>
+            </a>
+
+            <a href="#media-kit" class="quick-link-card">
+                <div class="quick-link-icon">📦</div>
+                <div class="quick-link-title" data-en="Media Kit" data-kr="미디어 키트">Media Kit</div>
+                <div class="quick-link-description" data-en="Logos, images, and brand assets" data-kr="로고, 이미지 및 브랜드 자산">Logos, images, and brand assets</div>
+            </a>
+
+            <a href="#coverage" class="quick-link-card">
+                <div class="quick-link-icon">🗞️</div>
+                <div class="quick-link-title" data-en="Media Coverage" data-kr="미디어 보도">Media Coverage</div>
+                <div class="quick-link-description" data-en="MAEUM in the news" data-kr="뉴스 속 MAEUM">MAEUM in the news</div>
+            </a>
+
+            <a href="#contact" class="quick-link-card">
+                <div class="quick-link-icon">✉️</div>
+                <div class="quick-link-title" data-en="Press Contact" data-kr="언론 연락처">Press Contact</div>
+                <div class="quick-link-description" data-en="Get in touch with our PR team" data-kr="PR 팀에 연락하기">Get in touch with our PR team</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Press Releases -->
+    <section class="press-releases" id="releases">
+        <div class="section-header">
+            <h2 class="section-title" data-en="Latest Press Releases" data-kr="최신 보도 자료">Latest Press Releases</h2>
+        </div>
+
+        <div class="press-release-list">
+            <div class="press-release-item">
+                <div class="press-release-date" data-en="Coming Soon" data-kr="출시 예정">Coming Soon</div>
+                <div class="press-release-title"
+                     data-en="MAEUM Launches StudioRoom: Interactive AI Experience Platform"
+                     data-kr="MAEUM, StudioRoom 출시: 인터랙티브 AI 경험 플랫폼">
+                    MAEUM Launches StudioRoom: Interactive AI Experience Platform
+                </div>
+                <div class="press-release-excerpt"
+                     data-en="Innovative platform allows users to experience on-device AI capabilities across 140 languages with complete privacy and zero cloud dependency."
+                     data-kr="혁신적인 플랫폼으로 사용자는 완전한 프라이버시와 클라우드 의존성 없이 140개 언어로 온디바이스 AI 기능을 경험할 수 있습니다.">
+                    Innovative platform allows users to experience on-device AI capabilities across 140 languages with complete privacy and zero cloud dependency.
+                </div>
+            </div>
+
+            <div class="press-release-item">
+                <div class="press-release-date" data-en="Coming Soon" data-kr="출시 예정">Coming Soon</div>
+                <div class="press-release-title"
+                     data-en="MAEUM Partners with Major City Governments for AI Transformation"
+                     data-kr="MAEUM, 주요 도시 정부와 AI 혁신을 위한 파트너십 체결">
+                    MAEUM Partners with Major City Governments for AI Transformation
+                </div>
+                <div class="press-release-excerpt"
+                     data-en="Strategic partnerships enable public sector organizations to deploy secure, on-premise AI solutions that serve citizens in their native languages."
+                     data-kr="전략적 파트너십을 통해 공공부문 조직이 시민들에게 모국어로 서비스하는 안전한 온프레미스 AI 솔루션을 배포할 수 있습니다.">
+                    Strategic partnerships enable public sector organizations to deploy secure, on-premise AI solutions that serve citizens in their native languages.
+                </div>
+            </div>
+
+            <div class="press-release-item">
+                <div class="press-release-date" data-en="Coming Soon" data-kr="출시 예정">Coming Soon</div>
+                <div class="press-release-title"
+                     data-en="MAEUM Achieves Breakthrough: AI Running on Standard CPUs"
+                     data-kr="MAEUM, 획기적 성과: 표준 CPU에서 실행되는 AI">
+                    MAEUM Achieves Breakthrough: AI Running on Standard CPUs
+                </div>
+                <div class="press-release-excerpt"
+                     data-en="Proprietary technology eliminates need for expensive GPU infrastructure, making enterprise AI accessible to organizations of all sizes."
+                     data-kr="독점 기술로 비싼 GPU 인프라의 필요성을 제거하여 모든 규모의 조직이 엔터프라이즈 AI에 접근할 수 있게 되었습니다.">
+                    Proprietary technology eliminates need for expensive GPU infrastructure, making enterprise AI accessible to organizations of all sizes.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Kit -->
+    <section class="media-kit" id="media-kit">
+        <div class="media-kit-container">
+            <h2 data-en="Download Media Assets" data-kr="미디어 자산 다운로드">Download Media Assets</h2>
+
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-icon">🎨</div>
+                    <div class="download-title" data-en="Brand Assets" data-kr="브랜드 자산">Brand Assets</div>
+                    <div class="download-description"
+                         data-en="MAEUM logos in various formats (PNG, SVG, EPS)"
+                         data-kr="다양한 형식의 MAEUM 로고 (PNG, SVG, EPS)">
+                        MAEUM logos in various formats (PNG, SVG, EPS)
+                    </div>
+                    <a href="#" class="btn-download" data-en="Download Logos" data-kr="로고 다운로드">Download Logos</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">📸</div>
+                    <div class="download-title" data-en="Product Screenshots" data-kr="제품 스크린샷">Product Screenshots</div>
+                    <div class="download-description"
+                         data-en="High-resolution images of MAEUM in action"
+                         data-kr="MAEUM 작동 중인 고해상도 이미지">
+                        High-resolution images of MAEUM in action
+                    </div>
+                    <a href="#" class="btn-download" data-en="Download Images" data-kr="이미지 다운로드">Download Images</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">👥</div>
+                    <div class="download-title" data-en="Executive Bios & Photos" data-kr="경영진 약력 및 사진">Executive Bios & Photos</div>
+                    <div class="download-description"
+                         data-en="Leadership team biographies and headshots"
+                         data-kr="리더십 팀 약력 및 프로필 사진">
+                        Leadership team biographies and headshots
+                    </div>
+                    <a href="#" class="btn-download" data-en="Download Bios" data-kr="약력 다운로드">Download Bios</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">📄</div>
+                    <div class="download-title" data-en="Company Fact Sheet" data-kr="회사 팩트 시트">Company Fact Sheet</div>
+                    <div class="download-description"
+                         data-en="Key facts, figures, and milestones"
+                         data-kr="주요 사실, 수치 및 이정표">
+                        Key facts, figures, and milestones
+                    </div>
+                    <a href="#" class="btn-download" data-en="Download PDF" data-kr="PDF 다운로드">Download PDF</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">🎥</div>
+                    <div class="download-title" data-en="Demo Videos" data-kr="데모 비디오">Demo Videos</div>
+                    <div class="download-description"
+                         data-en="Product demonstrations and explainer videos"
+                         data-kr="제품 시연 및 설명 비디오">
+                        Product demonstrations and explainer videos
+                    </div>
+                    <a href="#" class="btn-download" data-en="Access Videos" data-kr="비디오 액세스">Access Videos</a>
+                </div>
+
+                <div class="download-card">
+                    <div class="download-icon">📊</div>
+                    <div class="download-title" data-en="Presentation Deck" data-kr="프레젠테이션 자료">Presentation Deck</div>
+                    <div class="download-description"
+                         data-en="Company overview and vision presentation"
+                         data-kr="회사 개요 및 비전 프레젠테이션">
+                        Company overview and vision presentation
+                    </div>
+                    <a href="#" class="btn-download" data-en="Download Deck" data-kr="자료 다운로드">Download Deck</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Coverage -->
+    <section class="coverage" id="coverage">
+        <div class="section-header" style="text-align: center; max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" data-en="MAEUM in the News" data-kr="뉴스 속 MAEUM">MAEUM in the News</h2>
+        </div>
+
+        <div class="coverage-grid">
+            <a href="#" class="coverage-item">
+                <div class="coverage-image">📰</div>
+                <div class="coverage-content">
+                    <div class="coverage-source">Tech Blog Korea</div>
+                    <div class="coverage-title"
+                         data-en="Introducing MAEUM: The Future of On-Device AI"
+                         data-kr="MAEUM 소개: 온디바이스 AI의 미래">
+                        Introducing MAEUM: The Future of On-Device AI
+                    </div>
+                    <div class="coverage-date" data-en="Coming Soon" data-kr="곧 공개">Coming Soon</div>
+                </div>
+            </a>
+
+            <a href="#" class="coverage-item">
+                <div class="coverage-image">🗞️</div>
+                <div class="coverage-content">
+                    <div class="coverage-source">AI Weekly</div>
+                    <div class="coverage-title"
+                         data-en="MAEUM's Vision for Privacy-First AI"
+                         data-kr="프라이버시 우선 AI를 위한 MAEUM의 비전">
+                        MAEUM's Vision for Privacy-First AI
+                    </div>
+                    <div class="coverage-date" data-en="Coming Soon" data-kr="곧 공개">Coming Soon</div>
+                </div>
+            </a>
+
+            <a href="#" class="coverage-item">
+                <div class="coverage-image">📺</div>
+                <div class="coverage-content">
+                    <div class="coverage-source">Innovation Today</div>
+                    <div class="coverage-title"
+                         data-en="MAEUM: Making AI Accessible in 140 Languages"
+                         data-kr="MAEUM: 140개 언어로 AI 접근성 실현">
+                        MAEUM: Making AI Accessible in 140 Languages
+                    </div>
+                    <div class="coverage-date" data-en="Coming Soon" data-kr="곧 공개">Coming Soon</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Press Contact -->
+    <section class="press-contact" id="contact">
+        <h2 class="section-title" data-en="Press Inquiries" data-kr="언론 문의">Press Inquiries</h2>
+        <p class="subtitle"
+           data-en="For press inquiries, interview requests, or additional information, please contact our PR team."
+           data-kr="언론 문의, 인터뷰 요청 또는 추가 정보는 PR 팀에 문의하세요.">
+            For press inquiries, interview requests, or additional information, please contact our PR team.
+        </p>
+
+        <div class="contact-box">
+            <div class="contact-email">
+                <a href="mailto:princeps@maeum.io">princeps@maeum.io</a>
+            </div>
+            <p data-en="Response time: Within 24 hours" data-kr="응답 시간: 24시간 이내">Response time: Within 24 hours</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4 data-en="SOLUTIONS" data-kr="솔루션">SOLUTIONS</h4>
+                <div class="footer-links">
+                    <a href="/government" data-en="Government" data-kr="정부">Government</a>
+                    <a href="/enterprise" data-en="Enterprise" data-kr="기업">Enterprise</a>
+                    <a href="/studioroom" data-en="StudioRoom" data-kr="StudioRoom">StudioRoom</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 data-en="COMPANY" data-kr="회사">COMPANY</h4>
+                <div class="footer-links">
+                    <a href="/about" data-en="About" data-kr="소개">About</a>
+                    <a href="/press" data-en="Press" data-kr="보도자료">Press</a>
+                    <a href="/investors" data-en="Investors" data-kr="투자자">Investors</a>
+                    <a href="/contact" data-en="Contact" data-kr="연락처">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 data-en="RESOURCES" data-kr="자료">RESOURCES</h4>
+                <div class="footer-links">
+                    <a href="https://maeum.io/docs" data-en="Documentation" data-kr="문서">Documentation</a>
+                    <a href="https://maeum.io/blog" data-en="Blog" data-kr="블로그">Blog</a>
+                    <a href="https://maeum.io/support" data-en="Support" data-kr="지원">Support</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 data-en="CONNECT" data-kr="연결">CONNECT</h4>
+                <div class="footer-links">
+                    <a href="mailto:princeps@maeum.io">princeps@maeum.io</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu functionality with improved UX
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            const isOpen = menu.classList.contains('active');
+
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                menu.classList.add('active');
+                toggle.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scroll when menu is open
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.remove('active');
+            toggle.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scroll
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickOnToggle = toggle.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnToggle && menu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // Update language button states
+        function updateMobileLangButtons() {
+            const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+            document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === currentLang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        // Call on page load and when language changes
+        document.addEventListener('DOMContentLoaded', updateMobileLangButtons);
+        window.addEventListener('storage', updateMobileLangButtons);
+    </script>
+</body>
+</html>

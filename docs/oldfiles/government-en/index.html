@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAEUM - Government Document AI | Automate Reports in Minutes</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transform government document workflows with MAEUM AI. Cut report writing time by 70%. On-premise deployment. Used by cities worldwide.">
+    <meta name="keywords" content="government AI, document automation, public sector, staff reports, meeting minutes, policy briefs, on-premise AI">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MAEUM - Government Document AI">
+    <meta property="og:description" content="Automate government reports, memos, and analysis in minutes—not hours. Schedule a consultation to get started.">
+    <meta property="og:url" content="https://maeum.io/government-us/">
+
+    <script src="../config.js"></script>
+    <script src="../language.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+
+    <style>
+        /* Page-specific styles only */
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0066FF;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0066FF;
+        }
+
+        .btn-primary {
+            background: #0066FF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #0052CC;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 24px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #E3F2FF;
+            color: #0066FF;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #0066FF, #0052CC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .btn-secondary {
+            background: #F5F5F5;
+            color: #333;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #E5E5E5;
+        }
+
+        .features-quick {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .features-quick span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #F8F9FA;
+            padding: 60px 24px;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #0066FF;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 80px 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .problem-card {
+            background: #FFF;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #E5E5E5;
+        }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            background: #FFE4E4;
+            color: #FF4444;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .problem-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .problem-text {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: linear-gradient(135deg, #0066FF10, #0052CC10);
+            padding: 80px 24px;
+        }
+
+        .solution-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-top: 40px;
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background: #F8F9FA;
+            padding: 20px;
+            font-weight: 600;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 20px;
+            border-bottom: 1px solid #E5E5E5;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .before {
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .after {
+            color: #00CC44;
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 24px;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid #E5E5E5;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #0066FF20, #0052CC20);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .feature-text {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            color: #666;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00CC44;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            background: #F8F9FA;
+            padding: 80px 24px;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .use-case {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+        }
+
+        .use-case-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #0066FF;
+        }
+
+        .use-case-item {
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #0066FF, #0052CC);
+            padding: 80px 24px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .btn-white {
+            background: white;
+            color: #0066FF;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 24px 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .footer-column a {
+            color: #999;
+            text-decoration: none;
+            display: block;
+            padding: 4px 0;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #0066FF;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .hero {
+                padding: 120px 20px 60px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="../" class="logo">MAEUM</a>
+            <div class="nav-links">
+                <a href="../government-en/" class="nav-government" data-en="Government" data-kr="정부용">Government</a>
+                <a href="../enterprise-en/" class="nav-enterprise" data-en="Enterprise" data-kr="기업용">Enterprise</a>
+                <a href="../monet/" class="nav-monet" data-en="Monet Discord Bot" data-kr="Monet Discord Bot">Monet Discord Bot</a>
+                <a href="../about/" class="nav-about" data-en="About" data-kr="소개">About</a>
+                <a href="javascript:void(0)" onclick="openCalendly()" data-en="Schedule Meeting" data-kr="연락/문의" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;">Schedule Meeting</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">🏛️ GOVERNMENT DOCUMENT AI</div>
+        <h1>Turn 3-Hour Reports Into<br>5-Minute Tasks</h1>
+        <p class="subtitle">
+            Government staff spend 40% of their time on repetitive documents.
+            MAEUM automates reports, memos, and briefs with accuracy your agency requires.
+        </p>
+        <div class="hero-buttons">
+            <a href="#consultation" class="btn-primary" style="padding: 14px 32px; font-size: 16px;">
+                Schedule Consultation
+            </a>
+            <a href="#how-it-works" class="btn-secondary">
+                Watch 2-Min Demo →
+            </a>
+        </div>
+        <div class="features-quick">
+            <span>✓ On-premise deployment</span>
+            <span>✓ 10+ languages</span>
+            <span>✓ Government-ready security</span>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div>
+                <div class="stat-number">70%</div>
+                <div class="stat-label">Time Saved on Documents</div>
+            </div>
+            <div>
+                <div class="stat-number">5 min</div>
+                <div class="stat-label">Average Report Time</div>
+            </div>
+            <div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Data Security</div>
+            </div>
+            <div>
+                <div class="stat-number">$50K+</div>
+                <div class="stat-label">Annual Savings per Dept</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="section-header">
+            <h2 class="section-title">The Hidden Cost of Government Paperwork</h2>
+            <p class="section-subtitle">
+                Your best people are burning out on repetitive documents instead of serving citizens
+            </p>
+        </div>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">⏰</div>
+                <h3 class="problem-title">16 Hours Per Week</h3>
+                <p class="problem-text">
+                    Average time each staff member spends writing reports, memos, and meeting minutes that follow the same format every time.
+                </p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">💰</div>
+                <h3 class="problem-title">$500K Annual Cost</h3>
+                <p class="problem-text">
+                    What document preparation costs per 100 employees when you factor in salaries, overtime, and opportunity cost.
+                </p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">😔</div>
+                <h3 class="problem-title">Staff Burnout</h3>
+                <p class="problem-text">
+                    Talented professionals leave government service because they spend more time on paperwork than meaningful work.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="solution-container">
+            <div class="section-header">
+                <h2 class="section-title">Transform Your Document Workflow</h2>
+                <p class="section-subtitle">
+                    MAEUM turns hours of document work into minutes, with the format and accuracy you need
+                </p>
+            </div>
+
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div>Document Type</div>
+                    <div>Before</div>
+                    <div>With MAEUM</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Staff Report</div>
+                    <div class="before">2 hours</div>
+                    <div class="after">5 minutes</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Meeting Minutes</div>
+                    <div class="before">90 minutes</div>
+                    <div class="after">10 minutes</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Policy Brief</div>
+                    <div class="before">4 hours</div>
+                    <div class="after">15 minutes</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Budget Justification</div>
+                    <div class="before">3 hours</div>
+                    <div class="after">12 minutes</div>
+                </div>
+                <div class="comparison-row">
+                    <div>Compliance Report</div>
+                    <div class="before">Full day</div>
+                    <div class="after">30 minutes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="section-header">
+                <h2 class="section-title">Built for Government, By Government Experts</h2>
+                <p class="section-subtitle">
+                    Every feature designed with public sector requirements in mind
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Complete Security Control</h3>
+                    <p class="feature-text">
+                        Your data never leaves your infrastructure. Deploy on-premise or in your private cloud.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Zero external data transmission</li>
+                        <li>Air-gapped deployment option</li>
+                        <li>SOC 2 Type II certified</li>
+                        <li>Full audit logging</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">True Multilingual Support</h3>
+                    <p class="feature-text">
+                        Generate documents in any language your community needs, with perfect formatting.
+                    </p>
+                    <ul class="feature-list">
+                        <li>10+ languages natively</li>
+                        <li>Simultaneous translation</li>
+                        <li>Cultural formatting</li>
+                        <li>Right-to-left support</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Advanced Analytics Built-In</h3>
+                    <p class="feature-text">
+                        Combine statistical analysis with narrative generation in one seamless workflow.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Data visualization</li>
+                        <li>Trend analysis</li>
+                        <li>Budget calculations</li>
+                        <li>Performance metrics</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Rapid Deployment</h3>
+                    <p class="feature-text">
+                        Get up and running in days, not months. No complex integrations required.
+                    </p>
+                    <ul class="feature-list">
+                        <li>2-day setup</li>
+                        <li>Instant templates</li>
+                        <li>Training included</li>
+                        <li>24/7 support</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Government Templates</h3>
+                    <p class="feature-text">
+                        Pre-loaded with formats your agency uses every day, customizable to your needs.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Staff reports</li>
+                        <li>Council agendas</li>
+                        <li>Grant applications</li>
+                        <li>Compliance docs</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Continuous Learning</h3>
+                    <p class="feature-text">
+                        MAEUM learns your organization's style and improves with every document.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Custom training</li>
+                        <li>Style adaptation</li>
+                        <li>Terminology learning</li>
+                        <li>Format optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="section-header">
+            <h2 class="section-title">For Every Government Department</h2>
+            <p class="section-subtitle">
+                From city halls to federal agencies, MAEUM adapts to your needs
+            </p>
+        </div>
+
+        <div class="use-cases-grid">
+            <div class="use-case">
+                <h3 class="use-case-title">City & County</h3>
+                <div class="use-case-item">Council staff reports</div>
+                <div class="use-case-item">Meeting minutes</div>
+                <div class="use-case-item">Permit documentation</div>
+                <div class="use-case-item">Budget proposals</div>
+            </div>
+
+            <div class="use-case">
+                <h3 class="use-case-title">State Agencies</h3>
+                <div class="use-case-item">Legislative briefs</div>
+                <div class="use-case-item">Compliance reports</div>
+                <div class="use-case-item">Grant applications</div>
+                <div class="use-case-item">Policy analysis</div>
+            </div>
+
+            <div class="use-case">
+                <h3 class="use-case-title">Federal Departments</h3>
+                <div class="use-case-item">Congressional reports</div>
+                <div class="use-case-item">Inter-agency memos</div>
+                <div class="use-case-item">Regulatory documents</div>
+                <div class="use-case-item">Research summaries</div>
+            </div>
+
+            <div class="use-case">
+                <h3 class="use-case-title">Special Districts</h3>
+                <div class="use-case-item">Board presentations</div>
+                <div class="use-case-item">Annual reports</div>
+                <div class="use-case-item">Service updates</div>
+                <div class="use-case-item">Community notices</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="consultation">
+        <h2>Ready to Transform Your Agency?</h2>
+        <p class="cta-subtitle">
+            Start your AI transformation journey with a personalized consultation.<br>
+            Complete implementation support included.
+        </p>
+        <a href="mailto:hello@maeum.io?subject=Government%20Document%20AI%20Consultation" class="btn-white">
+            Schedule Your Consultation →
+        </a>
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+            Or email us directly: hello@maeum.io
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Product</h4>
+                <a href="#features">Features</a>
+                <a href="#use-cases">Use Cases</a>
+                <a href="#security">Security</a>
+                <a href="#pricing">Pricing</a>
+            </div>
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <a href="../government-us/">Government</a>
+                <a href="../enterprise-us/">Enterprise</a>
+                <a href="../healthcare/">Healthcare</a>
+                <a href="../education/">Education</a>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="../about/">About</a>
+                <a href="../blog/">Blog</a>
+                <a href="../careers/">Careers</a>
+                <a href="../contact/">Contact</a>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <a href="mailto:hello@maeum.io">hello@maeum.io</a>
+                <a href="https://linkedin.com/company/maeum">LinkedIn</a>
+                <a href="https://twitter.com/maeum_ai">Twitter</a>
+                <a href="https://github.com/maeum">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MAEUM. All rights reserved. |
+            <a href="../privacy/" style="color: #666;">Privacy Policy</a> |
+            <a href="../terms/" style="color: #666;">Terms of Service</a></p>
+        </div>
+    </footer>
+    <script>
+        // Schedule Meeting functionality
+        function openCalendly() {
+            // 언어에 따라 다른 URL 사용
+            const currentLang = MAEUM_LANG.getCurrentLanguage();
+            const url = currentLang === 'kr'
+                ? 'https://open.kakao.com/o/sdSIOgWh'
+                : 'https://discord.gg/ueYeUfCUQE';
+
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
