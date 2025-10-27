@@ -109,7 +109,7 @@ const MAEUM_LANG = {
                         elem.textContent = text;
                     }
                 } else {
-                    elem.textContent = text;
+                    elem.innerHTML = text;
                 }
             }
         });
@@ -334,4 +334,3 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => MAEUM_LANG.init());
 } else {
     MAEUM_LANG.init();
-}
