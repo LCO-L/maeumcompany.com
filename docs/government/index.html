@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAEUM - Government AI Solutions | Public Sector Innovation</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transform government services with MAEUM AI. 100% on-premise deployment. Complete data sovereignty. Support for 140 languages. Making public services accessible to all citizens.">
+    <meta name="keywords" content="government AI, public sector AI, document automation, on-premise AI, data sovereignty, multilingual government services">
+    <meta name="author" content="MAEUM">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://maeumcompany.com/government">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maeumcompany.com/government/">
+    <meta property="og:title" content="MAEUM - Government AI Solutions">
+    <meta property="og:description" content="Transform government services with secure, on-premise AI. Complete data sovereignty. 140 languages.">
+    <meta property="og:image" content="https://maeumcompany.com/og-government.png">
+    <meta property="og:site_name" content="MAEUM">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maeumcompany.com/government/">
+    <meta property="twitter:title" content="MAEUM - Government AI Solutions">
+    <meta property="twitter:description" content="Transform government services with secure, on-premise AI.">
+    <meta property="twitter:image" content="https://maeumcompany.com/twitter-government.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://hangeul.pstatic.net" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Korean Font -->
+    <style>
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-weight: 400;
+            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff2') format('woff2');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-weight: 700;
+            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff2') format('woff2');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo';
+            font-weight: 800;
+            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff2') format('woff2');
+            font-display: swap;
+        }
+    </style>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../css/common.css">
+
+    <!-- Configuration -->
+    <script src="../config.js"></script>
+    <script src="../language.js"></script>
+
+    <style>
+        /* Government Page Specific Styles */
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #FFFFFF;
+        }
+
+        body.kr {
+            font-family: 'NanumSquareNeo', -apple-system, sans-serif;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(0, 102, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0066FF;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: #0066FF;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #0066FF;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 40px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667EEA, #764BA2);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #0066FF, #0052CC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .btn-primary {
+            background: #0066FF;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: #0052CC;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.25);
+        }
+
+        .btn-secondary {
+            background: #F5F5F5;
+            color: #333;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #E5E5E5;
+            transform: translateY(-1px);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(to bottom, #F8F9FA, #FFFFFF);
+            padding: 80px 40px;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0066FF, #667EEA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #0066FF;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 102, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0, 102, 255, 0.15);
+            border-color: #0066FF;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #E3F2FF, #D4E6FF);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            background: #F8F9FA;
+            padding: 100px 40px;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 64px auto 0;
+        }
+
+        .use-case-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .use-case-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #0066FF;
+        }
+
+        .use-case-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Security Section */
+        .security {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, #0066FF, #667EEA);
+            color: white;
+        }
+
+        .security-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .security h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .security-description {
+            font-size: 20px;
+            margin-bottom: 48px;
+            opacity: 0.95;
+        }
+
+        .security-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .security-item {
+            text-align: center;
+        }
+
+        .security-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 16px;
+        }
+
+        .security-item h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .security-item p {
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .cta-description {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 48px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 60px 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+        }
+
+        .footer-section h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 24px 60px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .features-grid,
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="logo">MAEUM</a>
+            <div class="nav-links">
+                <a href="/studioroom" class="nav-studioroom" data-en="StudioRoom" data-kr="스튜디오룸">StudioRoom</a>
+                <a href="/government" class="nav-government active" data-en="Government" data-kr="정부">Government</a>
+                <a href="/enterprise" class="nav-enterprise" data-en="Enterprise" data-kr="기업">Enterprise</a>
+                <a href="/about" class="nav-about" data-en="About" data-kr="소개">About</a>
+                <a href="/press" class="nav-press" data-en="Press" data-kr="보도자료">Press</a>
+                <a href="/investors" class="nav-investors" data-en="Investors" data-kr="투자자">Investors</a>
+                <a href="/contact" class="btn-primary nav-contact" data-en="Contact" data-kr="연락처">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge" data-en="PUBLIC SECTOR AI" data-kr="공공부문 AI">PUBLIC SECTOR AI</div>
+        <h1 data-en="Transform Government Services with Secure AI" data-kr="안전한 AI로 공공 서비스 혁신">
+            Transform Government<br>Services with Secure AI
+        </h1>
+        <p class="subtitle"
+           data-en="Cut document processing time by 70%. 100% on-premise deployment. Complete data sovereignty. Making public services accessible in 140 languages."
+           data-kr="문서 처리 시간 70% 단축. 100% 온프레미스 배포. 완전한 데이터 주권. 140개 언어로 공공 서비스 접근성 확대.">
+            Cut document processing time by 70%. 100% on-premise deployment. Complete data sovereignty. Making public services accessible in 140 languages.
+        </p>
+        <div class="hero-buttons">
+            <a href="/contact" class="btn-primary" data-en="Schedule Consultation" data-kr="상담 예약">Schedule Consultation</a>
+            <a href="#use-cases" class="btn-secondary" data-en="View Use Cases" data-kr="사용 사례 보기">View Use Cases</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-en="70%" data-kr="70%">70%</div>
+                <div class="stat-label" data-en="Reduction in Document Processing Time" data-kr="문서 처리 시간 단축">Reduction in Document Processing Time</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-en="140" data-kr="140">140</div>
+                <div class="stat-label" data-en="Languages Supported" data-kr="지원 언어">Languages Supported</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-en="100%" data-kr="100%">100%</div>
+                <div class="stat-label" data-en="On-Premise & Offline" data-kr="온프레미스 및 오프라인">On-Premise & Offline</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-en="0" data-kr="0">0</div>
+                <div class="stat-label" data-en="Data Leaves Your Servers" data-kr="외부 데이터 유출">Data Leaves Your Servers</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <div class="section-label" data-en="KEY FEATURES" data-kr="주요 기능">KEY FEATURES</div>
+            <h2 class="section-title" data-en="Built for Government Needs" data-kr="정부 요구사항에 맞춘 설계">Built for Government Needs</h2>
+            <p class="section-description"
+               data-en="MAEUM is designed specifically for the unique requirements of public sector organizations"
+               data-kr="마음은 공공부문 조직의 고유한 요구사항을 위해 특별히 설계되었습니다">
+                MAEUM is designed specifically for the unique requirements of public sector organizations
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title" data-en="Complete Data Sovereignty" data-kr="완전한 데이터 주권">Complete Data Sovereignty</h3>
+                <p class="feature-description"
+                   data-en="100% on-premise deployment. Your data never leaves your infrastructure. Full compliance with data protection regulations."
+                   data-kr="100% 온프레미스 배포. 데이터는 절대 인프라를 벗어나지 않습니다. 데이터 보호 규정 완벽 준수.">
+                    100% on-premise deployment. Your data never leaves your infrastructure. Full compliance with data protection regulations.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title" data-en="Multilingual Accessibility" data-kr="다국어 접근성">Multilingual Accessibility</h3>
+                <p class="feature-description"
+                   data-en="Serve all citizens in their native language. Support for 140 languages ensures no one is left behind."
+                   data-kr="모든 시민에게 모국어로 서비스 제공. 140개 언어 지원으로 누구도 소외되지 않습니다.">
+                    Serve all citizens in their native language. Support for 140 languages ensures no one is left behind.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title" data-en="Instant Processing" data-kr="즉시 처리">Instant Processing</h3>
+                <p class="feature-description"
+                   data-en="Process documents, generate reports, and respond to citizen inquiries in seconds, not hours."
+                   data-kr="문서 처리, 보고서 생성, 시민 문의 응답을 시간이 아닌 초 단위로 처리합니다.">
+                    Process documents, generate reports, and respond to citizen inquiries in seconds, not hours.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title" data-en="Zero GPU Costs" data-kr="GPU 비용 제로">Zero GPU Costs</h3>
+                <p class="feature-description"
+                   data-en="Runs on standard government hardware. No expensive GPU infrastructure required."
+                   data-kr="표준 정부 하드웨어에서 실행. 비싼 GPU 인프라 불필요.">
+                    Runs on standard government hardware. No expensive GPU infrastructure required.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title" data-en="Security First" data-kr="보안 우선">Security First</h3>
+                <p class="feature-description"
+                   data-en="Built with government-grade security standards. Regular security audits and compliance certifications."
+                   data-kr="정부급 보안 표준으로 구축. 정기적인 보안 감사 및 규정 준수 인증.">
+                    Built with government-grade security standards. Regular security audits and compliance certifications.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title" data-en="Analytics & Insights" data-kr="분석 및 인사이트">Analytics & Insights</h3>
+                <p class="feature-description"
+                   data-en="Transform data into actionable insights. Make data-driven policy decisions with confidence."
+                   data-kr="데이터를 실행 가능한 인사이트로 변환. 자신 있게 데이터 기반 정책 결정.">
+                    Transform data into actionable insights. Make data-driven policy decisions with confidence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases" id="use-cases">
+        <div class="section-header">
+            <div class="section-label" data-en="USE CASES" data-kr="사용 사례">USE CASES</div>
+            <h2 class="section-title" data-en="Proven Results Across Government" data-kr="정부 전반의 검증된 결과">Proven Results Across Government</h2>
+            <p class="section-description"
+               data-en="From local municipalities to federal agencies, MAEUM is transforming public services"
+               data-kr="지방자치단체부터 중앙정부까지, 마음이 공공 서비스를 혁신하고 있습니다">
+                From local municipalities to federal agencies, MAEUM is transforming public services
+            </p>
+        </div>
+
+        <div class="use-cases-grid">
+            <div class="use-case-card">
+                <h3 class="use-case-title" data-en="Document Processing" data-kr="문서 처리">Document Processing</h3>
+                <p class="use-case-description"
+                   data-en="Automate permit applications, license renewals, and form processing. Reduce processing time from days to minutes."
+                   data-kr="허가 신청, 면허 갱신, 양식 처리 자동화. 처리 시간을 일 단위에서 분 단위로 단축.">
+                    Automate permit applications, license renewals, and form processing. Reduce processing time from days to minutes.
+                </p>
+            </div>
+
+            <div class="use-case-card">
+                <h3 class="use-case-title" data-en="Citizen Services" data-kr="시민 서비스">Citizen Services</h3>
+                <p class="use-case-description"
+                   data-en="24/7 multilingual support for citizen inquiries. Answer questions instantly in 140 languages."
+                   data-kr="시민 문의에 대한 24/7 다국어 지원. 140개 언어로 즉시 질문에 답변.">
+                    24/7 multilingual support for citizen inquiries. Answer questions instantly in 140 languages.
+                </p>
+            </div>
+
+            <div class="use-case-card">
+                <h3 class="use-case-title" data-en="Policy Analysis" data-kr="정책 분석">Policy Analysis</h3>
+                <p class="use-case-description"
+                   data-en="Analyze policy impacts, generate reports, and provide data-driven recommendations for decision makers."
+                   data-kr="정책 영향 분석, 보고서 생성, 의사결정자를 위한 데이터 기반 추천 제공.">
+                    Analyze policy impacts, generate reports, and provide data-driven recommendations for decision makers.
+                </p>
+            </div>
+
+            <div class="use-case-card">
+                <h3 class="use-case-title" data-en="Meeting Minutes" data-kr="회의록">Meeting Minutes</h3>
+                <p class="use-case-description"
+                   data-en="Automatically transcribe and summarize council meetings, board sessions, and public hearings."
+                   data-kr="의회 회의, 이사회 세션, 공청회 자동 전사 및 요약.">
+                    Automatically transcribe and summarize council meetings, board sessions, and public hearings.
+                </p>
+            </div>
+
+            <div class="use-case-card">
+                <h3 class="use-case-title" data-en="Legal Documentation" data-kr="법률 문서">Legal Documentation</h3>
+                <p class="use-case-description"
+                   data-en="Draft ordinances, review contracts, and ensure compliance with regulations automatically."
+                   data-kr="조례 초안 작성, 계약 검토, 규정 준수 자동 확인.">
+                    Draft ordinances, review contracts, and ensure compliance with regulations automatically.
+                </p>
+            </div>
+
+            <div class="use-case-card">
+                <h3 class="use-case-title" data-en="Emergency Response" data-kr="응급 대응">Emergency Response</h3>
+                <p class="use-case-description"
+                   data-en="Coordinate emergency services with real-time translation and instant information processing."
+                   data-kr="실시간 번역과 즉각적인 정보 처리로 응급 서비스 조정.">
+                    Coordinate emergency services with real-time translation and instant information processing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security">
+        <div class="security-container">
+            <h2 data-en="Security & Compliance Built In" data-kr="내장된 보안 및 규정 준수">Security & Compliance Built In</h2>
+            <p class="security-description"
+               data-en="MAEUM meets the highest standards for government security and data protection"
+               data-kr="마음은 정부 보안 및 데이터 보호를 위한 최고 표준을 충족합니다">
+                MAEUM meets the highest standards for government security and data protection
+            </p>
+
+            <div class="security-features">
+                <div class="security-item">
+                    <div class="security-icon">🔐</div>
+                    <h3 data-en="End-to-End Encryption" data-kr="종단간 암호화">End-to-End Encryption</h3>
+                    <p data-en="Military-grade encryption for all data" data-kr="모든 데이터에 대한 군사급 암호화">Military-grade encryption for all data</p>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">🏛️</div>
+                    <h3 data-en="Regulatory Compliance" data-kr="규제 준수">Regulatory Compliance</h3>
+                    <p data-en="GDPR, HIPAA, SOC 2 compliant" data-kr="GDPR, HIPAA, SOC 2 준수">GDPR, HIPAA, SOC 2 compliant</p>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">🛡️</div>
+                    <h3 data-en="Zero Trust Architecture" data-kr="제로 트러스트 아키텍처">Zero Trust Architecture</h3>
+                    <p data-en="Advanced security with continuous verification" data-kr="지속적인 검증을 통한 고급 보안">Advanced security with continuous verification</p>
+                </div>
+                <div class="security-item">
+                    <div class="security-icon">📝</div>
+                    <h3 data-en="Audit Trails" data-kr="감사 추적">Audit Trails</h3>
+                    <p data-en="Complete logging and accountability" data-kr="완전한 로깅 및 책임 추적">Complete logging and accountability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2 data-en="Transform Your Government Services Today" data-kr="오늘 정부 서비스를 혁신하세요">Transform Your Government Services Today</h2>
+            <p class="cta-description"
+               data-en="Join governments worldwide that are making public services more efficient, accessible, and citizen-friendly with MAEUM AI."
+               data-kr="마음 AI로 공공 서비스를 더 효율적이고, 접근 가능하며, 시민 친화적으로 만들고 있는 전 세계 정부들과 함께하세요.">
+                Join governments worldwide that are making public services more efficient, accessible, and citizen-friendly with MAEUM AI.
+            </p>
+            <div class="cta-buttons">
+                <a href="/contact" class="btn-primary" data-en="Schedule a Consultation" data-kr="상담 예약하기">Schedule a Consultation</a>
+                <a href="https://maeum.io/government-demo" class="btn-secondary" data-en="Request Demo" data-kr="데모 요청">Request Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4 data-en="SOLUTIONS" data-kr="솔루션">SOLUTIONS</h4>
+                <div class="footer-links">
+                    <a href="/government" data-en="Government" data-kr="정부">Government</a>
+                    <a href="/enterprise" data-en="Enterprise" data-kr="기업">Enterprise</a>
+                    <a href="/studioroom" data-en="StudioRoom" data-kr="스튜디오룸">StudioRoom</a>
+                    <a href="https://maeum.io" data-en="MAEUM AI Platform" data-kr="마음 AI 플랫폼">MAEUM AI Platform</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 data-en="RESOURCES" data-kr="자료">RESOURCES</h4>
+                <div class="footer-links">
+                    <a href="https://maeum.io/docs" data-en="Documentation" data-kr="문서">Documentation</a>
+                    <a href="https://maeum.io/case-studies" data-en="Case Studies" data-kr="사례 연구">Case Studies</a>
+                    <a href="https://maeum.io/whitepaper" data-en="Whitepaper" data-kr="백서">Whitepaper</a>
+                    <a href="https://maeum.io/security" data-en="Security" data-kr="보안">Security</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 data-en="COMPANY" data-kr="회사">COMPANY</h4>
+                <div class="footer-links">
+                    <a href="/about" data-en="About" data-kr="소개">About</a>
+                    <a href="/press" data-en="Press" data-kr="보도자료">Press</a>
+                    <a href="/investors" data-en="Investors" data-kr="투자자">Investors</a>
+                    <a href="/contact" data-en="Contact" data-kr="연락처">Contact</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 data-en="CONNECT" data-kr="연결">CONNECT</h4>
+                <div class="footer-links">
+                    <a href="mailto:princeps@maeum.io">princeps@maeum.io</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
