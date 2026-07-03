@@ -1,1636 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAEUM - Small but mighty AI | No Cloud. Only Device.</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Small but mighty AI, MAEUM. AI is the language that connects hearts around the world. No Cloud. Only Device. 140 languages. Zero GPU cost. 100% on-device.">
-    <meta name="keywords" content="MAEUM, on-device AI, offline AI, small but mighty AI, no cloud AI, device AI, multilingual AI, 140 languages, zero GPU, privacy AI">
-    <meta name="author" content="MAEUM">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://maeum.io">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://maeum.io/">
-    <meta property="og:title" content="MAEUM - Small but mighty AI">
-    <meta property="og:description" content="AI is the language that connects hearts around the world. No Cloud. Only Device. 140 languages. Zero GPU cost.">
-    <meta property="og:image" content="https://maeum.io/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="MAEUM">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ko_KR">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maeum.io/">
-    <meta property="twitter:title" content="MAEUM - Small but mighty AI">
-    <meta property="twitter:description" content="AI is the language that connects hearts around the world. No Cloud. Only Device.">
-    <meta property="twitter:image" content="https://maeum.io/twitter-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="css/common.css">
-
-<!-- GorillaChat 위젯 -->
-<script
-  src="https://gorillachat.ai/embed.js"
-  data-tenant-id="user_105633882944773322197"
-  data-api-url="https://gorillachat.ai"
-  data-position="bottom-right"
-  data-primary-color="#2563EB"
-  data-title="안녕하세요! 무엇을 도와드릴까요?"
-  data-welcome-message="안녕하세요! 무엇을 도와드릴까요?"
-  async
-></script>
-    <!-- Configuration -->
-    <script src="config.js"></script>
-    <script src="language.js"></script>
-
-    <style>
-        /* Page-specific styles only */
-        html {
-            font-size: 90%;
-        }
-
-        body {
-            font-weight: 500;
-            overflow-x: hidden;
-        }
-
-        body.kr {
-            font-weight: 500;
-        }
-
-        /* Header & Navigation */
-        .header {
-            background: #fff;
-            border-bottom: 1px solid #e5e5e5;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #000000;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-            margin-right: 100px; /* Space for language toggle */
-        }
-
-        .nav-links a {
-            color: #666;
-            text-decoration: none;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #0066FF;
-        }
-
-        /* Primary Button Style */
-        .btn-primary {
-            background: #0066FF;
-            color: white !important;
-            padding: 10px 24px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: #0052CC;
-            transform: translateY(-1px);
-        }
-
-        /* Mobile menu styles moved to common.css for consistency across all pages */
-        /* Animation for mobile menu */
-        .mobile-menu {
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 40px 80px;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 1000px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(40px, 7vw, 72px);
-            font-weight: 700;
-            line-height: 1;
-            letter-spacing: -2px;
-            margin-bottom: 24px;
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .hero h1.kr {
-            letter-spacing: -1px;
-            font-size: clamp(36px, 6vw, 64px);
-        }
-
-        .hero .subtitle {
-            font-size: clamp(18px, 2.5vw, 24px);
-            color: #666;
-            font-weight: 500;
-            margin-bottom: 48px;
-            animation: fadeInUp 0.8s ease 0.2s both;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 60px;
-            justify-content: center;
-            margin-top: 80px;
-            animation: fadeInUp 0.8s ease 0.4s both;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 40px;
-            font-weight: 700;
-            color: #0066FF;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 8px;
-        }
-
-        .stat-label.kr {
-            text-transform: none;
-            letter-spacing: 0;
-        }
-
-        /* Problem Section */
-        .problem {
-            padding: 120px 40px;
-            background: #FAFAFA;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-label {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-bottom: 16px;
-        }
-
-        .section-label.kr {
-            text-transform: none;
-            letter-spacing: 0;
-            font-size: 16px;
-        }
-
-        .section-title {
-            font-size: clamp(32px, 4.5vw, 48px);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -1px;
-            margin-bottom: 24px;
-        }
-
-        .section-subtitle {
-            font-size: 18px;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Solution Section */
-        .solution {
-            padding: 120px 40px;
-            background: white;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 60px;
-            margin-top: 80px;
-        }
-
-        .feature {
-            text-align: center;
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, #0066FF, #0052CC);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            color: white;
-        }
-
-        .feature h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .feature p {
-            color: #666;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        /* Vision Section */
-        .vision {
-            padding: 120px 40px;
-            background: white;
-        }
-
-        .vision-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 80px;
-        }
-
-        .vision-item {
-            padding: 32px;
-            border-radius: 16px;
-            background: #F5F5F5;
-            transition: all 0.3s;
-        }
-
-        .vision-item:hover {
-            background: #0066FF;
-            color: white;
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.2);
-        }
-
-        .vision-item h4 {
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-
-        .vision-item p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 120px 40px;
-            background: linear-gradient(135deg, #0066FF, #0052CC);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: clamp(32px, 4.5vw, 48px);
-            margin-bottom: 24px;
-        }
-
-        .cta-section p {
-            font-size: 20px;
-            margin-bottom: 48px;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 36px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-white {
-            background: white;
-            color: #0066FF;
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-outline:hover {
-            background: white;
-            color: #0066FF;
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 40px;
-            background: #000;
-            color: white;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-            margin-bottom: 32px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .lang-toggle {
-                right: 20px;
-                top: 15px;
-            }
-
-            nav {
-                padding: 15px 20px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .hero {
-                padding: 100px 20px 60px;
-                min-height: 100vh;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-                margin-bottom: 16px;
-            }
-
-            .hero h1.kr {
-                font-size: 32px;
-            }
-
-            .hero .subtitle {
-                font-size: 18px;
-                margin-bottom: 40px;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 30px;
-                margin-top: 50px;
-            }
-
-            .stat-number {
-                font-size: 32px;
-            }
-
-            .stat-label {
-                font-size: 12px;
-            }
-
-            .problem,
-            .solution,
-            .vision {
-                padding: 80px 20px;
-            }
-
-            .section-header {
-                margin-bottom: 50px;
-            }
-
-            .section-title {
-                font-size: 28px;
-                margin-bottom: 16px;
-            }
-
-            .section-subtitle {
-                font-size: 16px;
-            }
-
-            .features-grid,
-            .vision-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                margin-top: 50px;
-            }
-
-            .feature-icon {
-                width: 64px;
-                height: 64px;
-                font-size: 28px;
-                margin-bottom: 20px;
-            }
-
-            .feature h3 {
-                font-size: 18px;
-            }
-
-            .feature p {
-                font-size: 14px;
-            }
-
-            .vision-item {
-                padding: 24px;
-            }
-
-            .vision-item h4 {
-                font-size: 16px;
-            }
-
-            .vision-item p {
-                font-size: 13px;
-            }
-
-            .cta-section {
-                padding: 80px 20px;
-            }
-
-            .cta-section h2 {
-                font-size: 28px;
-                margin-bottom: 16px;
-            }
-
-            .cta-section p {
-                font-size: 18px;
-                margin-bottom: 32px;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 16px;
-            }
-
-            .btn {
-                padding: 14px 24px;
-                font-size: 15px;
-                width: 100%;
-            }
-
-            footer {
-                padding: 40px 20px;
-            }
-
-            .footer-links {
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-
-            .footer-links a {
-                font-size: 14px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="MAEUM — On-device AI for everyone" data-kr="마음 — 모두를 위한 온디바이스 AI">MAEUM — On-device AI for everyone</title>
+
+  <meta name="description" content="MAEUM works to keep on-device AI within reach of the people who need it most — especially those the cloud has left behind.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://maeumcompany.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://maeumcompany.com/">
+  <meta property="og:title" content="MAEUM — On-device AI for everyone">
+  <meta property="og:description" content="Keeping on-device AI within reach of the people who need it most.">
+  <meta property="og:site_name" content="MAEUM">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="css/foundation.css">
 </head>
-<body>
-    <!-- Language Toggle will be added by language.js -->
+<body class="lang-en">
 
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <a href="/" class="logo">MAEUM</a>
-            <div class="nav-links">
-                <a href="/studioroom" data-en="StudioRoom" data-kr="StudioRoom" class="nav-studioroom">StudioRoom</a>
-                <a href="/government" data-en="Government" data-kr="정부" class="nav-government">Government</a>
-                <a href="/enterprise" data-en="Enterprise" data-kr="기업" class="nav-enterprise">Enterprise</a>
-                <a href="/about" data-en="About" data-kr="소개" class="nav-about">About</a>
-                <a href="/press" data-en="Press" data-kr="보도자료" class="nav-press">Press</a>
-                <a href="/investors" data-en="Investors" data-kr="투자자" class="nav-investors">Investors</a>
-                <a href="/contact" data-en="Contact" data-kr="연락처" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;" class="nav-contact">Contact</a>
-            </div>
-            <button class="menu-toggle" onclick="toggleMobileMenu()">
-                <span class="menu-text" data-en="MENU" data-kr="메뉴">MENU</span>
-                <span class="close-text" data-en="CLOSE" data-kr="닫기">CLOSE</span>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="/studioroom" data-en="StudioRoom" data-kr="StudioRoom" class="nav-studioroom" onclick="closeMobileMenu()">StudioRoom</a>
-        <a href="/government" data-en="Government" data-kr="정부" class="nav-government" onclick="closeMobileMenu()">Government</a>
-        <a href="/enterprise" data-en="Enterprise" data-kr="기업" class="nav-enterprise" onclick="closeMobileMenu()">Enterprise</a>
-        <a href="/about" data-en="About" data-kr="소개" class="nav-about" onclick="closeMobileMenu()">About</a>
-        <a href="/press" data-en="Press" data-kr="보도자료" class="nav-press" onclick="closeMobileMenu()">Press</a>
-        <a href="/investors" data-en="Investors" data-kr="투자자" class="nav-investors" onclick="closeMobileMenu()">Investors</a>
-        <a href="/contact" data-en="Contact" data-kr="연락처" class="nav-contact" onclick="closeMobileMenu()">Contact</a>
-
-        <!-- Language Selector for Mobile -->
-        <div class="mobile-lang-selector">
-            <label data-en="Language" data-kr="언어">Language</label>
-            <div class="mobile-lang-buttons">
-                <button class="mobile-lang-btn" onclick="MAEUM_LANG.setLanguage('en')" data-lang="en">English</button>
-                <button class="mobile-lang-btn" onclick="MAEUM_LANG.setLanguage('kr')" data-lang="kr">한국어</button>
-            </div>
-        </div>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <a href="/"><span class="mark">MAEUM</span></a>
+        <span class="kicker" data-en="Public-interest project" data-kr="공익 프로젝트">Public-interest project</span>
+      </div>
+      <nav class="nav">
+        <a class="navlink" href="/principles/" data-en="Principles" data-kr="원칙">Principles</a>
+        <a class="navlink" href="#how" data-en="How it works" data-kr="운영 방식">How it works</a>
+        <a class="navlink" href="/contact/" data-en="Contact" data-kr="문의">Contact</a>
+        <span class="lang">
+          <button data-setlang="en">EN</button><span class="sep">/</span><button data-setlang="kr">KR</button>
+        </span>
+      </nav>
+      <button class="menu-btn" data-en="Menu" data-kr="메뉴">Menu</button>
     </div>
+    <div class="mobile-nav">
+      <a href="/principles/" data-en="Principles" data-kr="원칙">Principles</a>
+      <a href="#how" data-en="How it works" data-kr="운영 방식">How it works</a>
+      <a href="#serve" data-en="Who this is for" data-kr="누구를 위한 것인가">Who this is for</a>
+      <a href="/contact/" data-en="Contact" data-kr="문의">Contact</a>
+      <a href="#" onclick="document.querySelector('.lang [data-setlang=kr]').click();return false;">한국어 / English</a>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 data-en="AI for Everyone" data-kr="모두를 위한 AI">AI for Everyone</h1>
-            <p class="hero-tagline" style="font-weight: 700; font-size: 22px; margin-top: 24px; margin-bottom: 24px; color: #0066FF;"
-               data-en="No Cloud. Only Device." data-kr="클라우드 없이. 오직 당신의 기기에서.">
-                No Cloud. Only Device.
-            </p>
-            <p class="subtitle" style="margin-bottom: 48px;" data-en="Small but mighty AI.<br>AI is the language that connects hearts around the world." data-kr="작지만 강한 인공지능.<br>AI는 전세계 사람들의 마음을 잇는 언어입니다.">
-                Small but mighty AI.<br>AI is the language that connects hearts around the world.
-            </p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow reveal" data-en="MAEUM · A public-interest project" data-kr="마음 · 공익 프로젝트">MAEUM · A public-interest project</span>
+      <h1 class="display reveal" data-en="On-device AI should belong<br>to everyone." data-kr="온디바이스 AI는<br>모두의 것이어야 합니다.">On-device AI should belong<br>to everyone.</h1>
+      <p class="lead reveal" data-en="MAEUM works to keep on-device AI within reach of the people who need it most — especially those the cloud has left behind." data-kr="온디바이스 AI가 꼭 필요한 사람에게 먼저 닿도록 합니다. 클라우드가 미처 닿지 못한 곳까지.">MAEUM works to keep on-device AI within reach of the people who need it most — especially those the cloud has left behind.</p>
+      <div class="actions reveal">
+        <a class="btn btn-primary" href="/principles/" data-en="What we stand for" data-kr="우리의 원칙">What we stand for</a>
+        <a class="btn btn-ghost" href="/contact/" data-en="Partner with us" data-kr="함께하기">Partner with us</a>
+      </div>
+    </div>
+  </section>
 
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">140</span>
-                    <span class="stat-label" data-en="Languages" data-kr="개 언어">Languages</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">$0</span>
-                    <span class="stat-label" data-en="GPU Cost" data-kr="GPU 비용">GPU Cost</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label" data-en="On-Device" data-kr="온디바이스">On-Device</span>
-                </div>
-            </div>
+  <!-- Thesis -->
+  <section class="section panel">
+    <div class="column statement reveal">
+      <p class="big" data-en="Cloud AI runs on someone else's computer.<br>On-device AI runs on yours." data-kr="클라우드 AI는 남의 서버에서 돌아갑니다.<br>온디바이스 AI는 내 기기에서 돌아갑니다.">Cloud AI runs on someone else's computer.<br>On-device AI runs on yours.</p>
+      <cite data-en="What we believe" data-kr="우리의 생각">What we believe</cite>
+    </div>
+    <div class="column reveal" style="margin-top:56px">
+      <p data-en="That difference is not abstract. It is a family's data staying in the home. A hospital's records never leaving the ward. A country running its own AI on hardware it already owns — nothing rented, nothing sent abroad. When the AI runs on the device, the person keeps control." data-kr="이 차이는 추상적인 이야기가 아닙니다. 가정의 데이터가 집 밖으로 나가지 않고, 병원 기록이 병동을 떠나지 않는 것입니다. 한 나라가 이미 가진 장비로 자체 AI를 돌리는 것입니다. 빌리지 않고, 국외로 내보내지 않습니다. AI가 기기 안에서 돌아가면, 데이터의 주도권은 사용자에게 남습니다.">That difference is not abstract. It is a family's data staying in the home. A hospital's records never leaving the ward. A country running its own AI on hardware it already owns — nothing rented, nothing sent abroad. When the AI runs on the device, the person keeps control.</p>
+    </div>
+  </section>
+
+  <!-- Who this is for -->
+  <section class="section" id="serve">
+    <div class="wrap">
+      <span class="eyebrow reveal" data-en="Who this is for" data-kr="누구를 위한 것인가">Who this is for</span>
+      <h2 class="reveal" data-en="AI that reaches the last mile." data-kr="가장 먼 곳까지 닿는 AI.">AI that reaches the last mile.</h2>
+      <div class="cols">
+        <div class="col reveal">
+          <span class="tick"></span>
+          <h3 data-en="Developing nations" data-kr="개발도상국">Developing nations</h3>
+          <p data-en="AI that runs on the hardware a country already owns — no data sent abroad, nothing rented, no permission needed." data-kr="이미 보유한 장비에서 그대로 돌아가는 AI입니다. 데이터를 국외로 보낼 일도, 무언가를 빌릴 일도, 누군가의 허락을 받을 일도 없습니다.">AI that runs on the hardware a country already owns — no data sent abroad, nothing rented, no permission needed.</p>
         </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem" id="problem">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label" data-en="The Opportunity" data-kr="기회">The Opportunity</div>
-                <h2 class="section-title" data-en="AI Access for All 8 Billion People" data-kr="80억 모든 인류를 위한 AI">
-                    AI Access for All 8 Billion People
-                </h2>
-                <p class="section-subtitle"
-                   data-en="Everyone deserves AI, regardless of their infrastructure or location."
-                   data-kr="인프라나 위치에 관계없이 모든 사람이 AI를 누릴 수 있게 됩니다.">
-                    Everyone deserves AI, regardless of their infrastructure or location.
-                </p>
-            </div>
+        <div class="col reveal">
+          <span class="tick"></span>
+          <h3 data-en="Communities offline" data-kr="연결되지 않은 지역">Communities offline</h3>
+          <p data-en="Where the network is thin or absent, it still works — fully on the device, in the local language, for the clinic and the classroom alike." data-kr="네트워크가 약하거나 아예 없는 곳에서도 작동합니다. 오롯이 기기 안에서, 그 지역의 언어로. 진료소에서도 교실에서도 쓸 수 있습니다.">Where the network is thin or absent, it still works — fully on the device, in the local language, for the clinic and the classroom alike.</p>
         </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="solution" id="solution">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label" data-en="The Solution" data-kr="해결책">The Solution</div>
-                <h2 class="section-title" data-en="Making AI Accessible to Everyone" data-kr="모든 사람이 AI를 사용해 더 나은 세상을 향해 도약합니다">
-                    Making AI Accessible to Everyone
-                </h2>
-                <p class="section-subtitle"
-                   data-en="Top-tier AI performance without expensive infrastructure."
-                   data-kr="값비싼 인프라 없이도 최고 수준의 AI 성능을 구현합니다.">
-                    Top-tier AI performance without expensive infrastructure.
-                </p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">💻</div>
-                    <h3 data-en="Any Device" data-kr="모든 기기">Any Device</h3>
-                    <p data-en="Runs on 10-year-old laptops, smartphones, even Raspberry Pi. No GPU needed."
-                       data-kr="10년 된 노트북, 스마트폰, 라즈베리파이에서도 작동. GPU 불필요.">
-                        Runs on 10-year-old laptops, smartphones, even Raspberry Pi. No GPU needed.
-                    </p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🌍</div>
-                    <h3 data-en="140 Languages" data-kr="140개 언어">140 Languages</h3>
-                    <p data-en="From English to Zulu. Every human can use AI in their native language."
-                       data-kr="영어부터 한국어, 줄루어까지. 모든 사람이 모국어로 AI를 사용할 수 있습니다.">
-                        From English to Zulu. Every human can use AI in their native language.
-                    </p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">📡</div>
-                    <h3 data-en="100% Offline" data-kr="100% 오프라인">100% Offline</h3>
-                    <p data-en="Works without internet. Perfect for remote areas, secure facilities, anywhere."
-                       data-kr="인터넷 없이 작동. 원격 지역, 보안 시설, 어디서나 완벽합니다.">
-                        Works without internet. Perfect for remote areas, secure facilities, anywhere.
-                    </p>
-                </div>
-            </div>
+        <div class="col reveal">
+          <span class="tick"></span>
+          <h3 data-en="Public &amp; multilateral partners" data-kr="공공·다자기구">Public &amp; multilateral partners</h3>
+          <p data-en="For those who work for the public good — ministries, development banks, foundations, and the agencies behind them." data-kr="공공을 위해 일하는 곳을 위해. 정부 부처, 개발은행, 재단, 그리고 이들과 함께하는 기관까지.">For those who work for the public good — ministries, development banks, foundations, and the agencies behind them.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Vision Section -->
-    <section class="vision" id="vision">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-label" data-en="The Vision" data-kr="비전">The Vision</div>
-                <h2 class="section-title" data-en="Imagine This World" data-kr="이런 세상을 상상해보세요">
-                    Imagine This World
-                </h2>
-                <p class="section-subtitle"
-                   data-en="When every human has AI access."
-                   data-kr="모든 인류가 AI에 접근할 수 있을 때.">
-                    When every human has AI access.
-                </p>
-            </div>
-
-            <div class="vision-grid">
-                <div class="vision-item">
-                    <h4 data-en="African Students" data-kr="아프리카 학생들">African Students</h4>
-                    <p data-en="Every child with a personal AI tutor, in Swahili, Yoruba, or Amharic."
-                       data-kr="스와힐리어, 요루바어, 암하라어로 개인 AI 튜터를 가진 모든 아이들.">
-                        Every child with a personal AI tutor, in Swahili, Yoruba, or Amharic.
-                    </p>
-                </div>
-                <div class="vision-item">
-                    <h4 data-en="Rural Farmers" data-kr="농촌 농부들">Rural Farmers</h4>
-                    <p data-en="Agricultural AI advisors helping optimize crops, predict weather, increase yields."
-                       data-kr="작물 최적화, 날씨 예측, 수확량 증대를 돕는 농업 AI 어드바이저.">
-                        Agricultural AI advisors helping optimize crops, predict weather, increase yields.
-                    </p>
-                </div>
-                <div class="vision-item">
-                    <h4 data-en="Remote Doctors" data-kr="원격지 의사들">Remote Doctors</h4>
-                    <p data-en="Medical AI assistants in villages, providing diagnostic support offline."
-                       data-kr="마을에서 오프라인으로 진단 지원을 제공하는 의료 AI 어시스턴트.">
-                        Medical AI assistants in villages, providing diagnostic support offline.
-                    </p>
-                </div>
-                <div class="vision-item">
-                    <h4 data-en="Small Governments" data-kr="작은 정부들">Small Governments</h4>
-                    <p data-en="Pacific island nations with the same AI capabilities as superpowers."
-                       data-kr="선진국과 동일한 AI 능력을 가진 태평양 섬나라들.">
-                        Pacific island nations with the same AI capabilities as superpowers.
-                    </p>
-                </div>
-            </div>
+  <!-- Principles -->
+  <section class="section panel">
+    <div class="column">
+      <span class="eyebrow reveal" data-en="Our principles" data-kr="우리의 원칙">Our principles</span>
+      <h2 class="reveal" data-en="Three things we hold to." data-kr="우리가 지키는 세 가지.">Three things we hold to.</h2>
+      <div class="principles">
+        <div class="principle reveal">
+          <div class="no">1</div>
+          <div>
+            <h3 data-en="People succeed first" data-kr="사람의 성공이 먼저">People succeed first</h3>
+            <p data-en="Our job is to help people succeed. When growth and that duty pull apart, the person comes first — every time." data-kr="우리가 할 일은 사람을 잘 되게 하는 것입니다. 성장과 이 원칙이 부딪치면, 언제나 사람이 먼저입니다.">Our job is to help people succeed. When growth and that duty pull apart, the person comes first — every time.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Detailed Features Section -->
-    <section class="detailed-features" style="padding: 80px 40px; background: #f8f9fa;">
-        <div class="container">
-            <h2 style="text-align: center; font-size: clamp(28px, 4vw, 42px); margin-bottom: 20px;"
-                data-en="Powerful Features for Every Use Case"
-                data-kr="모든 사용 사례를 위한 강력한 기능">
-                Powerful Features for Every Use Case
-            </h2>
-            <p style="text-align: center; color: #666; font-size: 18px; margin-bottom: 60px;"
-               data-en="MAEUM adapts to your needs, from government to enterprise to personal use"
-               data-kr="MAEUM은 정부, 기업, 개인 사용까지 귀하의 요구에 맞게 조정됩니다">
-                MAEUM adapts to your needs, from government to enterprise to personal use
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-                <!-- Document Processing -->
-                <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                            <span style="font-size: 24px;">📄</span>
-                        </div>
-                        <h3 style="margin: 0;" data-en="Smart Document Processing" data-kr="스마트 문서 처리">Smart Document Processing</h3>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Process millions of documents in seconds" data-kr="수백만 개의 문서를 몇 초 만에 처리">Process millions of documents in seconds</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Extract insights from PDFs, images, handwriting" data-kr="PDF, 이미지, 손글씨에서 인사이트 추출">Extract insights from PDFs, images, handwriting</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Auto-categorize and route documents" data-kr="문서 자동 분류 및 라우팅">Auto-categorize and route documents</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Generate summaries and reports instantly" data-kr="즉시 요약 및 보고서 생성">Generate summaries and reports instantly</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Multilingual Support -->
-                <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                            <span style="font-size: 24px;">🌐</span>
-                        </div>
-                        <h3 style="margin: 0;" data-en="True Multilingual AI" data-kr="진정한 다국어 AI">True Multilingual AI</h3>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Support for 100+ languages and dialects" data-kr="100개 이상의 언어 및 방언 지원">Support for 100+ languages and dialects</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Real-time translation and interpretation" data-kr="실시간 번역 및 통역">Real-time translation and interpretation</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Cultural context awareness" data-kr="문화적 맥락 인식">Cultural context awareness</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Local dialect and slang understanding" data-kr="지역 방언 및 속어 이해">Local dialect and slang understanding</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Security & Privacy -->
-                <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #fa709a, #fee140); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                            <span style="font-size: 24px;">🔒</span>
-                        </div>
-                        <h3 style="margin: 0;" data-en="Enterprise Security" data-kr="엔터프라이즈 보안">Enterprise Security</h3>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="100% on-premise, air-gapped deployment" data-kr="100% 온프레미스, 에어갭 배포">100% on-premise, air-gapped deployment</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="End-to-end encryption" data-kr="종단 간 암호화">End-to-end encryption</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Compliance with GDPR, HIPAA, SOC2" data-kr="GDPR, HIPAA, SOC2 준수">Compliance with GDPR, HIPAA, SOC2</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Role-based access control" data-kr="역할 기반 액세스 제어">Role-based access control</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Integration -->
-                <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                            <span style="font-size: 24px;">🔗</span>
-                        </div>
-                        <h3 style="margin: 0;" data-en="Seamless Integration" data-kr="원활한 통합">Seamless Integration</h3>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="REST API for any platform" data-kr="모든 플랫폼을 위한 REST API">REST API for any platform</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Plug into existing workflows" data-kr="기존 워크플로우에 플러그인">Plug into existing workflows</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Pre-built connectors for popular tools" data-kr="인기 있는 도구용 사전 구축 커넥터">Pre-built connectors for popular tools</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Custom integration support" data-kr="사용자 정의 통합 지원">Custom integration support</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Analytics -->
-                <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #43e97b, #38f9d7); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                            <span style="font-size: 24px;">📊</span>
-                        </div>
-                        <h3 style="margin: 0;" data-en="Advanced Analytics" data-kr="고급 분석">Advanced Analytics</h3>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Real-time performance metrics" data-kr="실시간 성능 메트릭">Real-time performance metrics</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Usage patterns and insights" data-kr="사용 패턴 및 인사이트">Usage patterns and insights</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Predictive analytics" data-kr="예측 분석">Predictive analytics</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Custom reporting dashboards" data-kr="사용자 정의 보고 대시보드">Custom reporting dashboards</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Scalability -->
-                <div style="background: white; border-radius: 16px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f97316, #eab308); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                            <span style="font-size: 24px;">🚀</span>
-                        </div>
-                        <h3 style="margin: 0;" data-en="Infinite Scalability" data-kr="무한 확장성">Infinite Scalability</h3>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="From 1 to 1 billion users" data-kr="1명에서 10억 명의 사용자까지">From 1 to 1 billion users</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Auto-scaling infrastructure" data-kr="자동 확장 인프라">Auto-scaling infrastructure</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="Load balancing and redundancy" data-kr="로드 밸런싱 및 이중화">Load balancing and redundancy</span>
-                        </li>
-                        <li style="padding: 8px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4ade80; margin-right: 10px;">✓</span>
-                            <span data-en="99.99% uptime guarantee" data-kr="99.99% 가동 시간 보장">99.99% uptime guarantee</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <div class="principle reveal">
+          <div class="no">2</div>
+          <div>
+            <h3 data-en="On-device by default" data-kr="온디바이스가 기본">On-device by default</h3>
+            <p data-en="Your data, your computing, your decisions — kept in your own hands. Running on the device is the starting point, not an add-on." data-kr="데이터도, 연산도, 결정도 사용자 손 안에 둡니다. 기기 안에서 돌아가는 것이 기본이지, 나중에 덧붙이는 기능이 아닙니다.">Your data, your computing, your decisions — kept in your own hands. Running on the device is the starting point, not an add-on.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Expected Impact Section -->
-    <section class="expected-impact" style="padding: 80px 40px; background: white;">
-        <div class="container">
-            <h2 style="text-align: center; font-size: clamp(28px, 4vw, 42px); margin-bottom: 20px;"
-                data-en="Expected Impact"
-                data-kr="예상 임팩트">
-                Expected Impact
-            </h2>
-            <p style="text-align: center; color: #666; font-size: 18px; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;"
-               data-en="How MAEUM will transform governments and organizations"
-               data-kr="MAEUM이 정부와 조직을 어떻게 변화시킬 것인가">
-                How MAEUM will transform governments and organizations
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-                <!-- Healthcare Impact -->
-                <div style="background: #f8f9fa; border-radius: 16px; padding: 30px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #f093fb, #f5576c);"></div>
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <span style="font-size: 36px; margin-right: 15px;">🏥</span>
-                        <div>
-                            <h3 style="margin: 0; font-size: 20px;" data-en="For Healthcare" data-kr="의료를 위한">For Healthcare</h3>
-                            <p style="margin: 0; color: #666; font-size: 14px;" data-en="Accessible AI Diagnostics" data-kr="접근 가능한 AI 진단">Accessible AI Diagnostics</p>
-                        </div>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #f093fb; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Enable AI diagnostics in areas without internet" data-kr="인터넷이 없는 지역에서 AI 진단 가능">Enable AI diagnostics in areas without internet</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #f093fb; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Support rural health workers with instant AI guidance" data-kr="즉각적인 AI 지원으로 농촌 의료진 지원">Support rural health workers with instant AI guidance</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #f093fb; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Improve diagnosis accuracy by 70%+" data-kr="진단 정확도 70% 이상 개선">Improve diagnosis accuracy by 70%+</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #f093fb; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Zero cloud costs for medical data" data-kr="의료 데이터 클라우드 비용 제로">Zero cloud costs for medical data</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Government Impact -->
-                <div style="background: #f8f9fa; border-radius: 16px; padding: 30px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <span style="font-size: 36px; margin-right: 15px;">🏛️</span>
-                        <div>
-                            <h3 style="margin: 0; font-size: 20px;" data-en="For Governments" data-kr="정부를 위한">For Governments</h3>
-                            <p style="margin: 0; color: #666; font-size: 14px;" data-en="Public Service Innovation" data-kr="공공 서비스 혁신">Public Service Innovation</p>
-                        </div>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #667eea; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Process millions of documents in minutes instead of months" data-kr="수개월이 아닌 몇 분 만에 수백만 건의 문서 처리">Process millions of documents in minutes instead of months</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #667eea; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Provide 24/7 citizen services in all local languages" data-kr="모든 현지 언어로 24/7 시민 서비스 제공">Provide 24/7 citizen services in all local languages</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #667eea; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Reduce administrative costs by up to 80%" data-kr="행정 비용 최대 80% 절감">Reduce administrative costs by up to 80%</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #667eea; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Maintain 100% data sovereignty" data-kr="100% 데이터 주권 유지">Maintain 100% data sovereignty</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Enterprise Impact -->
-                <div style="background: #f8f9fa; border-radius: 16px; padding: 30px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, #4facfe, #00f2fe);"></div>
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <span style="font-size: 36px; margin-right: 15px;">🏭</span>
-                        <div>
-                            <h3 style="margin: 0; font-size: 20px;" data-en="For Enterprises" data-kr="기업을 위한">For Enterprises</h3>
-                            <p style="margin: 0; color: #666; font-size: 14px;" data-en="Operational Excellence" data-kr="운영 우수성">Operational Excellence</p>
-                        </div>
-                    </div>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4facfe; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Process 10M+ documents monthly on existing hardware" data-kr="기존 하드웨어에서 월 1천만 개 이상 문서 처리">Process 10M+ documents monthly on existing hardware</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4facfe; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Eliminate cloud dependency and recurring costs" data-kr="클라우드 종속성 및 반복 비용 제거">Eliminate cloud dependency and recurring costs</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4facfe; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Achieve 80% cost reduction in operations" data-kr="운영 비용 80% 절감 달성">Achieve 80% cost reduction in operations</span>
-                        </li>
-                        <li style="padding: 10px 0; display: flex; align-items: flex-start;">
-                            <span style="color: #4facfe; margin-right: 10px; font-weight: bold;">→</span>
-                            <span data-en="Scale from 1 to 10,000+ users instantly" data-kr="1명에서 10,000명 이상 사용자로 즉시 확장">Scale from 1 to 10,000+ users instantly</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
+        <div class="principle reveal">
+          <div class="no">3</div>
+          <div>
+            <h3 data-en="No gatekeepers" data-kr="문지기 없음">No gatekeepers</h3>
+            <p data-en="No middleman between a person and their tools. We take the gate away — we don't become one." data-kr="사람과 도구 사이에 중간 상인을 두지 않습니다. 문을 없애는 것이 우리 일이지, 우리가 새로운 문이 되지 않습니다.">No middleman between a person and their tools. We take the gate away — we don't become one.</p>
+          </div>
         </div>
-    </section>
+      </div>
+      <p class="reveal" style="margin-top:36px">
+        <a class="link" href="/principles/" data-en="See all our principles →" data-kr="원칙 전체 보기 →">See all our principles →</a>
+      </p>
+    </div>
+  </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section" style="padding: 80px 40px; background: #f8f9fa;">
-        <div class="container" style="max-width: 900px; margin: 0 auto;">
-            <h2 style="text-align: center; font-size: clamp(28px, 4vw, 42px); margin-bottom: 20px;"
-                data-en="Frequently Asked Questions"
-                data-kr="자주 묻는 질문">
-                Frequently Asked Questions
-            </h2>
-            <p style="text-align: center; color: #666; font-size: 18px; margin-bottom: 60px;"
-               data-en="Everything you need to know about MAEUM"
-               data-kr="MAEUM에 대해 알아야 할 모든 것">
-                Everything you need to know about MAEUM
-            </p>
+  <!-- How it works / why it sits apart -->
+  <section class="section" id="how">
+    <div class="column">
+      <span class="eyebrow reveal" data-en="How this is set up" data-kr="운영 방식">How this is set up</span>
+      <h2 class="reveal" data-en="Why the mission sits apart from the company." data-kr="미션을 회사와 따로 두는 이유.">Why the mission sits apart from the company.</h2>
+      <p class="reveal" style="margin-top:22px" data-en="MAEUM's technology is built with an operating company, maeum.io. But the name MAEUM and the promise behind it are kept apart from it — so that investment can grow the business without buying the direction. Money can shape the company. It can't buy what MAEUM is for." data-kr="마음의 기술은 운영 회사인 maeum.io와 함께 만듭니다. 다만 '마음'이라는 이름과 그 약속은 회사와 따로 둡니다. 투자가 사업은 키울 수 있어도, 나아갈 방향까지 사들이지는 못하도록 하기 위해서입니다. 돈은 회사를 키웁니다. 그러나 마음이 무엇을 위한 것인지는 바꾸지 못합니다.">MAEUM's technology is built with an operating company, maeum.io. But the name MAEUM and the promise behind it are kept apart from it — so that investment can grow the business without buying the direction. Money can shape the company. It can't buy what MAEUM is for.</p>
+      <p class="note reveal" style="margin-top:34px" data-en="Money comes and goes. What we're for doesn't." data-kr="돈은 오고 갑니다. 우리가 지키려는 것은 그대로입니다.">Money comes and goes. What we're for doesn't.</p>
+      <p class="muted reveal" style="margin-top:34px; font-size:0.95rem" data-en="MAEUM is early. This page says plainly what we're for — and invites the people who share it." data-kr="마음은 아직 초기 단계입니다. 이 페이지는 우리가 무엇을 지향하는지 솔직하게 밝히고, 그 뜻에 공감하는 분들을 초대하는 자리입니다.">MAEUM is early. This page says plainly what we're for — and invites the people who share it.</p>
+    </div>
+  </section>
 
-            <div style="space-y: 20px;">
-                <!-- FAQ Item 1 -->
-                <details style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <summary style="font-weight: 600; font-size: 18px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        <span data-en="What makes MAEUM unique?" data-kr="MAEUM의 특별한 점은 무엇인가요?">What makes MAEUM unique?</span>
-                        <span style="font-size: 24px;">+</span>
-                    </summary>
-                    <p style="margin-top: 15px; color: #666; line-height: 1.6;"
-                       data-en="MAEUM runs entirely offline on your own hardware - no internet needed. Your data never leaves your premises. It works on basic computers that cost under $100, making AI accessible to billions who can't afford expensive hardware or cloud subscriptions."
-                       data-kr="MAEUM은 인터넷 연결 없이 사용자의 하드웨어에서 완전히 오프라인으로 실행됩니다. 데이터가 절대 외부로 나가지 않습니다. $100 미만의 기본 컴퓨터에서 작동하여 비싼 하드웨어나 클라우드 구독을 감당할 수 없는 수십억 명에게 AI를 제공합니다.">
-                        MAEUM runs entirely offline on your own hardware - no internet needed. Your data never leaves your premises. It works on basic computers that cost under $100, making AI accessible to billions who can't afford expensive hardware or cloud subscriptions.
-                    </p>
-                </details>
+  <!-- Invitation -->
+  <section class="section panel">
+    <div class="column statement reveal">
+      <p class="big" data-en="If you work for the public good,<br>let's talk." data-kr="공공을 위해 일하고 계신가요?<br>이야기 나누고 싶습니다.">If you work for the public good,<br>let's talk.</p>
+      <p class="muted" style="margin-top:26px" data-en="Governments, development banks, foundations, and multilateral partners — from ITU to the field." data-kr="정부, 개발은행, 재단, 다자기구까지. ITU에서 현장까지 함께합니다.">Governments, development banks, foundations, and multilateral partners — from ITU to the field.</p>
+      <div class="actions" style="margin-top:40px">
+        <a class="btn btn-primary" href="/contact/" data-en="Get in touch" data-kr="문의하기">Get in touch</a>
+        <a class="btn btn-ghost" href="/principles/" data-en="Our principles" data-kr="우리의 원칙">Our principles</a>
+      </div>
+    </div>
+  </section>
 
-                <!-- FAQ Item 2 -->
-                <details style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <summary style="font-weight: 600; font-size: 18px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        <span data-en="What hardware do I need to run MAEUM?" data-kr="MAEUM을 실행하려면 어떤 하드웨어가 필요한가요?">What hardware do I need to run MAEUM?</span>
-                        <span style="font-size: 24px;">+</span>
-                    </summary>
-                    <p style="margin-top: 15px; color: #666; line-height: 1.6;"
-                       data-en="MAEUM can run on almost any device: a 10-year-old laptop, a $35 Raspberry Pi, even smartphones. No GPU required. If it can run a web browser, it can probably run MAEUM. Minimum requirements: 2GB RAM, 10GB storage."
-                       data-kr="MAEUM은 거의 모든 장치에서 실행할 수 있습니다: 10년 된 노트북, $35 라즈베리 파이, 심지어 스마트폰에서도. GPU가 필요하지 않습니다. 웹 브라우저를 실행할 수 있다면 MAEUM도 실행할 수 있습니다. 최소 요구 사항: 2GB RAM, 10GB 저장 공간.">
-                        MAEUM can run on almost any device: a 10-year-old laptop, a $35 Raspberry Pi, even smartphones. No GPU required. If it can run a web browser, it can probably run MAEUM. Minimum requirements: 2GB RAM, 10GB storage.
-                    </p>
-                </details>
-
-                <!-- FAQ Item 3 -->
-                <details style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <summary style="font-weight: 600; font-size: 18px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        <span data-en="Is my data really private?" data-kr="내 데이터가 정말 비공개인가요?">Is my data really private?</span>
-                        <span style="font-size: 24px;">+</span>
-                    </summary>
-                    <p style="margin-top: 15px; color: #666; line-height: 1.6;"
-                       data-en="Yes, 100%. MAEUM runs entirely on your device or on-premise servers. No data is sent to the cloud, no telemetry, no analytics. You have complete control. It can even run in air-gapped environments with no internet connection at all."
-                       data-kr="네, 100% 비공개입니다. MAEUM은 전적으로 사용자의 장치나 온프레미스 서버에서 실행됩니다. 클라우드로 전송되는 데이터, 원격 측정, 분석이 없습니다. 완전한 제어권을 가집니다. 인터넷 연결이 전혀 없는 에어갭 환경에서도 실행할 수 있습니다.">
-                        Yes, 100%. MAEUM runs entirely on your device or on-premise servers. No data is sent to the cloud, no telemetry, no analytics. You have complete control. It can even run in air-gapped environments with no internet connection at all.
-                    </p>
-                </details>
-
-                <!-- FAQ Item 4 -->
-                <details style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <summary style="font-weight: 600; font-size: 18px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        <span data-en="How fast is MAEUM?" data-kr="MAEUM은 얼마나 빠른가요?">How fast is MAEUM?</span>
-                        <span style="font-size: 24px;">+</span>
-                    </summary>
-                    <p style="margin-top: 15px; color: #666; line-height: 1.6;"
-                       data-en="MAEUM is optimized for efficiency. While it may not match the raw speed of data center GPUs, it's fast enough for real-time conversation and document processing. Plus, there's no network latency since everything runs locally. Most users find it faster than waiting for cloud API responses."
-                       data-kr="MAEUM은 효율성을 위해 최적화되었습니다. 데이터 센터 GPU의 원시 속도와 일치하지 않을 수 있지만 실시간 대화 및 문서 처리에는 충분히 빠릅니다. 또한 모든 것이 로컬에서 실행되므로 네트워크 지연이 없습니다. 대부분의 사용자는 클라우드 API 응답을 기다리는 것보다 빠르다고 생각합니다.">
-                        MAEUM is optimized for efficiency. While it may not match the raw speed of data center GPUs, it's fast enough for real-time conversation and document processing. Plus, there's no network latency since everything runs locally. Most users find it faster than waiting for cloud API responses.
-                    </p>
-                </details>
-
-                <!-- FAQ Item 5 -->
-                <details style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <summary style="font-weight: 600; font-size: 18px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        <span data-en="Can MAEUM handle my language?" data-kr="MAEUM이 내 언어를 처리할 수 있나요?">Can MAEUM handle my language?</span>
-                        <span style="font-size: 24px;">+</span>
-                    </summary>
-                    <p style="margin-top: 15px; color: #666; line-height: 1.6;"
-                       data-en="Yes! MAEUM supports over 100 languages including regional dialects and minority languages. From Swahili to Tamil, from Korean to Quechua, MAEUM speaks your language with cultural understanding."
-                       data-kr="네! MAEUM은 지역 방언과 소수 언어를 포함하여 100개 이상의 언어를 지원합니다. 스와힐리어에서 타밀어, 한국어에서 케추아어까지, MAEUM은 문화적 이해와 함께 여러분의 언어를 구사합니다.">
-                        Yes! MAEUM supports over 100 languages including regional dialects and minority languages. From Swahili to Tamil, from Korean to Quechua, MAEUM speaks your language with cultural understanding.
-                    </p>
-                </details>
-
-                <!-- FAQ Item 6 -->
-                <details style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <summary style="font-weight: 600; font-size: 18px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-                        <span data-en="What kind of support do you provide?" data-kr="어떤 종류의 지원을 제공하나요?">What kind of support do you provide?</span>
-                        <span style="font-size: 24px;">+</span>
-                    </summary>
-                    <p style="margin-top: 15px; color: #666; line-height: 1.6;"
-                       data-en="We provide comprehensive support based on your plan: documentation and community support for startups, priority email/chat support for enterprises, and 24/7 dedicated support teams for government deployments. We also offer training, custom integration, and on-site assistance."
-                       data-kr="플랜에 따라 포괄적인 지원을 제공합니다: 스타트업을 위한 문서 및 커뮤니티 지원, 기업을 위한 우선 이메일/채팅 지원, 정부 배포를 위한 24/7 전담 지원팀. 또한 교육, 사용자 정의 통합 및 현장 지원도 제공합니다.">
-                        We provide comprehensive support based on your plan: documentation and community support for startups, priority email/chat support for enterprises, and 24/7 dedicated support teams for government deployments. We also offer training, custom integration, and on-site assistance.
-                    </p>
-                </details>
-            </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <p class="lede" data-en="MAEUM — keeping on-device AI within reach of the people who need it most." data-kr="마음 — 꼭 필요한 사람에게 닿는 온디바이스 AI.">MAEUM — keeping on-device AI within reach of the people who need it most.</p>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 data-en="What We've revealed so far is just 0.1%" data-kr="우리는 아직 0.1%도 보여주지 않았습니다">
-                What We've revealed so far is just 0.1%
-            </h2>
-            <p data-en="The rest is for building a more humane, beautiful world." data-kr="더 인간적이고 아름다운 세상을 만드는 AI 여정에 함께하세요.">
-                The rest is for building a more humane, beautiful world.
-            </p>
-
-            <div class="cta-buttons">
-                <button class="btn btn-white" onclick="openCalendly()"
-                        data-en="Deploy for Your Nation" data-kr="더 나은 세상을 위해 함께하기">
-                    Deploy for Your Nation
-                </button>
-                <button class="btn btn-outline" onclick="joinMovement()"
-                        data-en="Join the Movement" data-kr="연락받기">
-                    Join the Movement
-                </button>
-            </div>
+        <div>
+          <h4 data-en="About" data-kr="소개">About</h4>
+          <a href="/principles/" data-en="Our principles" data-kr="우리의 원칙">Our principles</a>
+          <a href="#how" data-en="Why it sits apart" data-kr="따로 두는 이유">Why it sits apart</a>
+          <a href="#serve" data-en="Who this is for" data-kr="누구를 위한 것인가">Who this is for</a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="#" onclick="window.location.href='mailto:' + CONFIG.CONTACT_EMAIL; return false;">Contact</a>
-            <a href="#vision" data-en="Vision" data-kr="비전">Vision</a>
-            <a href="javascript:void(0)" onclick="openPressKit()" data-en="Press Kit" data-kr="프레스 키트">Press Kit</a>
-            <a href="javascript:void(0)" onclick="openInvestors()" data-en="Investors" data-kr="투자자">Investors</a>
+        <div>
+          <h4 data-en="Connect" data-kr="연결">Connect</h4>
+          <a href="/contact/" data-en="Contact" data-kr="문의">Contact</a>
+          <a href="mailto:support@maeum.io">support@maeum.io</a>
+          <a href="https://maeum.io" data-en="Operating company · maeum.io" data-kr="운영 회사 · maeum.io">Operating company · maeum.io</a>
         </div>
-        <p style="color: rgba(255, 255, 255, 0.5);"
-           data-en="© 2025 MAEUM. Building the future where every human has AI access."
-           data-kr="© 2025 MAEUM. 모든 인류가 AI의 혜택을 누릴 수 있도록, 미래를 현실로 만듭니다.">
-            © 2025 MAEUM. Building the future where every human has AI access.
-        </p>
-    </footer>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MAEUM · <span data-en="A public-interest project" data-kr="공익 프로젝트">A public-interest project</span></span>
+        <span data-en="Technology by maeum.io · Republic of Korea" data-kr="기술 제공 maeum.io · 대한민국">Technology by maeum.io · Republic of Korea</span>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-        // Mobile menu functionality with improved UX
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.querySelector('.menu-toggle');
-            const isOpen = menu.classList.contains('active');
-
-            if (isOpen) {
-                closeMobileMenu();
-            } else {
-                menu.classList.add('active');
-                toggle.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scroll when menu is open
-            }
-        }
-
-        function closeMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.querySelector('.menu-toggle');
-            menu.classList.remove('active');
-            toggle.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scroll
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.querySelector('.menu-toggle');
-            const isClickInsideMenu = menu.contains(event.target);
-            const isClickOnToggle = toggle.contains(event.target);
-
-            if (!isClickInsideMenu && !isClickOnToggle && menu.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeMobileMenu();
-            }
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                closeMobileMenu();
-            }
-        });
-
-        // Update language button states
-        function updateMobileLangButtons() {
-            const currentLang = localStorage.getItem('selectedLanguage') || 'en';
-            document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
-                if (btn.getAttribute('data-lang') === currentLang) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-
-        // Call on page load and when language changes
-        document.addEventListener('DOMContentLoaded', updateMobileLangButtons);
-        window.addEventListener('storage', updateMobileLangButtons);
-
-        // The language system is now handled by language.js
-        // MAEUM_LANG.init() is automatically called when the page loads
-
-        // Navbar scroll effect is now handled below with debouncing
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease both';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // CTA Functions
-        function openCalendly() {
-            // Redirect to contact page
-            window.location.href = '/contact';
-        }
-
-        function joinMovement() {
-            // Formspree를 사용한 간단한 이메일 수집
-            const currentLang = MAEUM_LANG.getCurrentLanguage();
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10000;
-                padding: 20px;
-                animation: fadeIn 0.3s ease;
-            `;
-
-            const modalContent = `
-                <div style="
-                    background: white;
-                    border-radius: 16px;
-                    padding: 40px;
-                    max-width: 500px;
-                    width: 100%;
-                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-                    animation: slideUp 0.3s ease;
-                    position: relative;
-                ">
-                    <button class="modal-close-btn" style="
-                        position: absolute;
-                        top: 20px;
-                        right: 20px;
-                        background: none;
-                        border: none;
-                        font-size: 28px;
-                        cursor: pointer;
-                        color: #999;
-                        padding: 0;
-                        width: 30px;
-                        height: 30px;
-                        line-height: 1;
-                    ">×</button>
-
-                    <h2 style="
-                        margin: 0 0 12px 0;
-                        font-size: 28px;
-                        color: #000;
-                    ">
-                        ${currentLang === 'kr' ? 'AI 혁신에 참여하세요' : 'Join the AI Innovation'}
-                    </h2>
-                    <p style="
-                        margin-bottom: 30px;
-                        color: #666;
-                        font-size: 16px;
-                    ">
-                        ${currentLang === 'kr'
-                            ? '귀하의 지역에서 MAEUM이 출시되면 가장 먼저 알려드립니다.'
-                            : 'Be the first to know when MAEUM launches in your region.'}
-                    </p>
-
-                    <form action="${CONFIG.FORMSPREE_URL}" method="POST" id="emailForm">
-                        <!-- Email Field (Required) -->
-                        <input type="email"
-                               name="email"
-                               required
-                               placeholder="${currentLang === 'kr' ? '이메일 주소' : 'Email address'}"
-                               style="
-                                   width: 100%;
-                                   padding: 14px 18px;
-                                   border: 2px solid #e0e0e0;
-                                   border-radius: 10px;
-                                   font-size: 16px;
-                                   margin-bottom: 15px;
-                                   box-sizing: border-box;
-                                   transition: border-color 0.3s;
-                               "
-                               onfocus="this.style.borderColor='#0066FF'"
-                               onblur="this.style.borderColor='#e0e0e0'">
-
-                        <!-- Name Field (Optional) -->
-                        <input type="text"
-                               name="name"
-                               placeholder="${currentLang === 'kr' ? '이름 (선택)' : 'Full name (optional)'}"
-                               style="
-                                   width: 100%;
-                                   padding: 14px 18px;
-                                   border: 2px solid #e0e0e0;
-                                   border-radius: 10px;
-                                   font-size: 16px;
-                                   margin-bottom: 15px;
-                                   box-sizing: border-box;
-                                   transition: border-color 0.3s;
-                               "
-                               onfocus="this.style.borderColor='#0066FF'"
-                               onblur="this.style.borderColor='#e0e0e0'">
-
-                        <!-- Organization Field (Optional) -->
-                        <input type="text"
-                               name="organization"
-                               placeholder="${currentLang === 'kr' ? '조직/회사 (선택)' : 'Organization (optional)'}"
-                               style="
-                                   width: 100%;
-                                   padding: 14px 18px;
-                                   border: 2px solid #e0e0e0;
-                                   border-radius: 10px;
-                                   font-size: 16px;
-                                   margin-bottom: 15px;
-                                   box-sizing: border-box;
-                                   transition: border-color 0.3s;
-                               "
-                               onfocus="this.style.borderColor='#0066FF'"
-                               onblur="this.style.borderColor='#e0e0e0'">
-
-                        <!-- Country Dropdown (Required) -->
-                        <select name="country"
-                                required
-                                style="
-                                    width: 100%;
-                                    padding: 14px 18px;
-                                    border: 2px solid #e0e0e0;
-                                    border-radius: 10px;
-                                    font-size: 16px;
-                                    margin-bottom: 20px;
-                                    box-sizing: border-box;
-                                    background: white;
-                                    cursor: pointer;
-                                    transition: border-color 0.3s;
-                                "
-                                onfocus="this.style.borderColor='#0066FF'"
-                                onblur="this.style.borderColor='#e0e0e0'">
-                            <option value="">${currentLang === 'kr' ? '국가/지역 선택' : 'Select country/region'}</option>
-                            <option value="KR">${currentLang === 'kr' ? '한국' : 'South Korea'}</option>
-                            <option value="US">United States</option>
-                            <option value="JP">${currentLang === 'kr' ? '일본' : 'Japan'}</option>
-                            <option value="CN">${currentLang === 'kr' ? '중국' : 'China'}</option>
-                            <option value="IN">India</option>
-                            <option value="ID">Indonesia</option>
-                            <option value="PH">Philippines</option>
-                            <option value="VN">Vietnam</option>
-                            <option value="TH">Thailand</option>
-                            <option value="MY">Malaysia</option>
-                            <option value="SG">Singapore</option>
-                            <option value="Other">${currentLang === 'kr' ? '기타' : 'Other'}</option>
-                        </select>
-
-                        <!-- Hidden Fields -->
-                        <input type="hidden" name="_subject" value="New MAEUM Waitlist Signup">
-                        <input type="hidden" name="_next" value="${window.location.href}?thanks=true">
-                        <input type="hidden" name="_template" value="table">
-
-                        <!-- Submit Button -->
-                        <button type="submit" style="
-                            width: 100%;
-                            padding: 16px 24px;
-                            background: linear-gradient(135deg, #0066FF, #0052CC);
-                            color: white;
-                            border: none;
-                            border-radius: 10px;
-                            font-size: 16px;
-                            font-weight: 600;
-                            cursor: pointer;
-                            transition: all 0.3s;
-                        "
-                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 30px rgba(0,102,255,0.3)'"
-                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                            ${currentLang === 'kr' ? '참여하기' : 'Join the Movement'}
-                        </button>
-                    </form>
-
-                    <p style="
-                        margin-top: 20px;
-                        font-size: 13px;
-                        color: #999;
-                        text-align: center;
-                    ">
-                        ${currentLang === 'kr'
-                            ? '스팸 메일은 보내지 않습니다. 언제든 구독을 취소할 수 있습니다.'
-                            : 'We respect your privacy. Unsubscribe anytime.'}
-                    </p>
-                </div>
-            `;
-
-            modal.innerHTML = modalContent;
-            document.body.appendChild(modal);
-
-            // Add close button event listener
-            const closeBtn = modal.querySelector('.modal-close-btn');
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    modal.remove();
-                });
-            }
-
-            // Close modal when clicking outside
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.remove();
-                }
-            });
-
-            // Add animation styles if not already present
-            if (!document.getElementById('modalAnimations')) {
-                const style = document.createElement('style');
-                style.id = 'modalAnimations';
-                style.textContent = `
-                    @keyframes fadeIn {
-                        from { opacity: 0; }
-                        to { opacity: 1; }
-                    }
-                    @keyframes slideUp {
-                        from {
-                            transform: translateY(30px);
-                            opacity: 0;
-                        }
-                        to {
-                            transform: translateY(0);
-                            opacity: 1;
-                        }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-
-            // Handle form submission
-            document.getElementById('emailForm').addEventListener('submit', function(e) {
-                // Form will submit normally to Formspree
-                // Optional: Add loading state
-                e.target.querySelector('button[type="submit"]').textContent =
-                    currentLang === 'kr' ? '처리 중...' : 'Processing...';
-            });
-        }
-
-        function openPressKit() {
-            const currentLang = MAEUM_LANG.getCurrentLanguage();
-            const message = currentLang === 'kr'
-                ? `프레스 키트: 데모, 창업자 바이오, 비전 문서 포함\n\n연락처: ${CONFIG.PRESS_EMAIL}`
-                : `Press Kit: Contains demos, founder bio, and vision documents\n\nContact: ${CONFIG.PRESS_EMAIL}`;
-            alert(message);
-        }
-
-        function openInvestors() {
-            const currentLang = MAEUM_LANG.getCurrentLanguage();
-            const message = currentLang === 'kr'
-                ? `역사를 함께 만들어갈 투자자를 위해:\n\n최소 투자: $10M\n연락처: ${CONFIG.INVESTOR_EMAIL}`
-                : `For investors looking to back history:\n\nMinimum investment: $10M\nContact: ${CONFIG.INVESTOR_EMAIL}`;
-            alert(message);
-        }
-
-        // Number counting animation
-        function animateNumbers() {
-            const stats = document.querySelectorAll('.stat-number');
-            stats.forEach(stat => {
-                const target = stat.innerText;
-                if (target === '140') {
-                    let current = 0;
-                    const increment = 140 / 50;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= 140) {
-                            stat.innerText = '140';
-                            clearInterval(timer);
-                        } else {
-                            stat.innerText = Math.floor(current);
-                        }
-                    }, 30);
-                }
-            });
-        }
-
-        // Trigger animation when page loads
-        window.addEventListener('load', animateNumbers);
-
-        // Additional initialization after DOM loads
-        window.addEventListener('DOMContentLoaded', () => {
-            // Lazy load heavy functions
-            if ('IntersectionObserver' in window) {
-                // Already using IntersectionObserver for animations
-            } else {
-                // Fallback for older browsers
-                document.querySelectorAll('section').forEach(section => {
-                    section.style.animation = 'fadeInUp 0.8s ease both';
-                });
-            }
-
-            // Optimize font loading
-            if ('fonts' in document) {
-                document.fonts.ready.then(() => {
-                    document.body.classList.add('fonts-loaded');
-                });
-            }
-        });
-
-        // Performance optimization: Debounce scroll events
-        let scrollTimeout;
-        const handleScroll = () => {
-            const navbar = document.querySelector('.header');
-            if (navbar) {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            }
-        };
-
-        window.addEventListener('scroll', () => {
-            if (scrollTimeout) clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(handleScroll, 10);
-        }, { passive: true });
-
-        // Add loading="lazy" attribute support check
-        if ('loading' in HTMLImageElement.prototype) {
-            // Browser supports lazy loading
-            console.log('Lazy loading supported');
-        } else {
-            // Implement fallback lazy loading
-            console.log('Lazy loading not supported, using fallback');
-        }
-    </script>
+  <script src="foundation.js"></script>
 </body>
 </html>

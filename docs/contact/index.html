@@ -1,921 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAEUM - Contact Us | Schedule a Meeting</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Get in touch with MAEUM. Schedule a demo, request information about our AI solutions, or explore partnership opportunities.">
-    <meta name="keywords" content="contact MAEUM, AI demo, schedule meeting, MAEUM support, partnership inquiry">
-    <meta name="author" content="MAEUM">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://maeumcompany.com/contact">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://maeumcompany.com/contact/">
-    <meta property="og:title" content="MAEUM - Contact Us">
-    <meta property="og:description" content="Get in touch with MAEUM for AI solutions, demos, and partnerships.">
-    <meta property="og:image" content="https://maeumcompany.com/og-contact.png">
-    <meta property="og:site_name" content="MAEUM">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ko_KR">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maeumcompany.com/contact/">
-    <meta property="twitter:title" content="MAEUM - Contact Us">
-    <meta property="twitter:description" content="Get in touch with MAEUM for AI solutions.">
-    <meta property="twitter:image" content="https://maeumcompany.com/twitter-contact.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Korean Font -->
-    <style>
-        @font-face {
-            font-family: 'NanumSquareNeo';
-            font-weight: 400;
-            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff2') format('woff2');
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'NanumSquareNeo';
-            font-weight: 700;
-            src: url('https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff2') format('woff2');
-            font-display: swap;
-        }
-    </style>
-
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="../css/common.css">
-
-    <!-- Configuration -->
-    <script src="../config.js"></script>
-    <script src="../language.js"></script>
-
-    <style>
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: #FFFFFF;
-            min-height: 100vh;
-        }
-
-        body.kr {
-            font-family: 'NanumSquareNeo', -apple-system, sans-serif;
-        }
-
-        /* Navigation - uses common.css styles with page-specific overrides */
-
-        /* Hero Section */
-        .hero {
-            padding: 140px 40px 60px;
-            background: linear-gradient(135deg, #FAFAFA, #FFFFFF);
-            text-align: center;
-        }
-
-        h1 {
-            font-size: clamp(40px, 6vw, 64px);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Contact Options */
-        .contact-options {
-            padding: 80px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .options-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-
-        .option-card {
-            background: white;
-            border: 1px solid #E0E0E0;
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .option-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-            border-color: #000;
-        }
-
-        .option-icon {
-            width: 64px;
-            height: 64px;
-            background: #F8F8F8;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 24px;
-        }
-
-        .option-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .option-description {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 24px;
-        }
-
-        .option-action {
-            color: #000;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: gap 0.3s;
-        }
-
-        .option-action:hover {
-            gap: 12px;
-        }
-
-        /* Contact Form Section */
-        .contact-form-section {
-            padding: 80px 40px;
-            background: #F8F9FA;
-        }
-
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            padding: 48px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .form-header {
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        .form-title {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .form-subtitle {
-            color: #666;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #333;
-        }
-
-        .form-input,
-        .form-select,
-        .form-textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #E0E0E0;
-            border-radius: 8px;
-            font-size: 16px;
-            font-family: inherit;
-            transition: all 0.3s;
-        }
-
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #000;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .form-submit {
-            background: #000;
-            color: white;
-            padding: 14px 32px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .form-submit:hover {
-            background: #333;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-note {
-            text-align: center;
-            color: #999;
-            font-size: 14px;
-            margin-top: 24px;
-        }
-
-        /* Calendar Section */
-        .calendar-section {
-            padding: 80px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .calendar-container {
-            background: white;
-            border-radius: 16px;
-            padding: 48px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-            margin-top: 32px;
-        }
-
-        .calendar-embed {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        /* Office Locations */
-        .offices {
-            padding: 80px 40px;
-            background: #000;
-            color: white;
-        }
-
-        .offices-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .offices h2 {
-            text-align: center;
-            color: white;
-            margin-bottom: 64px;
-        }
-
-        .offices-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .office-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 32px;
-            transition: all 0.3s;
-        }
-
-        .office-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .office-location {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .office-address {
-            opacity: 0.9;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .office-contact {
-            opacity: 0.8;
-            font-size: 14px;
-        }
-
-        .office-contact a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .office-contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 80px 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 48px;
-        }
-
-        .faq-item {
-            background: white;
-            border: 1px solid #E0E0E0;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        }
-
-        .faq-question {
-            padding: 24px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s;
-        }
-
-        .faq-question:hover {
-            background: #F8F8F8;
-        }
-
-        .faq-arrow {
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-arrow {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 24px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 24px 24px;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background: #FAFAFA;
-            padding: 60px 40px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 48px;
-        }
-
-        .footer-section h4 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #000;
-        }
-
-        .btn-primary {
-            background: #000;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            background: #333;
-            transform: translateY(-1px);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 120px 24px 40px;
-            }
-
-            .form-container {
-                padding: 32px 24px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .options-grid,
-            .offices-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .calendar-embed {
-                height: 400px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Contact — MAEUM" data-kr="문의 — 마음">Contact — MAEUM</title>
+  <meta name="description" content="Get in touch with MAEUM — for governments, development banks, foundations, and multilateral partners working for the public good.">
+  <link rel="canonical" href="https://maeumcompany.com/contact/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="../css/foundation.css">
+  <style>
+    .contact-grid { display:grid; grid-template-columns: 0.9fr 1.1fr; gap:64px; margin-top:24px; }
+    .field { margin-bottom:26px; }
+    .field label { display:block; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--muted); font-weight:600; margin-bottom:10px; }
+    body.lang-kr .field label { letter-spacing:0.02em; font-size:0.82rem; text-transform:none; }
+    .field input, .field textarea {
+      width:100%; background:transparent; border:0; border-bottom:1px solid var(--line);
+      padding:10px 0; font:inherit; color:var(--ink); transition:border-color .25s;
+    }
+    .field textarea { resize:vertical; min-height:120px; }
+    .field input:focus, .field textarea:focus { outline:0; border-color:var(--accent); }
+    .reach { border-top:1px solid var(--line); padding-top:20px; margin-top:20px; }
+    .reach:first-child { margin-top:0; }
+    .reach h3 { font-size:1.05rem; margin-bottom:8px; }
+    .reach p { color:var(--muted); font-size:0.95rem; }
+    @media (max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:44px; } }
+  </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <header class="header">
-        <nav class="nav">
-            <a href="/" class="logo">MAEUM</a>
-            <div class="nav-links">
-                <a href="/studioroom" class="nav-studioroom" data-en="StudioRoom" data-kr="StudioRoom">StudioRoom</a>
-                <a href="/government" class="nav-government" data-en="Government" data-kr="정부">Government</a>
-                <a href="/enterprise" class="nav-enterprise" data-en="Enterprise" data-kr="기업">Enterprise</a>
-                <a href="/about" class="nav-about" data-en="About" data-kr="소개">About</a>
-                <a href="/press" class="nav-press" data-en="Press" data-kr="보도자료">Press</a>
-                <a href="/investors" class="nav-investors" data-en="Investors" data-kr="투자자">Investors</a>
-                <a href="/contact" data-en="Contact" data-kr="연락처" style="background: #0066FF; color: white; padding: 10px 24px; border-radius: 6px;" class="nav-contact active">Contact</a>
-            </div>
-            <button class="menu-toggle" onclick="toggleMobileMenu()">
-                <span class="menu-text" data-en="MENU" data-kr="메뉴">MENU</span>
-                <span class="close-text" data-en="CLOSE" data-kr="닫기">CLOSE</span>
-            </button>
-        </nav>
-    </header>
+<body class="lang-en">
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="/studioroom" data-en="StudioRoom" data-kr="StudioRoom" class="nav-studioroom">StudioRoom</a>
-        <a href="/government" data-en="Government" data-kr="정부" class="nav-government">Government</a>
-        <a href="/enterprise" data-en="Enterprise" data-kr="기업" class="nav-enterprise">Enterprise</a>
-        <a href="/about" data-en="About" data-kr="소개" class="nav-about">About</a>
-        <a href="/press" data-en="Press" data-kr="보도자료" class="nav-press">Press</a>
-        <a href="/investors" data-en="Investors" data-kr="투자자" class="nav-investors">Investors</a>
-        <a href="/contact" data-en="Contact" data-kr="연락처" class="nav-contact">Contact</a>
-
-        <!-- Language Selector for Mobile -->
-        <div class="mobile-lang-selector">
-            <label data-en="Language" data-kr="언어">Language</label>
-            <div class="mobile-lang-buttons">
-                <button class="mobile-lang-btn" onclick="MAEUM_LANG.setLanguage('en')" data-lang="en">English</button>
-                <button class="mobile-lang-btn" onclick="MAEUM_LANG.setLanguage('kr')" data-lang="kr">한국어</button>
-            </div>
-        </div>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <a href="/"><span class="mark">MAEUM</span></a>
+        <span class="kicker" data-en="Public-interest project" data-kr="공익 프로젝트">Public-interest project</span>
+      </div>
+      <nav class="nav">
+        <a class="navlink" href="/principles/" data-en="Principles" data-kr="원칙">Principles</a>
+        <a class="navlink" href="/#how" data-en="How it works" data-kr="운영 방식">How it works</a>
+        <a class="navlink active" href="/contact/" data-en="Contact" data-kr="문의">Contact</a>
+        <span class="lang">
+          <button data-setlang="en">EN</button><span class="sep">/</span><button data-setlang="kr">KR</button>
+        </span>
+      </nav>
+      <button class="menu-btn" data-en="Menu" data-kr="메뉴">Menu</button>
     </div>
+    <div class="mobile-nav">
+      <a href="/principles/" data-en="Principles" data-kr="원칙">Principles</a>
+      <a href="/#how" data-en="How it works" data-kr="운영 방식">How it works</a>
+      <a href="/#serve" data-en="Who this is for" data-kr="누구를 위한 것인가">Who this is for</a>
+      <a href="/contact/" data-en="Contact" data-kr="문의">Contact</a>
+      <a href="#" onclick="document.querySelector('.lang [data-setlang=kr]').click();return false;">한국어 / English</a>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1 data-en="Let's Build the Future of AI Together" data-kr="함께 AI의 미래를 만듭니다">Let's Build the Future of AI Together</h1>
-        <p class="subtitle"
-           data-en="Whether you're exploring MAEUM for your organization or seeking partnership opportunities, we're here to help."
-           data-kr="조직을 위한 MAEUM을 탐색하거나 파트너십 기회를 찾고 계시다면, 저희가 도와드리겠습니다.">
-            Whether you're exploring MAEUM for your organization or seeking partnership opportunities, we're here to help.
-        </p>
-    </section>
+  <section class="hero" style="padding-bottom:40px">
+    <div class="wrap">
+      <span class="eyebrow reveal" data-en="Contact" data-kr="문의">Contact</span>
+      <h1 class="display reveal" data-en="Begin a conversation." data-kr="먼저 연락 주세요.">Begin a conversation.</h1>
+      <p class="lead reveal" data-en="We read every message from people working for the public good. Tell us who you serve, and what you're trying to make possible." data-kr="공공을 위해 일하는 분들의 메시지는 하나하나 읽습니다. 어떤 분들을 위해, 무엇을 이루려 하시는지 들려주세요.">We read every message from people working for the public good. Tell us who you serve, and what you're trying to make possible.</p>
+    </div>
+  </section>
 
-    <!-- Contact Options -->
-    <section class="contact-options">
-        <div class="options-grid">
-            <div class="option-card">
-                <div class="option-icon">🏢</div>
-                <h3 class="option-title" data-en="Enterprise Solutions" data-kr="기업 솔루션">Enterprise Solutions</h3>
-                <p class="option-description"
-                   data-en="Transform your business with on-device AI. Get a personalized demo and ROI assessment."
-                   data-kr="온디바이스 AI로 비즈니스를 혁신하세요. 개인화된 데모와 ROI 평가를 받으세요.">
-                    Transform your business with on-device AI. Get a personalized demo and ROI assessment.
-                </p>
-                <a href="#form" class="option-action" data-en="Request Enterprise Demo →" data-kr="기업 데모 요청 →">Request Enterprise Demo →</a>
-            </div>
+  <section class="section" style="padding-top:24px">
+    <div class="wrap">
+      <div class="contact-grid">
 
-            <div class="option-card">
-                <div class="option-icon">🏛️</div>
-                <h3 class="option-title" data-en="Government Services" data-kr="정부 서비스">Government Services</h3>
-                <p class="option-description"
-                   data-en="Learn how MAEUM can transform public services with secure, multilingual AI."
-                   data-kr="안전한 다국어 AI로 공공 서비스를 혁신하는 방법을 알아보세요.">
-                    Learn how MAEUM can transform public services with secure, multilingual AI.
-                </p>
-                <a href="#form" class="option-action" data-en="Schedule Consultation →" data-kr="상담 예약 →">Schedule Consultation →</a>
-            </div>
-
-            <div class="option-card">
-                <div class="option-icon">🤝</div>
-                <h3 class="option-title" data-en="Partnership Inquiries" data-kr="파트너십 문의">Partnership Inquiries</h3>
-                <p class="option-description"
-                   data-en="Explore strategic partnerships, integration opportunities, and collaborative ventures."
-                   data-kr="전략적 파트너십, 통합 기회 및 협력 벤처를 탐색하세요.">
-                    Explore strategic partnerships, integration opportunities, and collaborative ventures.
-                </p>
-                <a href="#form" class="option-action" data-en="Discuss Partnership →" data-kr="파트너십 논의 →">Discuss Partnership →</a>
-            </div>
-
-            <div class="option-card">
-                <div class="option-icon">💼</div>
-                <h3 class="option-title" data-en="Investor Relations" data-kr="투자자 관계">Investor Relations</h3>
-                <p class="option-description"
-                   data-en="Connect with our IR team for investment opportunities and financial information."
-                   data-kr="투자 기회 및 재무 정보를 위해 IR 팀과 연결하세요.">
-                    Connect with our IR team for investment opportunities and financial information.
-                </p>
-                <a href="mailto:princeps@maeum.io" class="option-action" data-en="Contact IR Team →" data-kr="IR 팀 연락 →">Contact IR Team →</a>
-            </div>
-
-            <div class="option-card">
-                <div class="option-icon">📰</div>
-                <h3 class="option-title" data-en="Media Inquiries" data-kr="미디어 문의">Media Inquiries</h3>
-                <p class="option-description"
-                   data-en="Press inquiries, interview requests, and media kit access for journalists."
-                   data-kr="언론 문의, 인터뷰 요청 및 기자를 위한 미디어 키트 액세스.">
-                    Press inquiries, interview requests, and media kit access for journalists.
-                </p>
-                <a href="mailto:princeps@maeum.io" class="option-action" data-en="Contact Press Team →" data-kr="언론팀 연락 →">Contact Press Team →</a>
-            </div>
-
-            <div class="option-card">
-                <div class="option-icon">💬</div>
-                <h3 class="option-title" data-en="General Inquiries" data-kr="일반 문의">General Inquiries</h3>
-                <p class="option-description"
-                   data-en="Questions about MAEUM, career opportunities, or general information."
-                   data-kr="MAEUM에 대한 질문, 경력 기회 또는 일반 정보.">
-                    Questions about MAEUM, career opportunities, or general information.
-                </p>
-                <a href="mailto:princeps@maeum.io" class="option-action" data-en="Send Message →" data-kr="메시지 보내기 →">Send Message →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="contact-form-section" id="form">
-        <div class="form-container">
-            <div class="form-header">
-                <h2 class="form-title" data-en="Send Us a Message" data-kr="메시지 보내기">Send Us a Message</h2>
-                <p class="form-subtitle" data-en="Fill out the form below and we'll get back to you within 24 hours" data-kr="아래 양식을 작성하시면 24시간 이내에 연락드리겠습니다">
-                    Fill out the form below and we'll get back to you within 24 hours
-                </p>
-            </div>
-
-            <form id="contact-form" action="https://formspree.io/f/xblzaeyn" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="first-name" data-en="First Name *" data-kr="이름 *">First Name *</label>
-                        <input type="text" id="first-name" name="first-name" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="last-name" data-en="Last Name *" data-kr="성 *">Last Name *</label>
-                        <input type="text" id="last-name" name="last-name" class="form-input" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="email" data-en="Email *" data-kr="이메일 *">Email *</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="phone" data-en="Phone" data-kr="전화">Phone</label>
-                        <input type="tel" id="phone" name="phone" class="form-input">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label" for="company" data-en="Company / Organization" data-kr="회사 / 조직">Company / Organization</label>
-                        <input type="text" id="company" name="company" class="form-input">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="role" data-en="Your Role" data-kr="역할">Your Role</label>
-                        <input type="text" id="role" name="role" class="form-input">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label" for="inquiry-type" data-en="Inquiry Type *" data-kr="문의 유형 *">Inquiry Type *</label>
-                    <select id="inquiry-type" name="inquiry-type" class="form-select" required>
-                        <option value="" data-en="Select inquiry type" data-kr="문의 유형 선택">Select inquiry type</option>
-                        <option value="enterprise" data-en="Enterprise Solutions" data-kr="기업 솔루션">Enterprise Solutions</option>
-                        <option value="government" data-en="Government Services" data-kr="정부 서비스">Government Services</option>
-                        <option value="partnership" data-en="Partnership Opportunity" data-kr="파트너십 기회">Partnership Opportunity</option>
-                        <option value="investor" data-en="Investor Relations" data-kr="투자자 관계">Investor Relations</option>
-                        <option value="media" data-en="Media Inquiry" data-kr="미디어 문의">Media Inquiry</option>
-                        <option value="general" data-en="General Question" data-kr="일반 질문">General Question</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label" for="message" data-en="Message *" data-kr="메시지 *">Message *</label>
-                    <textarea id="message" name="message" class="form-textarea" required></textarea>
-                </div>
-
-                <button type="submit" class="form-submit" data-en="Send Message" data-kr="메시지 보내기">Send Message</button>
-
-                <p class="form-note" data-en="By submitting this form, you agree to our privacy policy and terms of service." data-kr="이 양식을 제출하면 개인정보 보호정책 및 서비스 약관에 동의하는 것입니다.">
-                    By submitting this form, you agree to our privacy policy and terms of service.
-                </p>
-            </form>
-        </div>
-    </section>
-
-    <!-- Calendar Section -->
-    <section class="calendar-section">
-        <h2 class="form-title" data-en="Schedule a Meeting" data-kr="미팅 예약">Schedule a Meeting</h2>
-        <p class="form-subtitle" data-en="Book a time that works for you to discuss MAEUM's solutions" data-kr="MAEUM의 솔루션을 논의하기 위해 편한 시간을 예약하세요">
-            Book a time that works for you to discuss MAEUM's solutions
-        </p>
-        <div class="calendar-container">
-            <!-- Calendly embed would go here -->
-            <div style="padding: 48px; text-align: center; color: #999;">
-                <p data-en="Calendar scheduling will be embedded here" data-kr="일정 예약이 여기에 포함됩니다">Calendar scheduling will be embedded here</p>
-                <p style="margin-top: 16px;">
-                    <a href="https://calendly.com/maeum" target="_blank" class="btn-primary" data-en="Open Scheduler" data-kr="스케줄러 열기">Open Scheduler</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- FAQ Section -->
-    <section class="faq">
-        <h2 class="faq-title" data-en="Frequently Asked Questions" data-kr="자주 묻는 질문">Frequently Asked Questions</h2>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span data-en="How quickly can MAEUM be deployed in my organization?" data-kr="MAEUM을 우리 조직에 얼마나 빨리 배포할 수 있나요?">How quickly can MAEUM be deployed in my organization?</span>
-                <span class="faq-arrow">▼</span>
-            </div>
-            <div class="faq-answer">
-                <p data-en="MAEUM can be deployed within 24-48 hours for standard implementations. Since it runs on your existing hardware without cloud dependencies, deployment is significantly faster than traditional AI solutions."
-                   data-kr="표준 구현의 경우 MAEUM은 24-48시간 내에 배포할 수 있습니다. 클라우드 의존성 없이 기존 하드웨어에서 실행되므로 기존 AI 솔루션보다 배포가 훨씬 빠릅니다.">
-                    MAEUM can be deployed within 24-48 hours for standard implementations. Since it runs on your existing hardware without cloud dependencies, deployment is significantly faster than traditional AI solutions.
-                </p>
-            </div>
+        <div class="reveal">
+          <div class="reach">
+            <h3 data-en="Governments &amp; ministries" data-kr="정부·부처">Governments &amp; ministries</h3>
+            <p data-en="Sovereign, on-device intelligence for public services — in your language, on your hardware." data-kr="공공 서비스를 위한 온디바이스 AI입니다. 그 나라의 언어로, 이미 갖춘 장비 위에서 돌아갑니다.">Sovereign, on-device intelligence for public services — in your language, on your hardware.</p>
+          </div>
+          <div class="reach">
+            <h3 data-en="Development banks &amp; foundations" data-kr="개발은행·재단">Development banks &amp; foundations</h3>
+            <p data-en="Programs that put intelligence into the hands of the communities you serve." data-kr="여러분이 돕는 지역의 손에 AI를 직접 쥐어주는 프로그램입니다.">Programs that put intelligence into the hands of the communities you serve.</p>
+          </div>
+          <div class="reach">
+            <h3 data-en="Multilateral partners" data-kr="다자기구">Multilateral partners</h3>
+            <p data-en="From ITU to the field — standards, access, and the digital sovereignty of nations." data-kr="ITU에서 현장까지. 표준, 접근성, 그리고 국가의 디지털 주권을 함께 고민합니다.">From ITU to the field — standards, access, and the digital sovereignty of nations.</p>
+          </div>
+          <div class="reach">
+            <h3 data-en="Press &amp; general" data-kr="언론·일반">Press &amp; general</h3>
+            <p><a class="link" href="mailto:support@maeum.io">support@maeum.io</a></p>
+          </div>
         </div>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <span data-en="What languages does MAEUM support?" data-kr="MAEUM은 어떤 언어를 지원하나요?">What languages does MAEUM support?</span>
-                <span class="faq-arrow">▼</span>
+        <div class="reveal">
+          <form action="https://formspree.io/f/xblzaeyn" method="POST">
+            <div class="field">
+              <label data-en="Name" data-kr="이름">Name</label>
+              <input type="text" name="name" required>
             </div>
-            <div class="faq-answer">
-                <p data-en="MAEUM supports 140 languages, covering 95% of the world's population. This includes all major languages and many regional dialects, ensuring no one is left behind."
-                   data-kr="MAEUM은 140개 언어를 지원하여 전 세계 인구의 95%를 커버합니다. 모든 주요 언어와 많은 지역 방언을 포함하여 누구도 소외되지 않도록 합니다.">
-                    MAEUM supports 140 languages, covering 95% of the world's population. This includes all major languages and many regional dialects, ensuring no one is left behind.
-                </p>
+            <div class="field">
+              <label data-en="Organization" data-kr="소속">Organization</label>
+              <input type="text" name="organization">
             </div>
+            <div class="field">
+              <label data-en="Email" data-kr="이메일">Email</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="field">
+              <label data-en="Who do you serve, and what would you like to make possible?" data-kr="어떤 일을 함께하고 싶으신가요?">Who do you serve, and what would you like to make possible?</label>
+              <textarea name="message" required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="MAEUM — new message">
+            <button type="submit" class="btn btn-primary" data-en="Send message" data-kr="보내기">Send message</button>
+          </form>
         </div>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <span data-en="How does MAEUM ensure data privacy?" data-kr="MAEUM은 데이터 프라이버시를 어떻게 보장하나요?">How does MAEUM ensure data privacy?</span>
-                <span class="faq-arrow">▼</span>
-            </div>
-            <div class="faq-answer">
-                <p data-en="MAEUM runs 100% on your own infrastructure. Your data never leaves your servers, never touches the cloud, and is never accessible to us or any third party. This ensures complete data sovereignty and privacy."
-                   data-kr="MAEUM은 100% 자체 인프라에서 실행됩니다. 데이터는 서버를 떠나지 않고, 클라우드에 닿지 않으며, 우리나 제3자가 접근할 수 없습니다. 이는 완전한 데이터 주권과 프라이버시를 보장합니다.">
-                    MAEUM runs 100% on your own infrastructure. Your data never leaves your servers, never touches the cloud, and is never accessible to us or any third party. This ensures complete data sovereignty and privacy.
-                </p>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <p class="lede" data-en="MAEUM — keeping on-device AI within reach of the people who need it most." data-kr="마음 — 꼭 필요한 사람에게 닿는 온디바이스 AI.">MAEUM — keeping on-device AI within reach of the people who need it most.</p>
         </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span data-en="What hardware requirements does MAEUM have?" data-kr="MAEUM의 하드웨어 요구 사항은 무엇인가요?">What hardware requirements does MAEUM have?</span>
-                <span class="faq-arrow">▼</span>
-            </div>
-            <div class="faq-answer">
-                <p data-en="MAEUM runs on standard CPUs - no GPUs required. It can operate on your existing infrastructure, from desktop computers to enterprise servers, making it accessible and cost-effective."
-                   data-kr="MAEUM은 표준 CPU에서 실행되며 GPU가 필요하지 않습니다. 데스크톱 컴퓨터부터 엔터프라이즈 서버까지 기존 인프라에서 작동할 수 있어 접근성이 높고 비용 효율적입니다.">
-                    MAEUM runs on standard CPUs - no GPUs required. It can operate on your existing infrastructure, from desktop computers to enterprise servers, making it accessible and cost-effective.
-                </p>
-            </div>
+        <div>
+          <h4 data-en="About" data-kr="소개">About</h4>
+          <a href="/principles/" data-en="Our principles" data-kr="우리의 원칙">Our principles</a>
+          <a href="/#how" data-en="Why it sits apart" data-kr="따로 두는 이유">Why it sits apart</a>
+          <a href="/#serve" data-en="Who this is for" data-kr="누구를 위한 것인가">Who this is for</a>
         </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span data-en="How can I get a demo of MAEUM?" data-kr="MAEUM 데모는 어떻게 받을 수 있나요?">How can I get a demo of MAEUM?</span>
-                <span class="faq-arrow">▼</span>
-            </div>
-            <div class="faq-answer">
-                <p data-en="You can request a personalized demo by filling out the form above or scheduling a meeting through our calendar. We offer both virtual and on-site demonstrations tailored to your specific use case."
-                   data-kr="위의 양식을 작성하거나 일정을 통해 미팅을 예약하여 개인화된 데모를 요청할 수 있습니다. 특정 사용 사례에 맞춘 가상 및 현장 시연을 모두 제공합니다.">
-                    You can request a personalized demo by filling out the form above or scheduling a meeting through our calendar. We offer both virtual and on-site demonstrations tailored to your specific use case.
-                </p>
-            </div>
+        <div>
+          <h4 data-en="Connect" data-kr="연결">Connect</h4>
+          <a href="/contact/" data-en="Contact" data-kr="문의">Contact</a>
+          <a href="mailto:support@maeum.io">support@maeum.io</a>
+          <a href="https://maeum.io" data-en="Operating company · maeum.io" data-kr="운영 회사 · maeum.io">Operating company · maeum.io</a>
         </div>
-    </section>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 MAEUM · <span data-en="A public-interest project" data-kr="공익 프로젝트">A public-interest project</span></span>
+        <span data-en="Technology by maeum.io · Republic of Korea" data-kr="기술 제공 maeum.io · 대한민국">Technology by maeum.io · Republic of Korea</span>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4 data-en="SOLUTIONS" data-kr="솔루션">SOLUTIONS</h4>
-                <div class="footer-links">
-                    <a href="/government" data-en="Government" data-kr="정부">Government</a>
-                    <a href="/enterprise" data-en="Enterprise" data-kr="기업">Enterprise</a>
-                    <a href="/studioroom" data-en="StudioRoom" data-kr="StudioRoom">StudioRoom</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h4 data-en="COMPANY" data-kr="회사">COMPANY</h4>
-                <div class="footer-links">
-                    <a href="/about" data-en="About" data-kr="소개">About</a>
-                    <a href="/press" data-en="Press" data-kr="보도자료">Press</a>
-                    <a href="/investors" data-en="Investors" data-kr="투자자">Investors</a>
-                    <a href="/contact" data-en="Contact" data-kr="연락처">Contact</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h4 data-en="RESOURCES" data-kr="자료">RESOURCES</h4>
-                <div class="footer-links">
-                    <a href="https://maeum.io/docs" data-en="Documentation" data-kr="문서">Documentation</a>
-                    <a href="https://maeum.io/blog" data-en="Blog" data-kr="블로그">Blog</a>
-                    <a href="https://maeum.io/support" data-en="Support" data-kr="지원">Support</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h4 data-en="CONNECT" data-kr="연결">CONNECT</h4>
-                <div class="footer-links">
-                    <a href="mailto:princeps@maeum.io">princeps@maeum.io</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Form submission handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            // Form will be handled by Formspree
-        });
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const item = this.parentElement;
-                const wasActive = item.classList.contains('active');
-
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                });
-
-                // Open clicked item if it wasn't active
-                if (!wasActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Mobile menu functionality with improved UX
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.querySelector('.menu-toggle');
-            const isOpen = menu.classList.contains('active');
-
-            if (isOpen) {
-                closeMobileMenu();
-            } else {
-                menu.classList.add('active');
-                toggle.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scroll when menu is open
-            }
-        }
-
-        function closeMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.querySelector('.menu-toggle');
-            menu.classList.remove('active');
-            toggle.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scroll
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.querySelector('.menu-toggle');
-            const isClickInsideMenu = menu.contains(event.target);
-            const isClickOnToggle = toggle.contains(event.target);
-
-            if (!isClickInsideMenu && !isClickOnToggle && menu.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeMobileMenu();
-            }
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                closeMobileMenu();
-            }
-        });
-
-        // Update language button states
-        function updateMobileLangButtons() {
-            const currentLang = localStorage.getItem('selectedLanguage') || 'en';
-            document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
-                if (btn.getAttribute('data-lang') === currentLang) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-
-        // Call on page load and when language changes
-        document.addEventListener('DOMContentLoaded', updateMobileLangButtons);
-        window.addEventListener('storage', updateMobileLangButtons);
-    </script>
+  <script src="../foundation.js"></script>
 </body>
 </html>

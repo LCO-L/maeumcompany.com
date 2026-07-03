@@ -1,0 +1,272 @@
+/* ============================================================
+   MAEUM — Public-interest project
+   Minimal design system. Paper · Ink · one quiet accent.
+   Plain and unadorned.
+   ============================================================ */
+
+:root {
+  --paper:        #FAF8F2;   /* warm ivory */
+  --paper-deep:   #F3EFE6;   /* faint panel */
+  --ink:          #1A1A18;   /* warm near-black */
+  --ink-soft:     #34342F;
+  --muted:        #6E6C64;   /* warm gray */
+  --line:         rgba(26,26,24,0.14);
+  --line-soft:    rgba(26,26,24,0.08);
+  --accent:       #1B5E4F;   /* deep evergreen — sovereignty, access, calm */
+  --accent-deep:  #12463A;
+
+  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sans-kr:  'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --serif-kr: var(--sans-kr);
+
+  --measure: 46rem;      /* readable text column */
+  --wide:    68rem;      /* wide container */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 18px;
+  font-weight: 400;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+/* Korean typography swap — Pretendard throughout, clean and professional */
+body.lang-kr { font-family: var(--sans-kr); letter-spacing: -0.005em; }
+body.lang-kr h1, body.lang-kr h2, body.lang-kr h3,
+body.lang-kr .display { font-family: var(--sans-kr); font-weight: 600; letter-spacing: -0.02em; }
+body.lang-kr .display { font-weight: 700; }
+body.lang-kr .lead, body.lang-kr .statement .big { font-weight: 500; }
+body.lang-kr .eyebrow { letter-spacing: .1em; }
+
+::selection { background: rgba(27,94,79,0.16); }
+
+/* ---------- Layout ---------- */
+.wrap    { width: 100%; max-width: var(--wide); margin: 0 auto; padding: 0 32px; }
+.column  { width: 100%; max-width: var(--measure); margin: 0 auto; padding: 0 32px; }
+.section { padding: 120px 0; }
+.section--tight { padding: 84px 0; }
+.rule { height: 1px; background: var(--line); border: 0; }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, .display {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.display  { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 300; line-height: 1.06; }
+h1        { font-size: clamp(2.2rem, 4.6vw, 3.4rem); font-weight: 300; }
+h2        { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+h3        { font-size: 1.3rem; letter-spacing: 0; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 22px;
+  display: block;
+}
+
+.lead {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+p { color: var(--ink-soft); }
+p + p { margin-top: 1.2em; }
+.muted { color: var(--muted); }
+
+a { color: var(--accent); text-decoration: none; transition: color .25s; }
+a:hover { color: var(--accent-deep); }
+
+/* Inline link with quiet underline */
+.link {
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+  transition: border-color .25s, color .25s;
+}
+.link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: saturate(120%) blur(8px);
+  border-bottom: 1px solid var(--line-soft);
+}
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 74px; max-width: 82rem;
+}
+.brand { display: flex; align-items: baseline; gap: 12px; }
+.brand a { color: var(--ink); }
+.brand .mark {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.brand .mark::after {           /* the seal — a single quiet dot */
+  content: "";
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.brand .kicker {
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600;
+}
+body.lang-kr .brand .kicker { letter-spacing: 0.06em; }
+
+.nav { display: flex; align-items: center; gap: 30px; }
+.nav a.navlink {
+  font-size: 0.86rem; color: var(--muted); font-weight: 500; letter-spacing: 0.01em;
+}
+.nav a.navlink:hover, .nav a.navlink.active { color: var(--ink); }
+
+/* Language toggle — plain text EN / KR */
+.lang {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+}
+.lang button {
+  background: none; border: 0; cursor: pointer;
+  color: var(--muted); font: inherit; padding: 2px 2px;
+  transition: color .2s;
+}
+.lang button:hover { color: var(--ink); }
+.lang button.active { color: var(--accent); }
+.lang .sep { color: var(--line); }
+
+.menu-btn { display: none; background: none; border: 0; cursor: pointer;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 132px 0 96px; }
+.hero .display { max-width: 20ch; }
+.hero .lead { margin-top: 34px; max-width: 44ch; }
+.hero .actions { margin-top: 48px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--sans); font-size: 0.92rem; font-weight: 600; letter-spacing: 0.01em;
+  padding: 13px 26px; border-radius: 2px; cursor: pointer;
+  transition: all .25s; border: 1px solid transparent;
+}
+.btn-primary { background: var(--accent); color: var(--paper); }
+.btn-primary:hover { background: var(--accent-deep); color: var(--paper); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+.btn + .btn { margin-left: 14px; }
+
+/* ---------- Statement (big centered line) ---------- */
+.statement { text-align: center; }
+.statement .big {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(1.8rem, 3.6vw, 3rem); line-height: 1.22;
+  max-width: 24ch; margin: 0 auto;
+}
+.statement cite { display: block; margin-top: 32px; font-style: normal;
+  font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- Principle / numbered list ---------- */
+.principles { display: grid; gap: 0; margin-top: 56px; }
+.principle {
+  display: grid; grid-template-columns: 3.4rem 1fr; gap: 28px;
+  padding: 34px 0; border-top: 1px solid var(--line);
+}
+.principle:last-child { border-bottom: 1px solid var(--line); }
+.principle .no {
+  font-family: var(--serif); font-size: 1.1rem; color: var(--accent);
+  padding-top: 2px;
+}
+.principle h3 { margin-bottom: 10px; }
+.principle p { color: var(--muted); }
+
+/* ---------- Serve / quiet columns ---------- */
+.cols {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 60px;
+}
+.cols--2 { grid-template-columns: repeat(2, 1fr); }
+.col h3 { margin-bottom: 12px; font-size: 1.15rem; }
+.col p { color: var(--muted); font-size: 0.98rem; }
+.col .tick {
+  display: block; width: 26px; height: 1px; background: var(--accent); margin-bottom: 20px;
+}
+
+/* ---------- Aside note / panel ---------- */
+.panel { background: var(--paper-deep); }
+.note {
+  border-left: 2px solid var(--accent); padding: 4px 0 4px 26px;
+  color: var(--ink-soft); font-size: 1.05rem;
+}
+
+/* ---------- Document (charter) ---------- */
+.doc { max-width: var(--measure); }
+.doc h2 { margin: 56px 0 18px; }
+.doc h3 { margin: 34px 0 10px; }
+.doc p { margin-bottom: 1em; }
+.doc .article { padding: 30px 0; border-top: 1px solid var(--line-soft); }
+.doc .article:first-of-type { border-top: 0; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); padding: 72px 0 56px; }
+.site-footer .wrap { max-width: 82rem; }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+.footer-top h4 { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); font-weight: 600; margin-bottom: 18px; }
+body.lang-kr .footer-top h4 { letter-spacing: 0.06em; }
+.footer-top a { display: block; color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 10px; }
+.footer-top a:hover { color: var(--accent); }
+.footer-top .lede { font-family: var(--serif); font-size: 1.15rem; line-height: 1.5; color: var(--ink); max-width: 30ch; font-weight: 300; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center;
+  margin-top: 56px; padding-top: 26px; border-top: 1px solid var(--line-soft);
+  font-size: 0.8rem; color: var(--muted); flex-wrap: wrap; gap: 12px; }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  body { font-size: 17px; }
+  .section { padding: 88px 0; }
+  .hero { padding: 104px 0 80px; }
+  .cols, .cols--2 { grid-template-columns: 1fr; gap: 40px; }
+  .footer-top { grid-template-columns: 1fr; gap: 34px; }
+  .nav { display: none; }
+  .menu-btn { display: inline-block; }
+  .principle { grid-template-columns: 2.4rem 1fr; gap: 18px; }
+}
+
+/* Mobile menu (revealed) */
+.mobile-nav { display: none; border-bottom: 1px solid var(--line-soft); background: var(--paper); }
+.mobile-nav.open { display: block; }
+.mobile-nav a { display: block; padding: 16px 32px; color: var(--ink-soft); border-top: 1px solid var(--line-soft); font-size: 0.95rem; }
+.mobile-nav a:first-child { border-top: 0; }
